@@ -1,0 +1,131 @@
+<script>
+
+document.getElementById("indispo").addEventListener("change", switchIndispoDate);
+document.getElementById("update").addEventListener("click", update);
+
+document.addEventListener('DOMContentLoaded', function() {
+console.log("test");
+        var selectBoxes = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(selectBoxes);
+        var datePicker = document.getElementById('indispoDate');
+        var instances = M.Datepicker.init(datePicker, {
+            autoClose: true,
+            minDate: new Date(Date.now()),
+            format: 'dd/mm/yyyy'
+        });
+        //var autocomplete = document.querySelectorAll('.autocomplete');
+        //var instances = M.Autocomplete.init(autocomplete, data: {"ced": null,"loui": null} );
+        //console.log(<?=mailList?>);        
+        //var mailList= "{"+<?=mailList?>+"}";
+        //console.log(mailList);
+    });
+
+
+
+function update() {
+    var toValidate = {
+        prenom: "Le prenom doit être rempli",
+        nom: "Le nom doit être rempli",
+        site: "Le site doit être choisi",
+        poste: "Le poste doit être choisi",
+        dribble: "Le niveau de dribble doit être rempli",
+        frappe: "Le niveau de frappe doit être rempli",
+        defense: "Le niveau de défense doit être rempli"
+    }
+
+    var idKeys = Object.keys(toValidate);
+
+    var allValid = true;
+    idKeys.forEach(function(k) {
+        if (!checkValidity(k, toValidate[k])) {
+            allValid = false;
+        }
+    })
+
+    if (allValid) {
+        updateProfil();
+    }
+}
+
+function checkValidity(elementId, message) {
+    var isValid = document.getElementById(elementId).checkValidity();
+    if (!isValid) {
+        M.toast({
+            html: message
+        })
+        return false;
+    }
+    return true;
+}
+
+function updateProfil() {
+    var user = {};
+    user.mail = document.getElementById("mail").value;    
+    user.key = document.getElementById("key").value;
+    user.prenom = document.getElementById("prenom").value;
+    user.nom = document.getElementById("nom").value;
+    user.surnom = document.getElementById("surnom").value;
+    user.indispo = document.getElementById("indispo").checked;
+    user.indispoDate = document.getElementById("indispoDate").value;
+    user.lundi = document.getElementById("lundi").checked;
+    user.mardi = document.getElementById("mardi").checked;
+    user.mercredi = document.getElementById("mercredi").checked;
+    user.jeudi = document.getElementById("jeudi").checked;
+    user.vendredi = document.getElementById("vendredi").checked;
+    user.site = document.getElementById("site").value;
+    user.poste = document.getElementById("poste").value;
+    user.dribble = document.querySelector('input[name="dribble"]:checked').value;
+    user.frappe = document.querySelector('input[name="frappe"]:checked').value;
+    user.defense = document.querySelector('input[name="defense"]:checked').value;
+
+    console.log(user);
+    M.toast({ html: "En cours de modification" });
+    google.script.run.withSuccessHandler(success).withFailureHandler(failure).updateProfil(user);
+    
+};
+
+function success() {
+   M.toast({ html: "Profil modifié" });
+}
+function failure() {
+   M.toast({ html: "Clef non valide" });
+}
+
+function explaination() {
+    var niv = document.getElementById("niveau").value;
+    if (niv.length > 0) {
+        google.script.run.withSuccessHandler(updateExplaination).getExplaination(niv);
+    } else {
+        document.getElementById("explaination").value = "";
+    }
+}
+
+function updateExplaination(explain) {
+    document.getElementById("explaination").value = explain;
+    M.updateTextFields();
+}
+
+function switchIndispoDate() {
+    if (document.getElementById("indispo").checked) {
+        document.getElementById('indispoDate').removeAttribute("disabled");
+        M.Datepicker.getInstance(document.getElementById('indispoDate')).open();
+        M.toast({
+            html: "Sélectionne ta date de fin d'insponibilité"
+        })
+    } else {
+        document.getElementById('indispoDate').value = "";
+        document.getElementById('indispoDate').setAttribute("disabled", "disabled");
+    }
+}
+
+function setDatePicker() {
+    var datePicker = document.getElementById('indispoDate');
+    var instances = M.Datepicker.init(datePicker, {
+        autoClose: true,
+        minDate: new Date(Date.now()),
+        defaultDate: new Date(Date.now()),
+        setDefaultDate: true
+    });
+}
+
+</script>

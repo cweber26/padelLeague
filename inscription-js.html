@@ -1,0 +1,13 @@
+<script>
+  parameter = {};
+  google.script.url.getLocation(function(location) {
+      parameter = location.parameter;
+      google.script.run.withSuccessHandler(loadCompo).withFailureHandler(loadError).inscription(parameter);
+  });
+  function loadCompo() {
+    window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail="+String(parameter.mail)+"&key="+String(parameter.key);
+  }
+  function loadError() {
+    window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=error&mail="+String(parameter.mail)+"&key="+String(parameter.key);
+  }
+</script>
