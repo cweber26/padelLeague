@@ -1,7 +1,3 @@
-function test() {
-    inscription({mail: "benjamin.lepretre@decathlon.com", key: "666", answer: "Non"});
-}
-
 ////////////SHEET////////////
 var sheetTeam = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Team");
 var sheetBackOffice = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("BackOffice");
