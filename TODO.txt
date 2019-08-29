@@ -3,7 +3,6 @@
 /////////////////////////////////
 
 //STAND BY//
-// Utiliser des templates pour les mails
 // ajouter une photo du joueur
 // brancher le vendredi
 // lien vers page de paiement urban
@@ -24,6 +23,7 @@
 // Mail du mois : Vainqueur Nouveaux meilleur joueur etc... A EMBELLIR
 
 //FAIT//
+// Utiliser des templates pour les mails OK
 // Bloquer la composition à partir du rappel si un nouveau joueur s'inscrit (si il est plus prioritaire) OK
 // Faire les niveaux selon attaque défence OK
 // faire les compositions selon l'assiduité OK

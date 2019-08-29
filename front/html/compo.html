@@ -8,181 +8,197 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class ="row"></div>
-        <div class="row"> 
-          <h3 class="title"> Composition pour le match <?=date?></h3>
-        </div>
-        <div class="row">
-            <div class="field">
-                <div class="zone1 valign-wrapper">
+<div class="container">
+    <div class="row"></div>
+    <div class="row">
+        <h3 class="title"> Composition pour le match <?=date?></h3>
+    </div>
+    <div class="row">
+        <div class="field">
+            <div class="zone1 valign-wrapper">
+                <div class="joueur red z-depth-3">
+                    <?= compo[0] ?><? if(confirmations[0] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                </div>
+            </div>
+            <div class="zone2">
+                <div class="zoneGauche valign-wrapper">
                     <div class="joueur red z-depth-3">
-                        <?= compo[0] ?><? if(confirmations[0] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?> 
+                        <?= compo[1] ?><? if(confirmations[1] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
                     </div>
                 </div>
-                <div class="zone2">
-                    <div class="zoneGauche valign-wrapper">
-                        <div class="joueur red z-depth-3">
-                            <?= compo[1] ?><? if(confirmations[1] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?> 
-                        </div>
-                    </div>
-                    <div class="zoneDroite valign-wrapper">
-                        <div class="joueur red z-depth-3">
-                            <?= compo[2] ?><? if(confirmations[2] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?> 
-                        </div>
+                <div class="zoneDroite valign-wrapper">
+                    <div class="joueur red z-depth-3">
+                        <?= compo[2] ?><? if(confirmations[2] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
                     </div>
                 </div>
-                <div class="zone2">
-                    <div class="zoneGauche valign-wrapper">
-                        <div class="joueur red z-depth-3">
-                            <?= compo[3] ?><? if(confirmations[3] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?> 
-                        </div>
-                    </div>
-                    <div class="zoneDroite valign-wrapper">
-                        <div class="joueur red z-depth-3">
-                            <?= compo[4] ?><? if(confirmations[4] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?> 
-                        </div>
+            </div>
+            <div class="zone2">
+                <div class="zoneGauche valign-wrapper">
+                    <div class="joueur red z-depth-3">
+                        <?= compo[3] ?><? if(confirmations[3] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
                     </div>
                 </div>
-                <div class="zone2">
-                    <div class="zoneGauche valign-wrapper">
-                        <div class="joueur blue z-depth-3">
-                            <?= compo[5] ?><? if(confirmations[5] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?> 
-                        </div>
-                    </div>
-                    <div class="zoneDroite valign-wrapper">
-                        <div class="joueur blue z-depth-3">
-                            <?= compo[6] ?><? if(confirmations[6] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?> 
-                        </div>
+                <div class="zoneDroite valign-wrapper">
+                    <div class="joueur red z-depth-3">
+                        <?= compo[4] ?><? if(confirmations[4] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
                     </div>
                 </div>
-                <div class="zone2">
-                    <div class="zoneGauche valign-wrapper">
-                        <div class="joueur blue z-depth-3">
-                            <?= compo[7] ?><? if(confirmations[7] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?> 
-                        </div>
-                    </div>
-                    <div class="zoneDroite valign-wrapper">
-                        <div class="joueur blue z-depth-3">
-                            <?= compo[8] ?><? if(confirmations[8] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?> 
-                        </div>
-                    </div>
-                </div>
-                <div class="zone1 valign-wrapper">
+            </div>
+            <div class="zone2">
+                <div class="zoneGauche valign-wrapper">
                     <div class="joueur blue z-depth-3">
-                        <?= compo[9] ?><? if(confirmations[9] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?> 
+                        <?= compo[5] ?><? if(confirmations[5] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                    </div>
+                </div>
+                <div class="zoneDroite valign-wrapper">
+                    <div class="joueur blue z-depth-3">
+                        <?= compo[6] ?><? if(confirmations[6] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <? if(admin) { ?>
-        <div class="row">
-            <div class="input-field col s4"></div>
-            <div class="input-field col s2">
-                <label for="scoreRouge">Rouge</label><input id="scoreRouge" type="number" class="validate" value="<?=score.red?>" required>
+            <div class="zone2">
+                <div class="zoneGauche valign-wrapper">
+                    <div class="joueur blue z-depth-3">
+                        <?= compo[7] ?><? if(confirmations[7] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                    </div>
+                </div>
+                <div class="zoneDroite valign-wrapper">
+                    <div class="joueur blue z-depth-3">
+                        <?= compo[8] ?><? if(confirmations[8] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                    </div>
+                </div>
             </div>
-            <div class="input-field col s2">
-                <label for="scoreBleu">Bleu</label><input id="scoreBleu" type="number" class="validate" value="<?=score.blue?>" required>
+            <div class="zone1 valign-wrapper">
+                <div class="joueur blue z-depth-3">
+                    <?= compo[9] ?><? if(confirmations[9] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s4"></div>
-            <div class="input-field col s4">
-                <a id="score" class="buttonGreen">Score</a>
-            </div>  
-        </div>        
-        <? } else if(score.red && score.blue) { ?>
-        <div class="row">
-            <div class="mainScore valign-wrapper">
+    </div>
+
+    <? if(admin) { ?>
+    <div class="row">
+        <div class="input-field col s4"></div>
+        <div class="input-field col s2">
+            <label for="scoreRouge">Rouge</label><input id="scoreRouge" type="number" class="validate" value="<?=score.red?>" required>
+        </div>
+        <div class="input-field col s2">
+            <label for="scoreBleu">Bleu</label><input id="scoreBleu" type="number" class="validate" value="<?=score.blue?>" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s4"></div>
+        <div class="input-field col s4">
+            <a id="score" class="buttonGreen">Score</a>
+        </div>
+    </div>
+    <? } else if(score.red && score.blue) { ?>
+    <div class="row">
+        <div class="mainScore valign-wrapper">
             <div class="score red lighten-2"><?=score.red?></div>
-            <div class="score blue lighten-2"><?=score.blue?></div> 
-            </div>
+            <div class="score blue lighten-2"><?=score.blue?></div>
         </div>
-        <? } ?>
-        <? if(inscriptionPhase && !confirmationPhase) { ?>
-       <div class="row">
-            <div class="input-field col s4"></div>
-            <div class="input-field col s2">
-                <a id="inscription" class="buttonGreen">Inscription</a>
-            </div>
-            <div class="input-field col s2">
-                <a id="desinscription" class="buttonRed">Désinscription</a>
-            </div>
+    </div>
+    <? } ?>
+    <? if(inscriptionPhase && !confirmationPhase) { ?>
+    <div class="row">
+        <div class="input-field col s4"></div>
+        <div class="input-field col s2">
+            <a id="inscription" class="buttonGreen">Inscription</a>
         </div>
-        <? } else if(confirmationPhase) { ?>
-        <div class="row">
-            <div class="input-field col s4"></div>
-            <div class="input-field col s2">
-                <a id="confirmation" class="buttonGreen">Confirmation</a>
-            </div>
-            <div class="input-field col s2">
-                <a id="deconfirmation" class="buttonRed">Désinscription</a>
-            </div>
+        <div class="input-field col s2">
+            <a id="desinscription" class="buttonRed">Désinscription</a>
         </div>
-        <? } ?>
-        <? if (effectif != "") { ?>
-        <div class="row">
-          <table id="equipes" class="centered highlight">
+    </div>
+    <? } else if(confirmationPhase) { ?>
+    <div class="row">
+        <div class="input-field col s4"></div>
+        <div class="input-field col s2">
+            <a id="confirmation" class="buttonGreen">Confirmation</a>
+        </div>
+        <div class="input-field col s2">
+            <a id="deconfirmation" class="buttonRed">Désinscription</a>
+        </div>
+    </div>
+    <? } ?>
+    <? if (effectif != "") { ?>
+    <div class="row">
+        <table id="equipes" class="centered highlight">
             <thead>
-                <tr>
-                    <th onclick="sortTableCompo(0)" style="cursor:pointer">Equipe</th>
-                    <th onclick="sortTableCompo(1)" style="cursor:pointer">Joueur</th>
-                    <th onclick="sortTableCompo(2)" style="cursor:pointer">Surnom</th>
-                    <th onclick="sortTableCompo(3)" style="cursor:pointer">Site</th>
-                    <th onclick="sortTableCompo(4)" style="cursor:pointer">Classement</th>
-                    <th onclick="sortTableCompo(5)" style="cursor:pointer">Série en cours</th>
-                </tr>
+            <tr>
+                <th onclick="sortTableCompo(0)" style="cursor:pointer">Equipe</th>
+                <th onclick="sortTableCompo(1)" style="cursor:pointer">Joueur</th>
+                <th onclick="sortTableCompo(2)" style="cursor:pointer">Surnom</th>
+                <th onclick="sortTableCompo(3)" style="cursor:pointer">Site</th>
+                <th onclick="sortTableCompo(4)" style="cursor:pointer">Classement</th>
+                <th onclick="sortTableCompo(5)" style="cursor:pointer">Série en cours</th>
+            </tr>
             </thead>
 
             <tbody>
-                <?!=effectif?>
+            <?!=effectif?>
             </tbody>
-          </table>
+        </table>
+    </div>
+    <? if(listeAttente != "") { ?>
+    <div class="row">
+        <div class="col s3">
         </div>
-        <? if(listeAttente != "") { ?>
-        <div class="row">
-          <div class="col s3">
-          </div>
-          <div class="col s6">
+        <div class="col s6">
             <table id="enattente" class="centered highlight">
                 <thead>
-                    <tr>
-                        <th style="cursor:pointer">Joueur en attente</th>
-                    </tr>
+                <tr>
+                    <th style="cursor:pointer">Joueur en attente</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <?!=listeAttente?>
+                <?!=listeAttente?>
                 </tbody>
             </table>
-          </div>
         </div>
-        <? } ?>
-        <? } ?>
-        <? if(admin) { ?>
-        <?= url ?>
-        <div class ="row">
-            <a id="cleaning" class="buttonRed">PURGE MATCH</a>
-        </div>            
-        <? } ?>
     </div>
-    
-    <div class="fixed-action-btn direction-top active" style="bottom: 45px; right: 24px;">
-        <a data-target="helper" class="btn-floating btn-large waves-effect waves-light modal-trigger green lighten-2 pulse"><i class="material-icons">help_outline</i></a>
+    <? } ?>
+    <? } ?>
+    <? if(admin) { ?>
+    <div class="row">
+        <div class="col s2">
+            <a id="cleaning" class="buttonRed">Purge Match</a>
+        </div>
+        <div class="col s2">
+            <a id="sendPrio1" class="buttonGreen">Envoi Prio 1</a>
+        </div>
+        <div class="col s2">
+            <a id="sendPrio2" class="buttonGreen">Envoi Prio 2</a>
+        </div>
+        <div class="col s2">
+            <a id="sendPrio3" class="buttonGreen">Envoi Prio 3</a>
+        </div>
+        <div class="col s2">
+            <a id="sendReminder" class="buttonGreen">Envoi Rappel</a>
+        </div>
+        <div class="col s2">
+            <a id="sendConfirmation" class="buttonGreen">Envoi Confirmation</a>
+        </div>
     </div>
-    <div id="helper" class="modal">
-        <div class="modal-content">
-            <h5>Inscriptions</h5>
-            <p>Les inscriptions sont envoyées par vague	:
+    <? } ?>
+</div>
+
+<div class="fixed-action-btn direction-top active" style="bottom: 45px; right: 24px;">
+    <a data-target="helper" class="btn-floating btn-large waves-effect waves-light modal-trigger green lighten-2 pulse"><i class="material-icons">help_outline</i></a>
+</div>
+<div id="helper" class="modal">
+    <div class="modal-content">
+        <h5>Inscriptions</h5>
+        <p>Les inscriptions sont envoyées par vague :
             <br>1ère vaque : les habitués
-            <br>2ème vague : les joueurs occasionnels 
+            <br>2ème vague : les joueurs occasionnels
             <br>3ème vague : les joueurs venant rarement
-            <br>Les vagues 2 et 3 ne sont envoyées que s'il reste de la place 
+            <br>Les vagues 2 et 3 ne sont envoyées que s'il reste de la place
             <br>La composition est créée la veille du match (17h)
             <br>Une confirmation de présence est demandée le matin du match
-            </p> 
-            <h5>Priorisation / Composition</h5>
-            <p>Les joueurs sont choisis par :
+        </p>
+        <h5>Priorisation / Composition</h5>
+        <p>Les joueurs sont choisis par :
             <br>- l'heure d'inscription (première heure après envoi du mail d'inscription, deuxième heure, etc...)
             <br>- puis la priorité (en liste d'attente la dernière fois)
             <br>- puis la participation (nombre de match joué arrondi à la dizaine)
@@ -190,22 +206,22 @@
             <br>L'effectif est figé à partir de mardi soir
             <br>Les joueurs en liste d'attente gagne une priorité
             <br>Les joueurs qui jouent perdent leur priorité
-            </p>
-            <h5>Nos règles</h5>
-            <p>Le gardien reste dans sa zone
+        </p>
+        <h5>Nos règles</h5>
+        <p>Le gardien reste dans sa zone
             <br>Les joueurs ne rentrent pas dans la zone du gardien
             <br>Filets arrières => Sortie de but. Balle au gardien
             <br>Filets latéraux => Ça joue
             <br>Filet haut => On perd la balle. Balle au gardien
             <br>Un homme à terre, on stoppe le jeu
             <br>On ne s'accroche pas au filet
-            </p>
-            <h5>Composition</h5>
-            <p>La composition est faite automatiquement selon les niveaux des joueurs
+        </p>
+        <h5>Composition</h5>
+        <p>La composition est faite automatiquement selon les niveaux des joueurs
             <br>Pour mettre à jour tes niveaux va sur la page Profil
-            </p>
-        </div>
+        </p>
     </div>
+</div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <?!= include("front/js/compo-js"); ?>

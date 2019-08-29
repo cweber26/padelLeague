@@ -1,3 +1,19 @@
+function sendMailForAdmin(subject, contentHtml) {
+    var mails = mailsAdmin.split(',');
+    for (var i in mails) {
+        var player = getPlayerWithMail(mails[i]);
+        sendMailForAnAdmin(player, subject, contentHtml);
+    }
+}
+
+function sendMailForAnAdmin(player, subject, contentHtml) {
+    var body = includeWithArgs("front/mail/mailForAdmin", {
+        html: contentHtml,
+        urlMail: getUrlMail(player)
+    });
+    sendMail(player.mail, subject, body)
+}
+
 function sendMail(mail, subject, html) {
     if (!modeTest) {
         MailApp.sendEmail({

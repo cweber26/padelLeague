@@ -1,0 +1,22 @@
+<script>
+    var buttonEnvoiMailRecord = document.getElementById("sendMailRecord");
+    if (buttonEnvoiMailRecord) {
+        buttonEnvoiMailRecord.addEventListener("click", sendMailRecordJs);
+    }
+
+    function sendMailRecordJs() {
+        if (window.confirm("Es tu sûr de vouloir envoyer le mail de records du mois précédant ?")) {
+            M.toast({html: "Envoi en cours"});
+            google.script.run.withSuccessHandler(successRecord).withFailureHandler(failRecord).resultatDuMois();
+        }
+
+        function successRecord() {
+            M.toast({html: "Mails envoyés"});
+        }
+
+        function failRecord() {
+            M.toast({html: "Envoi en erreur"});
+        }
+    }
+
+</script>

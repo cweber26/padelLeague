@@ -17,6 +17,13 @@ function testInscription5() {
 }
 
 // noinspection JSUnusedGlobalSymbols
+function testDesinscription() {
+    var player = getPlayerWithMail("louis.williamson@decathlon.com");
+    inscription({mail: player.mail, key: player.keyWithSecurity, answer: "Non"});
+}
+
+
+// noinspection JSUnusedGlobalSymbols
 function testConfirmation() {
     var playersList = playersTeamList();
     for (var i = 0; i < 15; i++) {
@@ -28,18 +35,20 @@ function testConfirmation() {
 // noinspection JSUnusedGlobalSymbols
 function testMails() {
     var player = getPlayerWithMail("cedric.weber@decathlon.com");
-    sendInscriptionMail(player);
+    sendInscriptionMailForAPlayer(player);
     sendRemindMailForAPlayer(player, true);
     sendRemindMailForAPlayer(player, false);
     sendConfirmMailForAPlayer(player, true);
     sendConfirmMailForAPlayer(player, false);
     sendWaitingListMail(player);
-    sendMailCancelMatchForAPlayer(player, true);
-    sendMailCancelMatchForAPlayer(player, false);
-    sendMailMatchCompletForAPlayer(player);
+    sendCancelMatchMailForAPlayer(player, true);
+    sendCancelMatchMailForAPlayer(player, false);
+    sendMatchCompletMailForAPlayer(player);
+    sendLastMonthResultMailForAPlayer(player);
+    sendMailForAnAdmin(player, "subjet test", "<h2>html test</h2>");
 }
 
-function test() {
+function testMail() {
     var player = getPlayerWithMail("cedric.weber@decathlon.com");
-    sendMailMatchCompletForAPlayer(player);
+    sendMailForAnAdmin(player, "subjet test", "<h2>html test</h2>");
 }

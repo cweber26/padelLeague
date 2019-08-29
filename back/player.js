@@ -6,7 +6,7 @@ function playersTeamList() {
     return sheetTeam.getRange(3, 1, sheetTeam.getRange("A3:A").getValues().filter(String).length, sheetTeam.getLastColumn()).getValues()
 }
 
-function isAuthorized(player, prior) {
+function shouldReceiveInscriptionMail(player, prior) {
     if (player.mail
         && player.prioValue <= prior
         && player.haveAlreadyAnswer == false
@@ -21,39 +21,39 @@ function getPlayerWithMail(mail) {
     var teamList = playersTeamList();
     for (var i = 0; i < teamList.length; i++) {
         if (teamList[i][0] == mail) {
-            var p = sheetTeam.getRange(i + 3, 1, 1, sheetTeam.getLastColumn()).getValues()[0];
-            return initPlayer(p);
+            var playerLine = sheetTeam.getRange(i + 3, 1, 1, sheetTeam.getLastColumn()).getValues()[0];
+            return initPlayer(playerLine);
         }
     }
 }
 
-function initPlayer(p) {
+function initPlayer(playerLine) {
     return {
-        mail: p[0],
-        key: p[1],
-        keyWithSecurity: (p[1] * 2 + 10),
-        firstName: p[2],
-        lastName: p[3],
-        fullName: p[4],
-        shortfullName: p[5],
-        nickName: p[6],
-        isUnavailable: p[7],
-        endDateOfUnavailibility: p[8],
-        mondaySelected: p[9],
-        tuesdaySelected: p[10],
-        wednesdaySelected: p[11],
-        thursdaySelected: p[12],
-        fridaySelected: p[13],
-        site: p[14],
-        position: p[15],
-        levelDribble: p[16],
-        levelFrappe: p[17],
-        levelDefense: p[18],
-        haveDoneAutoEvaluation: p[19],
-        haveAlreadyAnswer: p[20],
-        prioValue: p[21],
-        isAdmin: p[22],
-        isPrioritary: p[23]
+        mail: playerLine[0],
+        key: playerLine[1],
+        keyWithSecurity: (playerLine[1] * 2 + 10),
+        firstName: playerLine[2],
+        lastName: playerLine[3],
+        fullName: playerLine[4],
+        shortfullName: playerLine[5],
+        nickName: playerLine[6],
+        isUnavailable: playerLine[7],
+        endDateOfUnavailibility: playerLine[8],
+        mondaySelected: playerLine[9],
+        tuesdaySelected: playerLine[10],
+        wednesdaySelected: playerLine[11],
+        thursdaySelected: playerLine[12],
+        fridaySelected: playerLine[13],
+        site: playerLine[14],
+        position: playerLine[15],
+        levelDribble: playerLine[16],
+        levelFrappe: playerLine[17],
+        levelDefense: playerLine[18],
+        haveDoneAutoEvaluation: playerLine[19],
+        haveAlreadyAnswer: playerLine[20],
+        prioValue: playerLine[21],
+        isAdmin: playerLine[22],
+        isPrioritary: playerLine[23]
     };
 }
 
@@ -109,7 +109,7 @@ function loadPageProfil() {
 // noinspection JSUnusedGlobalSymbols
 function updateProfil(user) {
 
-    var row = getRowPlayerWithMail(user.mail);
+    var row = getRowSheetTeamWithMail(user.mail);
 
     if (user.key == (sheetTeam.getRange(row, 2).getValue() * 2 + 10)) {
         var firstName = user.prenom;
@@ -198,12 +198,11 @@ function updateProfil(user) {
     }
 }
 
-function getRowPlayerWithMail(email) {
-    var playersList = playersTeamList();
-    for (var i in playersList) {
-        var player = initPlayer(playersList[i]);
-        if (email == player.mail) {
-            return Number(i) + 3;
+function getRowSheetTeamWithMail(mail) {
+    var teamList = playersTeamList();
+    for (var i = 0; i < teamList.length; i++) {
+        if (teamList[i][0] == mail) {
+            return i + 3;
         }
     }
 }

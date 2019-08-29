@@ -3,15 +3,15 @@ function sendInscriptionMailForAPrio(prio) {
         var playersList = playersTeamList();
         for (var i in playersList) {
             var player = initPlayer(playersList[i]);
-            if (isAuthorized(player, prio)) {
-                sendInscriptionMail(player);
+            if (shouldReceiveInscriptionMail(player, prio)) {
+                sendInscriptionMailForAPlayer(player);
             }
         }
     }
     logRunDate(prio);
 }
 
-function sendInscriptionMail(player) {
+function sendInscriptionMailForAPlayer(player) {
     var body = includeWithArgs("front/mail/mailInscription", {
         date: matchDayGapInFrench(true),
         nbAvailableSlots: nbAvailableSlots,
@@ -37,25 +37,18 @@ function loadPageInscription() {
 
 function inscription(parameter) {
     if (isValid(parameter)) {
-        var isDesistement = false;
         var playersInTheMatchMailBefore = playersInTheMatchMail();
         if (sheetInscription.getLastRow() > 1) {
             var inscriptions = sheetInscription.getRange(2, 1, sheetInscription.getLastRow(), sheetInscription.getLastColumn()).getValues();
             for (var i in inscriptions) {
-                var inscription = inscriptions[i];
-                if (inscription[1] == parameter.mail) {
-                    if (inscription[3] == parameter.answer) {
+                if (inscriptions[i][1] == parameter.mail) {
+                    if (inscriptions[i][3] == parameter.answer) {
+                        // user already send us the same answer. we do nothing
                         return;
                     } else {
+                        // answer different. we delete the row and check if it is a desistement.
                         sheetInscription.deleteRow(Number(i) + 2);
-                        if (parameter.answer == "Non") {
-                            for (var j in playersInTheMatchMailBefore) {
-                                if (playersInTheMatchMailBefore[j] == parameter.mail) {
-                                    isDesistement = true;
-                                    break;
-                                }
-                            }
-                        }
+                        checkIfDesistement(parameter, playersInTheMatchMailBefore);
                         break;
                     }
                 }
@@ -68,12 +61,10 @@ function inscription(parameter) {
         sheetInscription.getRange(row, 4).setValue(parameter.answer);
 
         if (nbPlayersAvailable == (nbMaxPlayers - 1) && parameter.answer == "Oui") {
-            sendMailMatchComplet();
+            sendMatchCompletMail();
+            createCalendarEvent();
         }
 
-        if (isDesistement) {
-            actionsToDoIfDesistement();
-        }
     }
 }
 
@@ -82,7 +73,7 @@ function isValid(parameter) {
     if (parameter.answer != "Oui" && parameter.answer != "Non") {
         return false;
     }
-    var rowPlayer = getRowPlayerWithMail(parameter.mail);
+    var rowPlayer = getRowSheetTeamWithMail(parameter.mail);
     // noinspection RedundantIfStatementJS
     if (!rowPlayer) {
         return false;

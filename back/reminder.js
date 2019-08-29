@@ -1,8 +1,7 @@
 function sendReminderMail() {
     if (rangeCancelMatch.isBlank() && rangeReminder.isBlank()) {
         if (nbPlayersAvailable == nbMaxPlayers) {
-            saveMatch();
-            createCalendarEvent();
+            saveMatchCompo();
         }
 
         var matchMails = playersInTheMatchMail();

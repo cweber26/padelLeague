@@ -1,13 +1,13 @@
-function sendMailCancelMatch(isAutoCancel) {
+function sendCancelMatchMail(isAutoCancel) {
     var playerMails = playersInTheMatchMail();
     for (var i in playerMails) {
         var player = getPlayerWithMail(playerMails[i]);
-        sendMailCancelMatchForAPlayer(player, isAutoCancel);
+        sendCancelMatchMailForAPlayer(player, isAutoCancel);
     }
 }
 
 
-function sendMailCancelMatchForAPlayer(player, isAutoCancel) {
+function sendCancelMatchMailForAPlayer(player, isAutoCancel) {
     var body = includeWithArgs("front/mail/mailCancelMatch", {
         date: matchDayGapInFrench(true),
         player: player,

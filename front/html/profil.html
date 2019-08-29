@@ -53,15 +53,15 @@
                 <? if(player.endDateOfUnavailibility) { ?>
                 <script> document.addEventListener('DOMContentLoaded', function() {
                            var datePicker = document.getElementById('indispoDate');
-                           var instances = M.Datepicker.init(datePicker, {
+                           M.Datepicker.init(datePicker, {
                            autoClose: true,
                            minDate: new Date(Date.now()),
                            format: 'dd/mm/yyyy',
                            defaultDate: new Date(<?=Utilities.formatDate(new Date(player[8]), "GMT", "MM/dd/yy")?>),
                            setDefaultDate: true
-                           }); 
+                           });
                         });
-                </script> 
+                </script>
                 <? } ?>
                 <input id="indispoDate" type="text" class="datepicker col s6">
                 <label for="indispoDate">Date fin indisponibilité</label>
@@ -85,7 +85,7 @@
                     <input id="mardi" type="checkbox" class="filled-in" checked="checked"/>
                     <? } else { ?>
                     <input id="mardi" type="checkbox" class="filled-in"/>
-                    <? } ?>                    
+                    <? } ?>
                     <span>Mardi</span>
                 </label>
             </div>
@@ -95,7 +95,7 @@
                     <input id="mercredi" type="checkbox" class="filled-in" checked="checked"/>
                     <? } else { ?>
                     <input id="mercredi" type="checkbox" class="filled-in"/>
-                    <? } ?>                    
+                    <? } ?>
                     <span>Mercredi</span>
                 </label>
             </div>
@@ -105,7 +105,7 @@
                     <input id="jeudi" type="checkbox" class="filled-in" checked="checked"/>
                     <? } else { ?>
                     <input id="jeudi" type="checkbox" class="filled-in"/>
-                    <? } ?>                    
+                    <? } ?>
                     <span>Jeudi</span>
                 </label>
             </div>
@@ -115,7 +115,7 @@
                     <input id="vendredi" type="checkbox" class="filled-in" checked="checked"/>
                     <? } else { ?>
                     <input id="vendredi" type="checkbox" class="filled-in"/>
-                    <? } ?>                    
+                    <? } ?>
                     <span>Vendredi</span>
                 </label>
             </div>
@@ -194,7 +194,7 @@
                         <input value="1" id="dribble" name="dribble" type="radio" checked required/>
                         <? } else { ?>
                         <input value="1" id="dribble" name="dribble" type="radio" required/>
-                        <? } ?>                        
+                        <? } ?>
                         <span>C'est pas mon truc</span>
                     </label>
                 </p>
@@ -204,7 +204,7 @@
                         <input value="2" id="dribble" name="dribble" type="radio" checked/>
                         <? } else { ?>
                         <input value="2" id="dribble" name="dribble" type="radio"/>
-                        <? } ?>  
+                        <? } ?>
                         <span>Je me débrouille</span>
                     </label>
                 </p>
@@ -214,7 +214,7 @@
                         <input value="3" id="dribble" name="dribble" type="radio" checked/>
                         <? } else { ?>
                         <input value="3" id="dribble" name="dribble" type="radio"/>
-                        <? } ?>  
+                        <? } ?>
                         <span>J'en abuse parfois (je dribble dans la mauvaise direction)</span>
                     </label>
                 </p>
@@ -224,7 +224,7 @@
                         <input value="4" id="dribble" name="dribble" type="radio" checked/>
                         <? } else { ?>
                         <input value="4" id="dribble" name="dribble" type="radio"/>
-                        <? } ?>  
+                        <? } ?>
                         <span>Je maitrise</span>
                     </label>
                 </p>
@@ -251,7 +251,7 @@
                         <input value="2" id="frappe" name="frappe" type="radio" checked/>
                         <? } else { ?>
                         <input value="2" id="frappe" name="frappe" type="radio"/>
-                        <? } ?> 
+                        <? } ?>
                         <span>Uniquement proche du but</span>
                     </label>
                 </p>
@@ -261,7 +261,7 @@
                         <input value="3" id="frappe" name="frappe" type="radio" checked/>
                         <? } else { ?>
                         <input value="3" id="frappe" name="frappe" type="radio"/>
-                        <? } ?>  
+                        <? } ?>
                         <span>J'en abuse parfois (je frappe dans la mauvaise direction)<br>De près et de loin mais c’est pas toujours précis</span>
                     </label>
                 </p>
@@ -308,7 +308,7 @@
                         <input value="3" id="defense" name="defense" type="radio" checked/>
                         <? } else { ?>
                         <input value="3" id="defense" name="defense" type="radio"/>
-                        <? } ?>  
+                        <? } ?>
                         <span>Je me place et je suis mon joueur jusqu’à la fin de l’action.<br>Quand je suis en attaque je ne fais pas toujours l’effort de revenir</span>
                     </label>
                 </p>
@@ -318,7 +318,7 @@
                         <input value="4" id="defense" name="defense" type="radio" checked/>
                         <? } else { ?>
                         <input value="4" id="defense" name="defense" type="radio"/>
-                        <? } ?>  
+                        <? } ?>
                         <span>Je me place et je suis mon joueur jusqu’à la fin de l’action.<br>Je fais toujours l’effort de revenir ou j’ai tendance à rester en défense lorsque mon équipe attaque</span>
                     </label>
                 </p>
@@ -338,7 +338,7 @@
             <br>Tu peux mettre une date de fin d'insponibilité
             <br>Tu seras automatiquement remis disponible pour le match après cette date de fin d'indispo
             <br>Si tu ne mets pas de date tu devras manuellement enlever ton indiso via l'url présent
-            </p> 
+            </p>
             <h5>Jour de match</h5>
             <p>Tu peux choisir les jours de match pour lesquel tu es dispo ou non
             <br>Tu ne recevras les invitations que pour les matchs prévus pour tes jours de dispo

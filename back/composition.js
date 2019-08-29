@@ -1,13 +1,15 @@
-function saveMatch() {
+function saveMatchCompo() {
     rangeMatchDate.setValue(nextMatchDate);
     rangeMatchCompo.setValues(rangeCompoUpdated.getValues());
     rangeScoreRed.clearContent();
     rangeScoreBlue.clearContent();
 }
 
-function updateMatch() {
-    rangeMatchDate.setValue(nextMatchDate);
-    rangeMatchCompo.setValues(rangeCompoUpdated.getValues());
+function updateMatchCompo() {
+    if(!rangeMatchDate.isBlank()) {
+        rangeMatchDate.setValue(nextMatchDate);
+        rangeMatchCompo.setValues(rangeCompoUpdated.getValues());
+    }
 }
 
 

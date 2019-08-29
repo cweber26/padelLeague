@@ -12,6 +12,11 @@ function createCalendarEvent() {
     }
 }
 
+function updateCalendarEvent() {
+    deleteCalendarEvent();
+    createCalendarEvent();
+}
+
 function deleteCalendarEvent() {
     var calendar = CalendarApp.getDefaultCalendar();
     var begin = new Date(Utilities.formatDate(nextMatchDate, "Europe/Paris", "MM/dd/yyyy") + " 12:00:00");

@@ -1,29 +1,29 @@
 <script>
     setTimeout(function () {
         refreshCompoPage()
-    }, 60000);
+    }, 300000); //5 min
 
     var buttonInscription = document.getElementById("inscription");
     if (buttonInscription) {
-        buttonInscription.addEventListener("click", inscription);
+        buttonInscription.addEventListener("click", inscriptionJs);
     }
 
     var buttonDesinscription = document.getElementById("desinscription");
     if (buttonDesinscription) {
-        buttonDesinscription.addEventListener("click", desinscription);
+        buttonDesinscription.addEventListener("click", desinscriptionJs);
     }
 
     var buttonConfirmation = document.getElementById("confirmation");
     if (buttonConfirmation) {
-        buttonConfirmation.addEventListener("click", confirmation);
+        buttonConfirmation.addEventListener("click", confirmationJs);
     }
 
     var buttonDeconfirmation = document.getElementById("deconfirmation");
     if (buttonDeconfirmation) {
-        buttonDeconfirmation.addEventListener("click", deconfirmation);
+        buttonDeconfirmation.addEventListener("click", deconfirmationJs);
     }
 
-    function inscription() {
+    function inscriptionJs() {
         M.toast({html: "Inscription en cours"});
         var parameter = {};
         google.script.url.getLocation(function (location) {
@@ -41,7 +41,7 @@
         }
     }
 
-    function desinscription() {
+    function desinscriptionJs() {
         M.toast({html: "Désinscription en cours"});
         var parameter = {};
         google.script.url.getLocation(function (location) {
@@ -59,7 +59,7 @@
         }
     }
 
-    function confirmation() {
+    function confirmationJs() {
         M.toast({html: "Confirmation en cours"});
         var parameter = {};
         google.script.url.getLocation(function (location) {
@@ -77,7 +77,7 @@
         }
     }
 
-    function deconfirmation() {
+    function deconfirmationJs() {
         M.toast({html: "Désinscription en cours"});
         var parameter = {};
         google.script.url.getLocation(function (location) {
@@ -96,31 +96,11 @@
     }
 
 
-    var buttonCleaning = document.getElementById("cleaning");
-    if (buttonCleaning) {
-        buttonCleaning.addEventListener("click", cleaning);
-    }
-
-    function cleaning() {
-        if (window.confirm("Es tu sûr de vouloir purger toutes les inscriptions ?")) {
-            M.toast({html: "Purge en cours"});
-            google.script.run.withSuccessHandler(reloadPageCompo).withFailureHandler(redirectToPageError).cleaning();
-        }
-
-        function reloadPageCompo() {
-            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
-        }
-
-        function redirectToPageError() {
-            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=error&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
-        }
-    }
-
     var buttonScore = document.getElementById("score");
+
     if (buttonScore) {
         buttonScore.addEventListener("click", score);
     }
-
     function score() {
         var toValidate = {
             scoreRouge: "Le score de l'équipe rouge doit être rempli",
@@ -139,6 +119,125 @@
             saveScore();
         }
 
+    }
+
+    var buttonCleaning = document.getElementById("cleaning");
+    if (buttonCleaning) {
+        buttonCleaning.addEventListener("click", cleaningJs);
+    }
+
+    var buttonSendPrio1 = document.getElementById("sendPrio1");
+    if (buttonSendPrio1) {
+        buttonSendPrio1.addEventListener("click", sendPrio1Js);
+    }
+
+    var buttonSendPrio2 = document.getElementById("sendPrio2");
+    if (buttonSendPrio2) {
+        buttonSendPrio2.addEventListener("click", sendPrio2Js);
+    }
+
+    var buttonSendPrio3 = document.getElementById("sendPrio3");
+    if (buttonSendPrio3) {
+        buttonSendPrio3.addEventListener("click", sendPrio3Js);
+    }
+
+    var buttonSendReminder = document.getElementById("sendReminder");
+    if (buttonSendReminder) {
+        buttonSendReminder.addEventListener("click", sendReminderJs);
+    }
+
+    var buttonSendConfirmation = document.getElementById("sendConfirmation");
+    if (buttonSendConfirmation) {
+        buttonSendConfirmation.addEventListener("click", sendConfirmationJs);
+    }
+
+    function cleaningJs() {
+        if (window.confirm("Es tu sûr de vouloir purger toutes les inscriptions ?")) {
+            M.toast({html: "Purge en cours"});
+            google.script.run.withSuccessHandler(successCleaning).withFailureHandler(failCleaning).cleaning();
+        }
+
+        function successCleaning() {
+            M.toast({html: "Purge éffectuée"});
+        }
+
+        function failCleaning() {
+            M.toast({html: "Purge en erreur"});
+        }
+    }
+
+    function sendPrio1Js() {
+        if (window.confirm("Es tu sûr de vouloir envoyer les inscriptions aux joueurs de la prio 1 ?")) {
+            M.toast({html: "Envoi en cours"});
+            google.script.run.withSuccessHandler(successSend1).withFailureHandler(failSend1).envoiInscriptionGroup1();
+        }
+
+        function successSend1() {
+            M.toast({html: "Mails envoyés"});
+        }
+
+        function failSend1() {
+            M.toast({html: "Envoi en erreur"});
+        }
+    }
+
+    function sendPrio2Js() {
+        if (window.confirm("Es tu sûr de vouloir envoyer les inscriptions aux joueurs de la prio 2 ?")) {
+            M.toast({html: "Envoi en cours"});
+            google.script.run.withSuccessHandler(successSend2).withFailureHandler(failSend2).envoiInscriptionGroup2();
+        }
+
+        function successSend2() {
+            M.toast({html: "Mails envoyés"});
+        }
+
+        function failSend2() {
+            M.toast({html: "Envoi en erreur"});
+        }
+    }
+
+    function sendPrio3Js() {
+        if (window.confirm("Es tu sûr de vouloir envoyer les inscriptions aux joueurs de la prio 3 ?")) {
+            M.toast({html: "Envoi en cours"});
+            google.script.run.withSuccessHandler(successSend3).withFailureHandler(failSend3).envoiInscriptionGroup3();
+        }
+
+        function successSend3() {
+            M.toast({html: "Mails envoyés"});
+        }
+
+        function failSend3() {
+            M.toast({html: "Envoi en erreur"});
+        }
+    }
+
+    function sendReminderJs() {
+        if (window.confirm("Es tu sûr de vouloir envoyer les rappels aux joueurs ?")) {
+            M.toast({html: "Envoi en cours"});
+            google.script.run.withSuccessHandler(successSend3).withFailureHandler(failSend3).rappelMatch();
+        }
+
+        function successSend3() {
+            M.toast({html: "Mails envoyés"});
+        }
+
+        function failSend3() {
+            M.toast({html: "Envoi en erreur"});
+        }
+    }
+    function sendConfirmationJs() {
+        if (window.confirm("Es tu sûr de vouloir envoyer les confirmations aux joueurs ?")) {
+            M.toast({html: "Envoi en cours"});
+            google.script.run.withSuccessHandler(successSend3).withFailureHandler(failSend3).confirmationMatch();
+        }
+
+        function successSend3() {
+            M.toast({html: "Mails envoyés"});
+        }
+
+        function failSend3() {
+            M.toast({html: "Envoi en erreur"});
+        }
     }
 
     function checkValidity(elementId, message) {
