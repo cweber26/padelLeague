@@ -1,163 +1,178 @@
 <script>
-setTimeout(function(){ refreshCompoPage() }, 60000);
+    setTimeout(function () {
+        refreshCompoPage()
+    }, 60000);
 
-var buttonInscription = document.getElementById("inscription");
-if(buttonInscription) {
-    buttonInscription.addEventListener("click", inscription);
-}
-function inscription() {
-    M.toast({html: "Inscription en cours"});
-    var parameter = {};
-    google.script.url.getLocation(function(location) {
-        parameter = location.parameter;
-        parameter.answer = "Oui";
-        google.script.run.withSuccessHandler(loadCompo).withFailureHandler(loadError).inscription(parameter);
-    });
-    function loadCompo() {
-        window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail="+String(parameter.mail)+"&key="+String(parameter.key);
+    var buttonInscription = document.getElementById("inscription");
+    if (buttonInscription) {
+        buttonInscription.addEventListener("click", inscription);
     }
-    function loadError() {
-        window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=error&mail="+String(parameter.mail)+"&key="+String(parameter.key);
-    }
-}  
 
-var buttonDesinscription = document.getElementById("desinscription");
-if(buttonDesinscription) {
-    buttonDesinscription.addEventListener("click", desinscription);
-}
-function desinscription() {
-    M.toast({html: "Désinscription en cours"});
-    var parameter = {};
-    google.script.url.getLocation(function(location) {
-        parameter = location.parameter;
-        parameter.answer = "Non";
-        google.script.run.withSuccessHandler(loadCompo).withFailureHandler(loadError).inscription(parameter);
-    });
-    function loadCompo() {
-        window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail="+String(parameter.mail)+"&key="+String(parameter.key);
+    var buttonDesinscription = document.getElementById("desinscription");
+    if (buttonDesinscription) {
+        buttonDesinscription.addEventListener("click", desinscription);
     }
-    function loadError() {
-        window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=error&mail="+String(parameter.mail)+"&key="+String(parameter.key);
-    }
-}  
 
+    var buttonConfirmation = document.getElementById("confirmation");
+    if (buttonConfirmation) {
+        buttonConfirmation.addEventListener("click", confirmation);
+    }
 
-var buttonConfirmation = document.getElementById("confirmation");
-if(buttonConfirmation) {
-    buttonConfirmation.addEventListener("click", confirmation);
-}
-function confirmation() {
-    M.toast({html: "Confirmation en cours"});
-    var parameter = {};
-    google.script.url.getLocation(function(location) {
-        parameter = location.parameter;
-        parameter.answer = "Oui";
-        google.script.run.withSuccessHandler(loadCompo).withFailureHandler(loadError).confirmation(parameter);
-    });
-    function loadCompo() {
-        window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail="+String(parameter.mail)+"&key="+String(parameter.key);
+    var buttonDeconfirmation = document.getElementById("deconfirmation");
+    if (buttonDeconfirmation) {
+        buttonDeconfirmation.addEventListener("click", deconfirmation);
     }
-    function loadError() {
-        window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=error&mail="+String(parameter.mail)+"&key="+String(parameter.key);
-    }
-}  
 
-var buttonDeconfirmation = document.getElementById("deconfirmation");
-if(buttonDeconfirmation) {
-    buttonDeconfirmation.addEventListener("click", deconfirmation);
-}
-function deconfirmation() {
-    M.toast({html: "Désinscription en cours"});
-    var parameter = {};
-    google.script.url.getLocation(function(location) {
-        parameter = location.parameter;
-        parameter.answer = "Non";
-        google.script.run.withSuccessHandler(loadCompo).withFailureHandler(loadError).confirmation(parameter);
-    });
-    function loadCompo() {
-        window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail="+String(parameter.mail)+"&key="+String(parameter.key);
-    }
-    function loadError() {
-        window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=error&mail="+String(parameter.mail)+"&key="+String(parameter.key);
-    }
-}
-
-var buttonCleaning = document.getElementById("cleaning");
-if(buttonCleaning) {
-    buttonCleaning.addEventListener("click", cleaning);
-}
-function cleaning() {
-    if(window.confirm("Es tu sûr de vouloir purger toutes les inscriptions ?")) {
-        M.toast({html: "Purge en cours"});
-        google.script.run.withSuccessHandler(loadCompo).withFailureHandler(loadError).cleaning();
-    }
-    
-    function loadCompo() {
-        window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail="+String(parameter.mail)+"&key="+String(parameter.key);
-    }
-    function loadError() {
-        window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=error&mail="+String(parameter.mail)+"&key="+String(parameter.key);
-    }
-} 
-
-    
-
-var buttonScore = document.getElementById("score");
-if(buttonScore) {
-    buttonScore.addEventListener("click", score);
-}
-function score() {
-    var toValidate = {
-        scoreRouge: "Le score de l'équipe rouge doit être rempli",
-        scoreBleu: "Le score de l'équipe bleue doit être rempli"
-    };
-    var idKeys = Object.keys(toValidate);
-        
-    var allValid = true;
-    idKeys.forEach(function(k) {
-        if (!checkValidity(k, toValidate[k])) {
-            allValid = false;
-        }
-    });
-
-    if (allValid) {
-        saveScore();
-    }
-   
-}
-
-function checkValidity(elementId, message) {
-    var isValid = document.getElementById(elementId).checkValidity();
-    if (!isValid) {
-        M.toast({
-            html: message
+    function inscription() {
+        M.toast({html: "Inscription en cours"});
+        var parameter = {};
+        google.script.url.getLocation(function (location) {
+            parameter = location.parameter;
+            parameter.answer = "Oui";
+            google.script.run.withSuccessHandler(reloadPageCompo).withFailureHandler(redirectToPageError).inscription(parameter);
         });
-        return false;
+
+        function reloadPageCompo() {
+            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
+        }
+
+        function redirectToPageError() {
+            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=error&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
+        }
     }
-    return true;
-}
 
-function saveScore() {
-    var scoreValues = {};
-    scoreValues.rouge = document.getElementById("scoreRouge").value;   
-    scoreValues.bleu = document.getElementById("scoreBleu").value;  
-    M.toast({html: "Enregistrement du score en cours"});
-    M.toast({html: "Recalcul des stats"});
-    google.script.run.withSuccessHandler(success).saveScore(scoreValues);
-}
+    function desinscription() {
+        M.toast({html: "Désinscription en cours"});
+        var parameter = {};
+        google.script.url.getLocation(function (location) {
+            parameter = location.parameter;
+            parameter.answer = "Non";
+            google.script.run.withSuccessHandler(reloadPageCompo).withFailureHandler(redirectToPageError).inscription(parameter);
+        });
 
-function refreshCompoPage() {
-    google.script.url.getLocation(function(location) {
-        window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail="+String(location.parameter.mail)+"&key="+String(location.parameter.key);
-    });
-}
+        function reloadPageCompo() {
+            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
+        }
 
-function success() {
-    M.toast({html: "Score enregistré"});
-    refreshCompoPage();
-}
+        function redirectToPageError() {
+            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=error&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
+        }
+    }
 
-function sortTable(n) {
+    function confirmation() {
+        M.toast({html: "Confirmation en cours"});
+        var parameter = {};
+        google.script.url.getLocation(function (location) {
+            parameter = location.parameter;
+            parameter.answer = "Oui";
+            google.script.run.withSuccessHandler(reloadPageCompo).withFailureHandler(redirectToPageError).confirmation(parameter);
+        });
+
+        function reloadPageCompo() {
+            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
+        }
+
+        function redirectToPageError() {
+            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=error&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
+        }
+    }
+
+    function deconfirmation() {
+        M.toast({html: "Désinscription en cours"});
+        var parameter = {};
+        google.script.url.getLocation(function (location) {
+            parameter = location.parameter;
+            parameter.answer = "Non";
+            google.script.run.withSuccessHandler(reloadPageCompo).withFailureHandler(redirectToPageError).confirmation(parameter);
+        });
+
+        function reloadPageCompo() {
+            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
+        }
+
+        function redirectToPageError() {
+            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=error&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
+        }
+    }
+
+
+    var buttonCleaning = document.getElementById("cleaning");
+    if (buttonCleaning) {
+        buttonCleaning.addEventListener("click", cleaning);
+    }
+
+    function cleaning() {
+        if (window.confirm("Es tu sûr de vouloir purger toutes les inscriptions ?")) {
+            M.toast({html: "Purge en cours"});
+            google.script.run.withSuccessHandler(reloadPageCompo).withFailureHandler(redirectToPageError).cleaning();
+        }
+
+        function reloadPageCompo() {
+            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
+        }
+
+        function redirectToPageError() {
+            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=error&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
+        }
+    }
+
+    var buttonScore = document.getElementById("score");
+    if (buttonScore) {
+        buttonScore.addEventListener("click", score);
+    }
+
+    function score() {
+        var toValidate = {
+            scoreRouge: "Le score de l'équipe rouge doit être rempli",
+            scoreBleu: "Le score de l'équipe bleue doit être rempli"
+        };
+        var idKeys = Object.keys(toValidate);
+
+        var allValid = true;
+        idKeys.forEach(function (k) {
+            if (!checkValidity(k, toValidate[k])) {
+                allValid = false;
+            }
+        });
+
+        if (allValid) {
+            saveScore();
+        }
+
+    }
+
+    function checkValidity(elementId, message) {
+        var isValid = document.getElementById(elementId).checkValidity();
+        if (!isValid) {
+            M.toast({
+                html: message
+            });
+            return false;
+        }
+        return true;
+    }
+
+    function saveScore() {
+        var scoreValues = {};
+        scoreValues.rouge = document.getElementById("scoreRouge").value;
+        scoreValues.bleu = document.getElementById("scoreBleu").value;
+        M.toast({html: "Enregistrement du score en cours"});
+        M.toast({html: "Recalcul des stats"});
+        google.script.run.withSuccessHandler(saveScoreSuccess).saveScore(scoreValues);
+    }
+
+    function refreshCompoPage() {
+        google.script.url.getLocation(function (location) {
+            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail=" + String(location.parameter.mail) + "&key=" + String(location.parameter.key);
+        });
+    }
+
+    function saveScoreSuccess() {
+        M.toast({html: "Score enregistré"});
+        refreshCompoPage();
+    }
+
+    function sortTableCompo(n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = document.getElementById("equipes");
         switching = true;
@@ -239,5 +254,5 @@ function sortTable(n) {
                 }
             }
         }
-    } 
+    }
 </script>

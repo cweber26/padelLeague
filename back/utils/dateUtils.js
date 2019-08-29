@@ -1,3 +1,7 @@
+var currentWeekDay = parseInt(Utilities.formatDate(new Date(), "GMT", "u ### EEEE - dd/MM/yyyy"));
+var nextMatchDate = rangeNextGameDate.getValue();
+var nextMatchDay = nextMatchDate.getDay();
+
 function setNextMatchDate() {
     switch (currentWeekDay) {
         case 1:

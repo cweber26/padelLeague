@@ -25,7 +25,7 @@ function sendInscriptionMail(player) {
 
 
 
-function loadInscription() {
+function loadPageInscription() {
     if (param.answer == "Oui") {
         return render("front/html/inscription", "inscription", {mail: param.mail, key: param.key, admin: param.isAdmin});
     } else {
@@ -83,6 +83,7 @@ function isValid(parameter) {
         return false;
     }
     var rowPlayer = getRowPlayerWithMail(parameter.mail);
+    // noinspection RedundantIfStatementJS
     if (!rowPlayer) {
         return false;
     }

@@ -1,4 +1,4 @@
-function loadRecord() {
+function loadPageRecord() {
     var victoryPercentage = sheetRecordFilter.getRange(2, 2, 2, 3).getValues();
     var losePercentage = sheetRecordFilter.getRange(5, 2, 2, 3).getValues();
     var victoryInRow = sheetRecordFilter.getRange(8, 2, 2, 3).getValues();

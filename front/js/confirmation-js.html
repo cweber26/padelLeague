@@ -2,12 +2,12 @@
   parameter = {};
   google.script.url.getLocation(function(location) {
       parameter = location.parameter;
-      google.script.run.withSuccessHandler(loadCompo).withFailureHandler(loadError).confirmation(parameter);
+      google.script.run.withSuccessHandler(redirectToPageCompo).withFailureHandler(redirectToPageError).confirmation(parameter);
   });
-  function loadCompo() {
+  function redirectToPageCompo() {
     window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail="+String(parameter.mail)+"&key="+String(parameter.key);
   }
-  function loadError() {
+  function redirectToPageError() {
     window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=error&mail="+String(parameter.mail)+"&key="+String(parameter.key);
   }
 </script>

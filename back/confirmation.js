@@ -24,7 +24,7 @@ function sendConfirmMailForAPlayer(player, isNewPlayer) {
     sendMail(player.mail, "Confirmation de présence au match de Footsal " + matchDayGapInFrench(true) + " ✅", body);
 }
 
-function loadConfirmation() {
+function loadPageConfirmation() {
     if (param.answer == "Oui") {
         return render("front/html/confirmation", "confirmation",{mail: param.mail, key: param.key, admin: param.isAdmin});
     } else {

@@ -2,25 +2,25 @@
 function logRunDate(type) {
     switch (type) {
         case 1:
-            rangeSending1.setValue(now);
+            rangeSending1.setValue(new Date(Date.now()));
             break;
         case 2:
-            rangeSending2.setValue(now);
+            rangeSending2.setValue(new Date(Date.now()));
             break;
         case 3:
-            rangeSending3.setValue(now);
+            rangeSending3.setValue(new Date(Date.now()));
             break;
         case "reminder":
-            rangeReminder.setValue(now);
+            rangeReminder.setValue(new Date(Date.now()));
             break;
         case "control":
-            rangeControl.setValue(now);
+            rangeControl.setValue(new Date(Date.now()));
             break;
         case "confirmation":
-            rangeConfirmation.setValue(now);
+            rangeConfirmation.setValue(new Date(Date.now()));
             break;
         case "googleEvent":
-            rangeGoogleEvent.setValue(now);
+            rangeGoogleEvent.setValue(new Date(Date.now()));
             break;
     }
 }

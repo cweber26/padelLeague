@@ -1,79 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5d5575c-0efc-49cf-ae86-8ed850f6d9c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/calendar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/cancel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/cleaning.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/code.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/composition.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/confirmation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/control.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/desistement.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/error.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/front.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/fullMatch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/inscription.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/lastMonthResult.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/log.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/lumiere.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/mail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/player.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/priority.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/record.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/reminder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/score.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/stat.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/utils/dateUtils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/utils/htmlUtils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/utils/profil.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/html/record.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/mail/mailConfirmation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/mail/mailMatchComplet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/mail/mailReminder.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/mail/mailStadiumInfo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/testing.js" afterDir="false" />
+    <list default="true" id="e5d5575c-0efc-49cf-ae86-8ed850f6d9c2" name="Default Changelist" comment="refactoring 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Archives.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO.js" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Trigger.js" beforeDir="false" afterPath="$PROJECT_DIR$/trigger/trigger.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compo-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/compo-js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compo.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/compo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confirmation-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/confirmation-js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/confirmation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/css/css.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desinscription-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/desinscription-js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desinscription.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/desinscription.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inscription-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/inscription-js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inscription.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/inscription.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/invalid.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/invalid.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailCancelMatch.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/mail/mailCancelMatch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailCompo.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/mail/mailCompo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailConfirmation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailEvaluation.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/mail/mailEvaluation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailFooter.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/mail/mailFooter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailHeader.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/mail/mailHeader.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailInscription.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/mail/mailInscription.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailReminder.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailStadiumInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mailWaitingList.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/mail/mailWaitingList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nav-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/nav-js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/podium.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/podium.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/profil-js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profil.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/profil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/record.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stat-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/stat-js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stat.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/stat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/strings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/composition.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/composition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/confirmation.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/confirmation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/error.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/front.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/front.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/inscription.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/inscription.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/log.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/log.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/record.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/record.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/stat.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/stat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/utils/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/utils/dateUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/utils/dateUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/utils/htmlUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/utils/htmlUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/utils/profil.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/css/css.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/css/css.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/html/compo.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/compo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/html/stat.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/stat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/js/compo-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/compo-js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/js/confirmation-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/confirmation-js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/js/desinscription-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/desinscription-js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/js/inscription-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/inscription-js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/js/profil-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/profil-js.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/js/stat-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/stat-js.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,18 +38,133 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="204">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/back/front.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/html/compo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="455">
+              <caret line="128" column="52" selection-start-line="128" selection-start-column="52" selection-end-line="128" selection-end-column="74" />
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#8;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/html/invalid.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/front/js/compo-js.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="114" column="47" selection-start-line="114" selection-start-column="47" selection-end-line="114" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/composition.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/html/confirmation.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="99" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="99" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/js/confirmation-js.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="102" selection-start-line="4" selection-start-column="102" selection-end-line="4" selection-end-column="102" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/utils/constants.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="73" column="1" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/css/css.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/js/desinscription-js.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/utils/htmlUtils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/js/inscription-js.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="102" selection-start-line="4" selection-start-column="102" selection-end-line="4" selection-end-column="102" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/js/profil-js.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="337">
+              <caret line="76" column="6" lean-forward="true" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/html/stat.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="32" column="46" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/js/stat-js.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="22" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TODO.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -112,16 +178,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>front/css/nav</find>
-      <find>include(&quot;head&quot;)</find>
-      <find>include(&quot;nav-js&quot;)</find>
-      <find>includeWithArgs(&quot;podium&quot;</find>
-      <find>includeWith</find>
-      <find>compo</find>
-      <find>match</find>
-      <find>manualCancelling</find>
-      <find>saveScore</find>
-      <find>initStats</find>
       <find>getPlayerWithFullName</find>
       <find>for (i in</find>
       <find>gap</find>
@@ -142,6 +198,16 @@
       <find>reload</find>
       <find>clean</find>
       <find>loadInvalidUser</find>
+      <find>front/html/invalid</find>
+      <find>includeWithArgs(&quot;</find>
+      <find>now</find>
+      <find>loadCompo</find>
+      <find>redirectToPageCompe</find>
+      <find>loadError</find>
+      <find>explaination</find>
+      <find>setDatePicker</find>
+      <find>@</find>
+      <find>sortTable</find>
     </findStrings>
     <replaceStrings>
       <replace>===</replace>
@@ -157,6 +223,11 @@
       <replace>for (var i in</replace>
       <replace>==</replace>
       <replace>&lt;html&gt;</replace>
+      <replace>redirectToPageCompo</replace>
+      <replace>redirectToPageError</replace>
+      <replace>new Date(Date.now())</replace>
+      <replace>sortTableStat</replace>
+      <replace>sortTableCompo</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -168,20 +239,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/utils/strings.js" />
-        <option value="$PROJECT_DIR$/.claspignore" />
-        <option value="$PROJECT_DIR$/utils/test.js" />
-        <option value="$PROJECT_DIR$/compo.html" />
-        <option value="$PROJECT_DIR$/Code.js" />
-        <option value="$PROJECT_DIR$/front/html/desinscription.html" />
-        <option value="$PROJECT_DIR$/test/testing.js" />
-        <option value="$PROJECT_DIR$/front/mail/mailStadiumInfo.html" />
-        <option value="$PROJECT_DIR$/front/mail/mailConfirmation.html" />
-        <option value="$PROJECT_DIR$/front/html/record.html" />
-        <option value="$PROJECT_DIR$/front/html/profil.html" />
         <option value="$PROJECT_DIR$/front/mail/mailMatchComplet.html" />
-        <option value="$PROJECT_DIR$/front/html/stat.html" />
-        <option value="$PROJECT_DIR$/front/html/confirmation.html" />
         <option value="$PROJECT_DIR$/front/html/inscription.html" />
         <option value="$PROJECT_DIR$/front/mail/mailHeader.html" />
         <option value="$PROJECT_DIR$/front/mail/mailReminder.html" />
@@ -189,7 +247,6 @@
         <option value="$PROJECT_DIR$/front/mail/mailWaitingList.html" />
         <option value="$PROJECT_DIR$/front/mail/mailFooter.html" />
         <option value="$PROJECT_DIR$/front/mail/mailInscription.html" />
-        <option value="$PROJECT_DIR$/back/log.js" />
         <option value="$PROJECT_DIR$/back/cleaning" />
         <option value="$PROJECT_DIR$/utils/htmlUtils.js" />
         <option value="$PROJECT_DIR$/back/cancel.js" />
@@ -205,19 +262,34 @@
         <option value="$PROJECT_DIR$/back/stat.js" />
         <option value="$PROJECT_DIR$/back/utils/profil.js" />
         <option value="$PROJECT_DIR$/back/record.js" />
-        <option value="$PROJECT_DIR$/back/error.js" />
-        <option value="$PROJECT_DIR$/back/composition.js" />
         <option value="$PROJECT_DIR$/back/lumiere.js" />
         <option value="$PROJECT_DIR$/back/confirmation.js" />
-        <option value="$PROJECT_DIR$/back/player.js" />
         <option value="$PROJECT_DIR$/back/inscription.js" />
         <option value="$PROJECT_DIR$/back/init.js" />
         <option value="$PROJECT_DIR$/back/code.js" />
         <option value="$PROJECT_DIR$/back/desistement.js" />
-        <option value="$PROJECT_DIR$/front/css/css.html" />
+        <option value="$PROJECT_DIR$/back/invalidUser.js" />
+        <option value="$PROJECT_DIR$/front/html/confirmation.html" />
+        <option value="$PROJECT_DIR$/back/constants.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/back/log.js" />
+        <option value="$PROJECT_DIR$/back/utils/dateUtils.js" />
+        <option value="$PROJECT_DIR$/back/profil.js" />
+        <option value="$PROJECT_DIR$/back/utils/constants.js" />
+        <option value="$PROJECT_DIR$/back/player.js" />
+        <option value="$PROJECT_DIR$/back/composition.js" />
+        <option value="$PROJECT_DIR$/back/error.js" />
+        <option value="$PROJECT_DIR$/back/front.js" />
+        <option value="$PROJECT_DIR$/front/js/desinscription-js.html" />
+        <option value="$PROJECT_DIR$/front/js/inscription-js.html" />
+        <option value="$PROJECT_DIR$/front/js/confirmation-js.html" />
+        <option value="$PROJECT_DIR$/front/js/profil-js.html" />
+        <option value="$PROJECT_DIR$/front/js/stat-js.html" />
+        <option value="$PROJECT_DIR$/front/html/stat.html" />
         <option value="$PROJECT_DIR$/front/html/compo.html" />
         <option value="$PROJECT_DIR$/front/js/compo-js.html" />
-        <option value="$PROJECT_DIR$/back/front.js" />
+        <option value="$PROJECT_DIR$/front/css/css.html" />
+        <option value="$PROJECT_DIR$/back/utils/htmlUtils.js" />
       </list>
     </option>
   </component>
@@ -229,7 +301,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1920" />
     <option name="height" value="1200" />
   </component>
@@ -241,8 +313,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -287,12 +359,6 @@
             <path>
               <item name="barbeucLeague" type="b2602c69:ProjectViewProjectNode" />
               <item name="barbeucLeague" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="mail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="barbeucLeague" type="b2602c69:ProjectViewProjectNode" />
-              <item name="barbeucLeague" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -308,6 +374,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/front/html" />
@@ -321,10 +388,10 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/back" />
+      <recent name="$PROJECT_DIR$/back/utils" />
       <recent name="$PROJECT_DIR$/front" />
       <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/archives" />
-      <recent name="$PROJECT_DIR$/front/html" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/front/html" />
@@ -378,12 +445,13 @@
       <option name="presentableId" value="Default" />
       <updated>1567007025962</updated>
       <workItem from="1567007027226" duration="13306000" />
-      <workItem from="1567062691257" duration="3712000" />
+      <workItem from="1567062691257" duration="6810000" />
+      <workItem from="1567071354006" duration="813000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17018000" />
+    <option name="totallyTimeSpent" value="20929000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -396,7 +464,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Capture Tool" order="0" />
       <window_info id="Designer" order="1" />
@@ -404,10 +471,10 @@
       <window_info id="Image Layers" order="3" />
       <window_info id="Web" order="4" show_stripe_button="false" side_tool="true" />
       <window_info id="JavaEE:App" order="5" show_stripe_button="false" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.14217253" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.14007372" />
       <window_info active="true" anchor="bottom" id="Problems" order="0" visible="true" weight="0.3293247" />
-      <window_info anchor="bottom" id="SonarLint" order="1" weight="0.5161588" />
-      <window_info anchor="bottom" id="Messages" order="2" sideWeight="0.49947917" weight="0.33580017" />
+      <window_info anchor="bottom" id="SonarLint" order="1" show_stripe_button="false" weight="0.5159292" />
+      <window_info active="true" anchor="bottom" id="Messages" order="2" sideWeight="0.49947917" visible="true" weight="0.33539823" />
       <window_info anchor="bottom" id="Application Servers" order="3" show_stripe_button="false" sideWeight="0.49947917" weight="0.32963988" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49947917" weight="0.32920355" />
@@ -420,8 +487,8 @@
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" show_stripe_button="false" weight="0.32963988" />
       <window_info anchor="bottom" id="Structure" order="14" sideWeight="0.49947917" side_tool="true" weight="0.24884367" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32963988" />
-      <window_info anchor="bottom" id="Terminal" order="16" visible="true" weight="0.32920355" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32920355" />
+      <window_info anchor="bottom" id="Terminal" order="16" weight="0.32920355" />
       <window_info anchor="bottom" id="Spring" order="17" show_stripe_button="false" weight="0.32963988" />
       <window_info anchor="bottom" content_ui="combo" id="Hierarchy" order="18" weight="0.32743362" />
       <window_info anchor="bottom" id="Event Log" order="19" sideWeight="0.5005208" side_tool="true" weight="0.24884367" />
@@ -437,75 +504,17 @@
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" show_stripe_button="false" />
-      <window_info anchor="right" id="Maven" order="10" />
+      <window_info anchor="right" id="Maven" order="10" show_stripe_button="false" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Capture Tool" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Web" order="4" show_stripe_button="false" side_tool="true" />
-      <window_info id="JavaEE:App" order="5" show_stripe_button="false" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.14217253" />
-      <window_info active="true" anchor="bottom" id="Problems" order="0" visible="true" weight="0.3293247" />
-      <window_info anchor="bottom" id="SonarLint" order="1" weight="0.5161588" />
-      <window_info anchor="bottom" id="Messages" order="2" sideWeight="0.49947917" weight="0.33580017" />
-      <window_info anchor="bottom" id="Application Servers" order="3" show_stripe_button="false" sideWeight="0.49947917" weight="0.32963988" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49947917" weight="0.32920355" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.84375" weight="0.4570637" />
-      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.85625" weight="0.44136658" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Favorites" order="10" sideWeight="0.49947917" side_tool="true" weight="0.32871652" />
-      <window_info anchor="bottom" id="TODO" order="11" weight="0.32920355" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" show_stripe_button="false" weight="0.32963988" />
-      <window_info anchor="bottom" id="Structure" order="14" sideWeight="0.49947917" side_tool="true" weight="0.24884367" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32963988" />
-      <window_info anchor="bottom" id="Terminal" order="16" weight="0.32963988" />
-      <window_info anchor="bottom" id="Spring" order="17" show_stripe_button="false" weight="0.32963988" />
-      <window_info anchor="bottom" content_ui="combo" id="Hierarchy" order="18" visible="true" weight="0.32743362" />
-      <window_info anchor="bottom" id="Event Log" order="19" sideWeight="0.5005208" side_tool="true" weight="0.24884367" />
-      <window_info anchor="bottom" id="Docker" order="20" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TunnelliJ" order="21" />
-      <window_info anchor="right" id="Key Promoter X" order="0" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" show_stripe_button="false" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven Projects" order="4" show_stripe_button="false" weight="0.3296875" />
-      <window_info anchor="right" id="Database" order="5" show_stripe_button="false" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Bean Validation" order="9" show_stripe_button="false" />
-      <window_info anchor="right" id="Maven" order="10" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactoring 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring 3" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.claspignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="11" lean-forward="true" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/strings.js" />
-    <entry file="file://$PROJECT_DIR$/barbeucLeague.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trigger/trigger.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appsscript.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/mail/mailReminder.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/testing.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -553,13 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/html/stat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/html/error.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -580,27 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="44" column="71" selection-start-line="44" selection-start-column="71" selection-end-line="44" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/log.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/utils/htmlUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -635,24 +616,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/priority.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="48" lean-forward="true" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/back/mail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/utils/dateUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -677,24 +644,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/utils/profil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="144" column="1" selection-start-line="144" selection-start-column="1" selection-end-line="144" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/back/record.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/error.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -719,13 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/player.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/back/inscription.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="708">
@@ -740,13 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/code.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="87" column="98" selection-start-line="87" selection-start-column="98" selection-end-line="87" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/back/desistement.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -754,41 +693,164 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/css/css.html">
+    <entry file="file://$PROJECT_DIR$/front/html/invalid.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/invalidUser.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/composition.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+        <state>
+          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/html/compo.html">
+    <entry file="file://$PROJECT_DIR$/back/log.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="94" column="50" lean-forward="true" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
+        <state relative-caret-position="315">
+          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/profil.js" />
+    <entry file="file://$PROJECT_DIR$/back/priority.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/player.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="93" column="20" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/front.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/error.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/utils/dateUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/desinscription-js.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/stat-js.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/html/stat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="32" column="46" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/confirmation-js.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="102" selection-start-line="4" selection-start-column="102" selection-end-line="4" selection-end-column="102" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front/js/compo-js.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1929">
-          <caret line="206" column="45" selection-start-line="206" selection-start-column="45" selection-end-line="206" selection-end-column="45" />
+        <state relative-caret-position="15">
+          <caret line="114" column="47" selection-start-line="114" selection-start-column="47" selection-end-line="114" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/html/invalid.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/front.js">
+    <entry file="file://$PROJECT_DIR$/front/html/compo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="455">
+          <caret line="128" column="52" selection-start-line="128" selection-start-column="52" selection-end-line="128" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#8;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/profil-js.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="76" column="6" lean-forward="true" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/utils/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="73" column="1" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/css/css.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/utils/htmlUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/inscription-js.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="102" selection-start-line="4" selection-start-column="102" selection-end-line="4" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/html/confirmation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="99" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/composition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
         </state>
       </provider>
     </entry>

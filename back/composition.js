@@ -11,7 +11,7 @@ function updateMatch() {
 }
 
 
-function loadCompo() {
+function loadPageCompo() {
     var players = [];
     var confirmations = [];
     var effectif = "";

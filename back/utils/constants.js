@@ -57,29 +57,18 @@ var rangeScoreBlue = sheetBackOffice.getRange(firstRowMatch + 12, columnParam);
 ////////////PLAYER LIST////////////
 function playersInTheMatchMail() {
     if (nbPlayersAvailable > 0) {
-        return sheetBackOffice.getRange(2, 3, nbPlayersAvailable, 1).getValues()
+        return sheetBackOffice.getRange(2, 3, nbPlayersAvailable, 1).getValues();
     }
 }
 
 function playersInWaitingListMail() {
-    return sheetBackOffice.getRange(12, 3, nbPlayersWaiting, 1).getValues()
+    if (nbPlayersWaiting > 0) {
+        return sheetBackOffice.getRange(12, 3, nbPlayersWaiting, 1).getValues();
+    }
 }
 
 function playersInTheMatchForFinalCompo() {
-    return sheetComposition.getRange(13, 2, nbMaxPlayers, 11).getValues()
+    if (nbPlayersAvailable > 0) {
+        return sheetComposition.getRange(13, 2, nbMaxPlayers, 11).getValues();
+    }
 }
-
-function playersTeamMailList() {
-    return sheetTeam.getRange(3, 1, sheetTeam.getRange("A3:A").getValues().filter(String).length, 1).getValues()
-}
-
-function playersTeamList() {
-    return sheetTeam.getRange(3, 1, sheetTeam.getRange("A3:A").getValues().filter(String).length, sheetTeam.getLastColumn()).getValues()
-}
-
-////////////DATE////////////
-var now = new Date(Date.now());
-var nextMatchDate = rangeNextGameDate.getValue();
-var nextMatchDay = nextMatchDate.getDay();
-var currentWeekDay = parseInt(Utilities.formatDate(new Date(), "GMT", "u ### EEEE - dd/MM/yyyy"));
-

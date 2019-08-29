@@ -9,19 +9,19 @@ var param = {isAdmin: false};
 function doGet(e) {
     param = e.parameters;
 
-    Route.path("profil", loadProfil);
-    Route.path("inscription", loadInscription);
-    Route.path("confirmation", loadConfirmation);
-    Route.path("compo", loadCompo);
-    Route.path("stat", loadStat);
-    Route.path("record", loadRecord);
-    Route.path("error", loadError);
+    Route.path("profil", loadPageProfil);
+    Route.path("inscription", loadPageInscription);
+    Route.path("confirmation", loadPageConfirmation);
+    Route.path("compo", loadPageCompo);
+    Route.path("stat", loadPageStat);
+    Route.path("record", loadPageRecord);
+    Route.path("error", loadPageError);
 
     if (!isValidUser(param)) {
         return loadInvalidUser();
     } else if (Route[param.page]) {
         return Route[param.page]();
     } else {
-        return loadCompo();
+        return loadPageCompo();
     }
 }

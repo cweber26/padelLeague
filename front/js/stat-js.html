@@ -3,18 +3,18 @@ document.getElementById("initStats").addEventListener("click", initStats);
 
 function initStats() {
     M.toast({ html: "Recalcul des statistiques en cours " });
-    google.script.run.withSuccessHandler(success).withFailureHandler(failure).initStats();
-};
+    google.script.run.withSuccessHandler(initStatsSuccess).withFailureHandler(initStatsFailure).initStats();
+}
 
-function success() {
+function initStatsSuccess() {
    M.toast({ html: "Statistique mise à jour" });
 }
 
-function failure() {
+function initStatsFailure() {
    M.toast({ html: "Erreur durant la mise à jour des stats" });
 }
 
-function sortTable(n) {
+function sortTableStat(n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = document.getElementById("stat");
         switching = true;
@@ -39,11 +39,11 @@ function sortTable(n) {
                 based on the direction, asc or desc: */
 
                 if (x.innerHTML === "") {
-                  x.innerHTML = 99;
-                };
+                  x.innerHTML = "99";
+                }
                 if (y.innerHTML === "") {
-                  y.innerHTML = 99;
-                };
+                  y.innerHTML = "99";
+                }
                 if (n === 1) {
                     if (dir == "asc") {
                         if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
@@ -76,10 +76,10 @@ function sortTable(n) {
                 }
                 if (x.innerHTML === "99") {
                   x.innerHTML = "";
-                };
+                }
                 if (y.innerHTML === "99") {
                   y.innerHTML = "";
-                };
+                }
             }
             if (shouldSwitch) {
                 /* If a switch has been marked, make the switch

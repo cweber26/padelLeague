@@ -76,7 +76,7 @@ function getRowSheetResultFilter(playerName) {
     }
 }
 
-function loadStat() {
+function loadPageStat() {
     var stats = "";
     var data = sheetStats.getRange(2, 1, sheetStats.getLastRow() - 1, sheetStats.getLastColumn()).getValues();
     data.forEach(function (p) {
