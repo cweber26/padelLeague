@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <?!= include("front/html/head"); ?>
+    <?!= include("front/css/css"); ?>
+    <?!= includeWithArgs("front/html/nav", {mail: mail, key: key, admin: admin}); ?>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row"></div>
+        <div class="row">
+            <h3>2019</h3>
+        </div>
+        <div class="row">
+            <div class="col s6">
+            <?!= includeWithArgs("front/html/podium", {type: "win", label: "Pourcentage de victoires", values: victoryPercentage}); ?>
+            </div>
+            <div class="col s6">
+            <?!= includeWithArgs("front/html/podium", {type: "lose", label: "Pourcentage de défaites", values: losePercentage}); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6">
+            <?!= includeWithArgs("front/html/podium", {type: "win", label: "Plus grande série de victoires", values: victoryInRow}); ?>
+            </div>
+            <div class="col s6">
+            <?!= includeWithArgs("front/html/podium", {type: "lose", label: "Plus grande série de défaites", values: loseInRow}); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3"></div>
+            <div class="col s6">
+            <?!= includeWithArgs("front/html/podium", {type: "win", label: "Nombre de matchs", values: participation}); ?>
+            </div>
+        </div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row">
+            <h3>Dernier mois</h3>
+        </div>
+        <div class="row">
+            <div class="col s6">
+            <?!= includeWithArgs("front/html/podium", {type: "win", label: "Nombre de victoires", values: victory}); ?>
+            </div>
+            <div class="col s6">
+            <?!= includeWithArgs("front/html/podium", {type: "lose", label: "Nombre de défaites", values: lose}); ?>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<?!= include("front/js/nav-js"); ?>
+
+</html>

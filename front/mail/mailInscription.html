@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <?!= include("front/html/head"); ?>
+    <?!= include("front/css/css"); ?>
+</head>
+
+<body>
+    <div class="container">
+        <?!= includeWithArgs("front/mail/mailHeader", {urlMail: urlMail}); ?>
+        <? if(evalToDo) { ?> <?!= includeWithArgs("front/mail/mailEvaluation", {urlMail: urlMail}); ?> <? } ?>
+        <div class="row">
+            <table style="margin:auto; width:400px">
+            <tr><th width=50%>
+            <a class="buttonGreen" style="color:white; width: 198px" href="<?=urlMail.inscription?>">Je m'inscris</a>
+            </th><th width=50%>
+            <a class="buttonRed" style="color:white; width: 198px" href="<?=urlMail.desinscription?>">Pas dispo</a>
+            </th></tr>
+            </table>
+        </div>
+        <? if(nbAvailableSlots<5) { ?>
+        <div class="row">
+            <h4 class="title">Il reste <?=nbAvailableSlots?> place(s)</h4>
+        </div>
+        <? } ?>
+        <?!= includeWithArgs("front/mail/mailFooter", {urlMail: urlMail}); ?>
+    </div>
+</body>
+</html>
+
+

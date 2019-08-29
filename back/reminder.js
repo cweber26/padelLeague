@@ -1,0 +1,55 @@
+function sendReminderMail() {
+    if (rangeCancelMatch.isBlank() && rangeReminder.isBlank()) {
+        if (nbPlayersAvailable == nbMaxPlayers) {
+            saveMatch();
+            createCalendarEvent();
+        }
+
+        var matchMails = playersInTheMatchMail();
+        for (var i in matchMails) {
+            sendRemindMailForAPlayer(getPlayerWithMail(matchMails[i]), false);
+        }
+
+        if (nbPlayersWaiting > 0) {
+            var waitingListMails = playersInWaitingListMail();
+            for (var j in waitingListMails) {
+                sendWaitingListMail(getPlayerWithMail(waitingListMails[j]));
+            }
+        }
+        logRunDate("reminder");
+    }
+}
+
+function sendWaitingListMail(player) {
+    var body = includeWithArgs("front/mail/mailWaitingList", {
+        date: matchDayGapInFrench(true),
+        urlMail: getUrlMail(player)
+    });
+    sendMail(player.mail, "Liste d'attente pour le match " + matchDayGapInFrench(true), body);
+}
+
+function sendRemindMailForAPlayer(player, isNewPlayer) {
+    sendMail(player.mail, "Rappel : Match de footsal " + matchDayGapInFrench(false) + " 🤙🤙", getBodyMailReminder(player, isNewPlayer));
+}
+
+function getBodyMailReminder(player, isNewPlayer) {
+    return includeWithArgs("front/mail/mailReminder", {
+        date: matchDayGapInFrench(true),
+        nbAvailableSlots: nbAvailableSlots,
+        compo: getCompoPlayersListForMail(),
+        isNewPlayer: isNewPlayer,
+        urlMail: getUrlMail(player),
+        stadium: getStadiumInfo()
+    });
+}
+
+function getCompoPlayersListForMail() {
+    var players = [];
+    if (nbPlayersAvailable > 0) {
+        var data = playersInTheMatchForFinalCompo();
+        data.forEach(function (p) {
+            players.push(p[1]);
+        });
+    }
+    return players;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <?!= include("front/html/head"); ?>
+    <?!= include("front/css/css"); ?>
+    <?!= includeWithArgs("front/html/nav", {mail: mail, key: key, admin: admin}); ?>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row"></div>
+        <? if(admin) {?>
+        <div class="row">
+            <a id="initStats" class="buttonGreen">RECALCUL DES STATS</a>
+        </div>
+        <? } ?>
+            <div class="row">
+            <table id="stat" class="centered highlight">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)" style="cursor:pointer">Classement</th>
+                        <th onclick="sortTable(1)" style="cursor:pointer">Joueur</th>
+                        <th onclick="sortTable(2)" style="cursor:pointer">Match</th>
+                        <th onclick="sortTable(3)" style="cursor:pointer">Victoire</th>
+                        <th onclick="sortTable(4)" style="cursor:pointer">Nul</th>
+                        <th onclick="sortTable(5)" style="cursor:pointer">Défaite</th>
+                        <th onclick="sortTable(6)" style="cursor:pointer">Bonus Offensif</th>
+                        <th onclick="sortTable(7)" style="cursor:pointer">Bonus Défensif</th>
+                        <th onclick="sortTable(8)" style="cursor:pointer">Point</th>
+                        <th>Point par match</th>
+                        <th onclick="sortTable(10)" style="cursor:pointer">Meilleure série de victoire</th>
+                        <th onclick="sortTable(11)" style="cursor:pointer">Pire série de victoire</th>   
+                        <th>Derniers résultats</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <?!=table?>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="fixed-action-btn direction-top active" style="bottom: 45px; right: 24px;">
+          <a data-target="helper" class="btn-floating btn-large waves-effect waves-light modal-trigger green lighten-2 pulse"><i class="material-icons">help_outline</i></a>
+        </div>
+
+        <div id="helper" class="modal">
+            <div class="modal-content">
+                <h5>Stat</h5>
+                <p>Le classement d'un joueur est activé à partir de son 5ème match
+                <br>Le classement est la moyenne du nb de points par match
+                <br>Victoire : 3 points
+                <br>Nul : 1 point
+                <br>Défaite : 0 point
+                <br>Bonus Offensif : 1 point (victoire avec au moins 5 buts d'écart)
+                <br>Bonus Défensif : 1 point (défaite avec maximum 2 buts d'écart)
+                </p>
+            </div>
+        </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<?!= include("front/js/stat-js"); ?>
+<?!= include("front/js/nav-js"); ?>
+</html>

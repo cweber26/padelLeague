@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <?!= include("front/html/head"); ?>
+    <?!= include("front/css/css"); ?>
+</head>
+
+<body>
+<div class="container">
+    <?!= includeWithArgs("front/mail/mailHeader", {urlMail: urlMail}); ?>
+    <div class="row">
+        <h2 class="title">Merci de confirmer ta présence pour le match <?=date?></h2>
+        <? if(isNewPlayer) { ?>
+        <h3 class="alert">Suite à un désistement tu as été sélectionné</h3>
+        <? } ?>
+    </div>
+
+    <div class="row">
+        <table style="margin:auto; width:400px">
+            <tr>
+                <th style="width:50%">
+                    <a class="buttonGreen" style="color: white; width: 198px" href="<?=urlMail.confirmation?>">Je confirme</a>
+                </th>
+                <th style="width:50%">
+                    <a class="buttonRed" style="color:white; width: 198px" href="<?=urlMail.deconfirmation?>">Plus dispo</a>
+                </th>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <? if(nbAvailableSlots===0) { ?> <?!= includeWithArgs("front/mail/mailCompo", {compo: compo}) ?> <? } ?>
+    <?!= includeWithArgs("front/mail/mailStadiumInfo", {stadium: stadium, withDetail: true}) ?>
+    <h4><a href="mailto:<?=playersInTheMatchMails?>?subject=<?=subjectMailContact?>" style="text-decoration: none; color: #81c784; font-weight: bold;">Contacter l'équipe du jour via mail</a></h4>
+    <?!= includeWithArgs("front/mail/mailFooter", {urlMail: urlMail}); ?>
+</div>
+</body>
+</html>
+
+
