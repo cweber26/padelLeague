@@ -7,7 +7,7 @@ function loadPageRecord() {
     var victory = sheetRecordFilter.getRange(24, 2, 3, 3).getValues();
     var lose = sheetRecordFilter.getRange(29, 2, 3, 3).getValues();
 
-    return render("front/html/record", "Barbeuc : Record", {
+    return render("front/html/record", "Barbeuc : Records", {
         mail: param.mail,
         key: param.key,
         admin: param.isAdmin,

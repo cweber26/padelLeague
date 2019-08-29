@@ -48,6 +48,7 @@ function testMails() {
     sendMailForAnAdmin(player, "subjet test", "<h2>html test</h2>");
 }
 
+// noinspection JSUnusedGlobalSymbols
 function testMail() {
     var player = getPlayerWithMail("cedric.weber@decathlon.com");
     sendMailForAnAdmin(player, "subjet test", "<h2>html test</h2>");
