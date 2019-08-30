@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <?!= include("front/html/head"); ?>
+    <?!= include("front/page/head"); ?>
     <?!= include("front/css/css"); ?>
-    <?!= includeWithArgs("front/html/nav", {mail: mail, key: key, admin: admin, testing: testing}); ?>
+    <?!= includeWithArgs("front/page/nav", {mail: mail, key: key, admin: admin, testing: testing}); ?>
 </head>
 
 <body>
@@ -47,11 +47,7 @@
         <div class="col s3"></div>
         <div class="switch input-field col s3">
             <label>
-                <? if(param.modeTest) { ?>
-                <input id="modeTest" type="checkbox" class="filled-in" checked="checked"/>
-                <? } else { ?>
-                <input id="modeTest" type="checkbox" class="filled-in"/>
-                <? } ?>
+                <input id="modeTest" type="checkbox"  class="filled-in" <?if(param.modeTest) {?> checked="checked" <? } ?> />
                 <span>ModeTest</span>
             </label>
         </div>

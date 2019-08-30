@@ -26,9 +26,9 @@ function sendConfirmMailForAPlayer(player, isNewPlayer) {
 
 function loadPageConfirmation() {
     if (param.answer == "Oui") {
-        return render("front/html/confirmation", "confirmation",{mail: param.mail, key: param.key, admin: param.isAdmin});
+        return render("front/page/confirmation", "confirmation",{mail: param.mail, key: param.key, admin: param.isAdmin});
     } else {
-        return render("front/html/desinscription", "desinscription",{mail: param.mail, key: param.key, admin: param.isAdmin});
+        return render("front/page/desinscription", "desinscription",{mail: param.mail, key: param.key, admin: param.isAdmin});
     }
 }
 

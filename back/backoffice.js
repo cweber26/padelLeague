@@ -27,7 +27,7 @@ function loadPageBackoffice() {
     log.confirmation = getDateTimeFormat(rangeConfirmation.getValue());
 
 
-    return render("front/html/backoffice", "Barbeuc : BackOffice", {
+    return render("front/page/backoffice", "Barbeuc : BackOffice", {
         mail: param.mail,
         key: param.key,
         admin: param.isAdmin,

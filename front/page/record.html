@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <?!= include("front/html/head"); ?>
+    <?!= include("front/page/head"); ?>
     <?!= include("front/css/css"); ?>
-    <?!= includeWithArgs("front/html/nav", {mail: mail, key: key, admin: admin, testing: testing}); ?>
+    <?!= includeWithArgs("front/page/nav", {mail: mail, key: key, admin: admin, testing: testing}); ?>
 </head>
 
 <body>
@@ -15,24 +15,24 @@
         </div>
         <div class="row">
             <div class="col s6">
-            <?!= includeWithArgs("front/html/podium", {type: "win", label: "Pourcentage de victoires", values: victoryPercentage}); ?>
+            <?!= includeWithArgs("front/page/podium", {type: "win", label: "Pourcentage de victoires", values: victoryPercentage}); ?>
             </div>
             <div class="col s6">
-            <?!= includeWithArgs("front/html/podium", {type: "lose", label: "Pourcentage de défaites", values: losePercentage}); ?>
+            <?!= includeWithArgs("front/page/podium", {type: "lose", label: "Pourcentage de défaites", values: losePercentage}); ?>
             </div>
         </div>
         <div class="row">
             <div class="col s6">
-            <?!= includeWithArgs("front/html/podium", {type: "win", label: "Plus grande série de victoires", values: victoryInRow}); ?>
+            <?!= includeWithArgs("front/page/podium", {type: "win", label: "Plus grande série de victoires", values: victoryInRow}); ?>
             </div>
             <div class="col s6">
-            <?!= includeWithArgs("front/html/podium", {type: "lose", label: "Plus grande série de défaites", values: loseInRow}); ?>
+            <?!= includeWithArgs("front/page/podium", {type: "lose", label: "Plus grande série de défaites", values: loseInRow}); ?>
             </div>
         </div>
         <div class="row">
             <div class="col s3"></div>
             <div class="col s6">
-            <?!= includeWithArgs("front/html/podium", {type: "win", label: "Nombre de matchs", values: participation}); ?>
+            <?!= includeWithArgs("front/page/podium", {type: "win", label: "Nombre de matchs", values: participation}); ?>
             </div>
         </div>
         <div class="row"></div>
@@ -42,10 +42,10 @@
         </div>
         <div class="row">
             <div class="col s6">
-            <?!= includeWithArgs("front/html/podium", {type: "win", label: "Nombre de victoires", values: victory}); ?>
+            <?!= includeWithArgs("front/page/podium", {type: "win", label: "Nombre de victoires", values: victory}); ?>
             </div>
             <div class="col s6">
-            <?!= includeWithArgs("front/html/podium", {type: "lose", label: "Nombre de défaites", values: lose}); ?>
+            <?!= includeWithArgs("front/page/podium", {type: "lose", label: "Nombre de défaites", values: lose}); ?>
             </div>
         </div>
         <? if(admin) {?>

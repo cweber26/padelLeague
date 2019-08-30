@@ -97,7 +97,7 @@ function loadPageProfil() {
     if (param.isAdmin) {
         mailList = playersTeamMailList();
     }
-    return render("front/html/profil", "Barbeuc : Profil", {
+    return render("front/page/profil", "Barbeuc : Profil", {
         mail: param.mail,
         key: param.key,
         player: player,

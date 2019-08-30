@@ -96,7 +96,7 @@ function loadPageStat() {
             + "<td>" + getLumieres(p) + "</td>"
             + "</tr>";
     });
-    return render("front/html/stat", "Barbeuc : Stats", {
+    return render("front/page/stat", "Barbeuc : Stats", {
         mail: param.mail,
         key: param.key,
         table: stats,

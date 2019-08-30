@@ -27,9 +27,9 @@ function sendInscriptionMailForAPlayer(player) {
 
 function loadPageInscription() {
     if (param.answer == "Oui") {
-        return render("front/html/inscription", "inscription", {mail: param.mail, key: param.key, admin: param.isAdmin});
+        return render("front/page/inscription", "inscription", {mail: param.mail, key: param.key, admin: param.isAdmin});
     } else {
-        return render("front/html/desinscription", "desinscription",{mail: param.mail, key: param.key, admin: param.isAdmin});
+        return render("front/page/desinscription", "desinscription",{mail: param.mail, key: param.key, admin: param.isAdmin});
     }
 }
 

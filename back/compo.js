@@ -51,7 +51,7 @@ function loadPageCompo() {
         score.red = rangeScoreRed.getValue();
     }
 
-    return render("front/html/compo", "Barbeuc : Composition", {
+    return render("front/page/compo", "Barbeuc : Composition", {
         mail: param.mail,
         key: param.key,
         date: matchDayGapInFrench(true),
