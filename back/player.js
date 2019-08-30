@@ -102,7 +102,8 @@ function loadPageProfil() {
         key: param.key,
         player: player,
         admin: param.isAdmin,
-        mailList: mailList
+        mailList: mailList,
+        testing: rangeModeTest.getValue()
     });
 }
 

@@ -96,5 +96,11 @@ function loadPageStat() {
             + "<td>" + getLumieres(p) + "</td>"
             + "</tr>";
     });
-    return render("front/html/stat", "Barbeuc : Stats", {mail: param.mail, key: param.key, table: stats, admin: param.isAdmin});
+    return render("front/html/stat", "Barbeuc : Stats", {
+        mail: param.mail,
+        key: param.key,
+        table: stats,
+        admin: param.isAdmin,
+        testing: rangeModeTest.getValue()
+    });
 }

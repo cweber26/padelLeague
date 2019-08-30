@@ -1,4 +1,5 @@
-function sendCancelMatchMail(isAutoCancel) {
+function cancelMatchAndSendMail(isAutoCancel) {
+    rangeCancelMatch.setValue(true);
     var playerMails = playersInTheMatchMail();
     for (var i in playerMails) {
         var player = getPlayerWithMail(playerMails[i]);

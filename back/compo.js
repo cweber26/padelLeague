@@ -63,6 +63,7 @@ function loadPageCompo() {
         listeAttente: listeAttente,
         admin: param.isAdmin,
         score: score,
-        url: ScriptApp.getService().getUrl()
+        cancelMatch: rangeCancelMatch.getValue(),
+        testing: rangeModeTest.getValue()
     });
 }

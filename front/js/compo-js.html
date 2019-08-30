@@ -151,18 +151,28 @@
         buttonSendConfirmation.addEventListener("click", sendConfirmationJs);
     }
 
+    var buttonCancelMatch = document.getElementById("cancelMatch");
+    if (buttonCancelMatch) {
+        buttonCancelMatch.addEventListener("click", cancelMatchJs);
+    }
+
     function cleaningJs() {
         if (window.confirm("Es tu sûr de vouloir purger toutes les inscriptions ?")) {
-            M.toast({html: "Purge en cours"});
-            google.script.run.withSuccessHandler(successCleaning).withFailureHandler(failCleaning).cleaning();
-        }
+            var parameter = {};
+            google.script.url.getLocation(function (location) {
+                parameter = location.parameter;
+                M.toast({html: "Purge en cours"});
+                google.script.run.withSuccessHandler(successCleaning).withFailureHandler(failCleaning).cleaning();
+            });
 
-        function successCleaning() {
-            M.toast({html: "Purge éffectuée"});
-        }
+            function successCleaning() {
+                M.toast({html: "Purge éffectuée"});
+                window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
+            }
 
-        function failCleaning() {
-            M.toast({html: "Purge en erreur"});
+            function failCleaning() {
+                M.toast({html: "Purge en erreur"});
+            }
         }
     }
 
@@ -240,7 +250,26 @@
         }
     }
 
-    //TODO ajout action bouton annulation
+    function cancelMatchJs() {
+        if (window.confirm("Es tu sûr de vouloir annuler le match ?")) {
+            var parameter = {};
+            google.script.url.getLocation(function (location) {
+                parameter = location.parameter;
+                M.toast({html: "Annulation en cours"});
+                google.script.run.withSuccessHandler(successSend3).withFailureHandler(failSend3).cancelMatchAndSendMail(false);
+            });
+
+            function successSend3() {
+                M.toast({html: "Match annulé"});
+                M.toast({html: "Mails envoyés"});
+                window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
+            }
+
+            function failSend3() {
+                M.toast({html: "Annulation du match en erreur"});
+            }
+        }
+    }
 
     function checkValidity(elementId, message) {
         var isValid = document.getElementById(elementId).checkValidity();

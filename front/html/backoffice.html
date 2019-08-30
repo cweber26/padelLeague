@@ -4,7 +4,7 @@
 <head>
     <?!= include("front/html/head"); ?>
     <?!= include("front/css/css"); ?>
-    <?!= includeWithArgs("front/html/nav", {mail: mail, key: key, admin: admin}); ?>
+    <?!= includeWithArgs("front/html/nav", {mail: mail, key: key, admin: admin, testing: testing}); ?>
 </head>
 
 <body>
@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="row">
-        <h4>Paramétrage test</h4>
+        <h4>Paramétrage testing</h4>
     </div>
     <div class="row">
         <div class="col s3"></div>
@@ -99,6 +99,9 @@
             <time><?=log.confirmation?></time>
         </div>
     </div>
+    <!-- TODO ajout tableau joueur backoffice -->
+    <!-- TODO ajout tableau jour backoffice -->
+    <!-- TODO ajout tableau stade backoffice -->
 </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

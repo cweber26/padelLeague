@@ -1,7 +1,7 @@
 function loadPageBackoffice() {
     var player = getPlayerWithMail(param.mail);
     if (!param.isAdmin) {
-        return loadInvalidUser();
+        return loadPageUnauthorized();
     }
 
     var parameterApplication = {};
@@ -33,7 +33,8 @@ function loadPageBackoffice() {
         admin: param.isAdmin,
         player: player,
         param: parameterApplication,
-        log: log
+        log: log,
+        testing: rangeModeTest.getValue()
     });
 }
 

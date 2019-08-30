@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <?!= include("front/html/head"); ?>
+    <?!= include("front/css/css"); ?>
+    <?!= includeWithArgs("front/html/nav", {mail: mail, key: key, admin: admin, testing: testing}); ?>
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <h4>Equipe</h4>
+    </div>
+    <!-- TODO ajout tableau équipe backoffice -->
+    <!-- TODO ajout boutons inscription etc... -->
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<?!= includeWithArgs("front/js/backoffice-js"); ?>
+<?!= include("front/js/nav-js"); ?>
+</html>

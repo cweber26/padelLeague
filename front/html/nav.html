@@ -1,5 +1,11 @@
 <nav>
-    <div class="nav-wrapper green lighten-2">
+
+    <div class="nav-wrapper <?if(!admin || !testing){?>green<?} else {?>red<?}?> lighten-2">
+
+        <?if(admin && testing){?>
+        <a class="brand-logo center">TESTING</a>
+        <?}?>
+
         <a class="brand-logo">Barbeuc League</a>
         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down navbar">
@@ -9,6 +15,7 @@
             <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=profil&mail=<?=mail?>&key=<?=key?>">Profil</a></li>
             <?if(admin){?>
             <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=backoffice&mail=<?=mail?>&key=<?=key?>">BackOffice</a></li>
+            <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=team&mail=<?=mail?>&key=<?=key?>">Team</a></li>
             <?}?>
         </ul>
 
@@ -19,6 +26,7 @@
             <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=profil&mail=<?=mail?>&key=<?=key?>">Profil</a></li>
             <?if(admin){?>
             <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=backoffice&mail=<?=mail?>&key=<?=key?>">BackOffice</a></li>
+            <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=team&mail=<?=mail?>&key=<?=key?>">Team</a></li>
             <?}?>
         </ul>
     </div>

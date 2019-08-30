@@ -1,5 +1,5 @@
 /////////////////////////////////
-////////////TODO LIST////////////
+//////////////LISTE//////////////
 /////////////////////////////////
 
 //STAND BY//
@@ -8,7 +8,7 @@
 // lien vers page de paiement urban
 // gérer le covoiturage
 
-//TODO//
+//A FAIRE//
 // faire du tri dans les joueurs
 // Gérer envoi de mail selon le décalage de jour avec le prochain match
 // Créer le RDV dès le 10 inscrits

@@ -4,15 +4,18 @@
 <head>
     <?!= include("front/html/head"); ?>
     <?!= include("front/css/css"); ?>
-    <?!= includeWithArgs("front/html/nav", {mail: mail, key: key, admin: admin}); ?>
+    <?!= includeWithArgs("front/html/nav", {mail: mail, key: key, admin: admin, testing: testing}); ?>
 </head>
 
 <body>
-<!-- TODO ajout mention match annulé -->
 <div class="container">
     <div class="row"></div>
     <div class="row">
+        <?if(!cancelMatch) {?>
         <h3 class="title"> Composition pour le match <?=date?></h3>
+        <?} else {?>
+        <h3 class="alert"> Match <?=date?> annulé</h3>
+        <?}?>
     </div>
     <div class="row">
         <div class="field">

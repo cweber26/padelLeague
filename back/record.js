@@ -17,6 +17,7 @@ function loadPageRecord() {
         loseInRow: loseInRow,
         participation: participation,
         victory: victory,
-        lose: lose
+        lose: lose,
+        testing: rangeModeTest.getValue()
     });
 }
