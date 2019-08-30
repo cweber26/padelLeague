@@ -1,10 +1,9 @@
 <script>
 
     document.getElementById("indispo").addEventListener("change", switchIndispoDate);
-    document.getElementById("update").addEventListener("click", update);
+    document.getElementById("updateProfil").addEventListener("click", update);
 
     document.addEventListener('DOMContentLoaded', function () {
-        console.log("test");
         var selectBoxes = document.querySelectorAll('select');
         M.FormSelect.init(selectBoxes);
         var datePicker = document.getElementById('indispoDate');

@@ -1,0 +1,74 @@
+<script>
+
+    var buttonUpdate = document.getElementById("updateParam");
+    if (buttonUpdate) {
+        buttonUpdate.addEventListener("click", updateParamJsControl);
+    }
+
+
+    function updateParamJsControl() {
+        var toValidate = {
+            victory: "Le nombre de points par victoire doit être choisi",
+            draw: "Le nombre de points par match nul doit être choisi",
+            defeat: "Le nombre de points par défaite doit être choisi",
+            minMatch: "Le nombre minimum de match pour être dans le classement doit être choisi",
+            offensiveBonus: "Le nombre de points pour le bonus offensif doit être choisi",
+            offensiveBonusGap: "Le nombre minimum de but pour le bonus offensif doit être choisi",
+            defensiveBonus: "Le nombre de points pour le bonus déffensif doit être choisi",
+            defensiveBonusGap: "Le nombre maximum de but pour le bonus déffensif doit être choisi",
+            mailTester: "Le mail du testeur doit être choisi"
+        };
+
+        var idKeys = Object.keys(toValidate);
+
+        var allValid = true;
+        idKeys.forEach(function (k) {
+            if (!checkValidity(k, toValidate[k])) {
+                allValid = false;
+            }
+        });
+
+        if (allValid) {
+            updateParamJsAction();
+        }
+    }
+
+    function checkValidity(elementId, message) {
+        var isValid = document.getElementById(elementId).checkValidity();
+        if (!isValid) {
+            M.toast({ html: message });
+            return false;
+        }
+        return true;
+    }
+
+    function updateParamJsAction() {
+
+        var parameterApplication = {};
+        parameterApplication.victory = document.getElementById("victory").value;
+        parameterApplication.draw = document.getElementById("draw").value;
+        parameterApplication.defeat = document.getElementById("defeat").value;
+        parameterApplication.minMatch = document.getElementById("minMatch").value;
+        parameterApplication.offensiveBonus = document.getElementById("offensiveBonus").value;
+        parameterApplication.offensiveBonusGap = document.getElementById("offensiveBonusGap").value;
+        parameterApplication.defensiveBonus = document.getElementById("defensiveBonus").value;
+        parameterApplication.defensiveBonusGap = document.getElementById("defensiveBonusGap").value;
+        parameterApplication.modeTest = document.getElementById("modeTest").checked;
+        parameterApplication.mailTester = document.getElementById("mailTester").value;
+
+        console.log(parameterApplication);
+
+        M.toast({html: "En cours de modification"});
+        google.script.run.withSuccessHandler(successUpdateParam).withFailureHandler(failureUpdateParam).updateParameter(parameterApplication);
+
+
+        function successUpdateParam() {
+            M.toast({html: "Mise à jour effectuée"});
+        }
+
+        function failureUpdateParam() {
+            M.toast({html: "Error durant la mise à jour"});
+        }
+    }
+
+</script>

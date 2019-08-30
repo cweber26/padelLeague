@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<!-- TODO ajout mention match annulé -->
 <div class="container">
     <div class="row"></div>
     <div class="row">
@@ -161,23 +162,28 @@
     <? } ?>
     <? if(admin) { ?>
     <div class="row">
-        <div class="col s2">
-            <a id="cleaning" class="buttonRed">Purge Match</a>
+        <div class="col s3">
+            <a id="sendPrio1" class="buttonGreen">Envoyer mail prio 1</a>
         </div>
-        <div class="col s2">
-            <a id="sendPrio1" class="buttonGreen">Envoi Prio 1</a>
+        <div class="col s3">
+            <a id="sendPrio2" class="buttonGreen">Envoyer mail prio 2</a>
         </div>
-        <div class="col s2">
-            <a id="sendPrio2" class="buttonGreen">Envoi Prio 2</a>
+        <div class="col s3">
+            <a id="sendPrio3" class="buttonGreen">Envoi mail prio 3</a>
         </div>
-        <div class="col s2">
-            <a id="sendPrio3" class="buttonGreen">Envoi Prio 3</a>
+        <div class="col s3">
+            <a id="sendReminder" class="buttonGreen">Envoi mail Rappel</a>
         </div>
-        <div class="col s2">
-            <a id="sendReminder" class="buttonGreen">Envoi Rappel</a>
+    </div>
+    <div class="row">
+        <div class="col s3">
+            <a id="sendConfirmation" class="buttonGreen">Envoi mail Confirmation</a>
         </div>
-        <div class="col s2">
-            <a id="sendConfirmation" class="buttonGreen">Envoi Confirmation</a>
+        <div class="col s3">
+            <a id="cleaning" class="buttonRed">Purger le match</a>
+        </div>
+        <div class="col s3">
+            <a id="cancelMatch" class="buttonRed">Annuler le Match</a>
         </div>
     </div>
     <? } ?>

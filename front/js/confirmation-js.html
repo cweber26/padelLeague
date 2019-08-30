@@ -1,7 +1,7 @@
 <script>
-  parameter = {};
+  var parameter = {};
   google.script.url.getLocation(function(location) {
-      var parameter = location.parameter;
+      parameter = location.parameter;
       google.script.run.withSuccessHandler(redirectToPageCompo).withFailureHandler(redirectToPageError).confirmation(parameter);
   });
   function redirectToPageCompo() {

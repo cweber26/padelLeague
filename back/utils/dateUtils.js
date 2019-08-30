@@ -76,3 +76,11 @@ function matchDayGapInFrench(withPronom) {
             }
     }
 }
+
+function getDateTimeFormat(date) {
+    if(date!="") {
+        return Utilities.formatDate(new Date(date), "GMT", "dd/MM/yy HH:mm:ss");
+    } else {
+        return "";
+    }
+}

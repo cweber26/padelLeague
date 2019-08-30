@@ -91,8 +91,8 @@ function loadPageStat() {
             + "<td>" + p[7] + "</td>"
             + "<td>" + p[8] + "</td>"
             + "<td>" + p[9] + "</td>"
+            + "<td>" + p[12] + "</td>"
             + "<td>" + p[13] + "</td>"
-            + "<td>" + p[14] + "</td>"
             + "<td>" + getLumieres(p) + "</td>"
             + "</tr>";
     });

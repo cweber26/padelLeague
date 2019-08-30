@@ -10,9 +10,21 @@ var sheetStats = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Stats");
 
 ////////////RANGE & VALUES////////////
 var columnParam = 2;
+var firstRowStat = 2;
+var rangePointForVictory = sheetBackOffice.getRange(firstRowStat, columnParam);
+var rangePointForDraw = sheetBackOffice.getRange(firstRowStat + 1, columnParam);
+var rangePointForDefeat = sheetBackOffice.getRange(firstRowStat + 2, columnParam);
+var rangePointForOffensiveBonus = sheetBackOffice.getRange(firstRowStat + 3, columnParam);
+var rangeMinGoalGapForOffensiveBonus = sheetBackOffice.getRange(firstRowStat + 4, columnParam);
+var rangePointForDefensiveBonuse = sheetBackOffice.getRange(firstRowStat + 5, columnParam);
+var rangeMaxGoalGapForDefensiveBonus = sheetBackOffice.getRange(firstRowStat + 6, columnParam);
+var rangeMinMatchForStat = sheetBackOffice.getRange(firstRowStat + 7, columnParam);
+
+
 var firstRowParam = 11;
 var applicationName = sheetBackOffice.getRange(firstRowParam, columnParam).getValue();
 var nbMaxPlayers = sheetBackOffice.getRange(firstRowParam + 1, columnParam).getValue();
+var rangeNbLimitPlayers = sheetBackOffice.getRange(firstRowParam + 2, columnParam);
 var nbLimitPlayers = sheetBackOffice.getRange(firstRowParam + 2, columnParam).getValue();
 var rangeCancelMatch = sheetBackOffice.getRange(firstRowParam + 3, columnParam);
 var nbPlayersAvailable = sheetBackOffice.getRange(firstRowParam + 4, columnParam).getValue();
@@ -34,7 +46,9 @@ var beginGameHour = sheetBackOffice.getRange(firstRowStadium + 5, columnParam).g
 var infoGame = sheetBackOffice.getRange(firstRowStadium + 6, columnParam).getValue();
 
 var firstRowTest = 32;
+var rangeModeTest = sheetBackOffice.getRange(firstRowTest, columnParam);
 var modeTest = sheetBackOffice.getRange(firstRowTest, columnParam).getValue();
+var rangeMailTester = sheetBackOffice.getRange(firstRowTest + 1, columnParam);
 var mailTester = sheetBackOffice.getRange(firstRowTest + 1, columnParam).getValue();
 
 var firstRowLogDate = 34;
