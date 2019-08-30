@@ -1,12 +1,6 @@
 <nav>
-
     <div class="nav-wrapper <?if(!admin || !testing){?>green<?} else {?>red<?}?> lighten-2">
-
-        <?if(admin && testing){?>
-        <a class="brand-logo center">TESTING</a>
-        <?}?>
-
-        <a class="brand-logo">Barbeuc League</a>
+        <a class="brand-logo">Barbeuc League<?if(admin && testing){?> ⚠️Test⚠️ <?}?></a>
         <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down navbar">
             <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail=<?=mail?>&key=<?=key?>">Compo</a></li>

@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5d5575c-0efc-49cf-ae86-8ed850f6d9c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/back/unauthorized.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/html/team.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/html/unauthorized.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/backoffice.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/backoffice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/cancel.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/cancel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/composition.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/compo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/control.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/control.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/front.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/front.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/invalidUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/invalidUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/record.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/record.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/stat.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/stat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/html/backoffice.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/backoffice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/html/compo.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/compo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/html/invalid.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/invalid.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/html/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/html/profil.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/profil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/html/record.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/record.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/html/stat.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/html/stat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/js/compo-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/compo-js.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,11 +21,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="144">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/html/backoffice.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="103" column="48" selection-start-line="103" selection-start-column="48" selection-end-line="103" selection-end-column="48" />
+            <state relative-caret-position="1470">
+              <caret line="98" column="17" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -52,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/back/backoffice.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+            <state relative-caret-position="225">
+              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -63,6 +53,20 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
               <caret line="272" selection-start-line="272" selection-end-line="272" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/error.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/front.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="35" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -85,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/html/nav.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+            <state relative-caret-position="420">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -97,8 +101,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/html/team.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+            <state relative-caret-position="210">
+              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/team.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -141,8 +154,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>19</find>
-      <find>mailInscr</find>
       <find>complet</find>
       <find>Il manque</find>
       <find>sendReminder</find>
@@ -170,6 +181,8 @@
       <find>includeWithArgs(&quot;front/html/nav&quot;, {mail: mail, key: key, admin: admin});</find>
       <find>Erreur</find>
       <find>cancelMatch</find>
+      <find>error</find>
+      <find>s3</find>
       <find>cancelMat</find>
     </findStrings>
     <replaceStrings>
@@ -195,6 +208,7 @@
       <replace>SendPrio3</replace>
       <replace>ParamStat.victory =</replace>
       <replace>includeWithArgs(&quot;front/html/nav&quot;, {mail: mail, key: key, admin: admin, testing: testing});</replace>
+      <replace>s4</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -206,8 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/back/mail.js" />
-        <option value="$PROJECT_DIR$/back/init.js" />
         <option value="$PROJECT_DIR$/back/trigger.js" />
         <option value="$PROJECT_DIR$/back/inscription.js" />
         <option value="$PROJECT_DIR$/back/fullMatch.js" />
@@ -230,7 +242,6 @@
         <option value="$PROJECT_DIR$/front/html/error.html" />
         <option value="$PROJECT_DIR$/front/html/desinscription.html" />
         <option value="$PROJECT_DIR$/back/lumiere.js" />
-        <option value="$PROJECT_DIR$/back/front.js" />
         <option value="$PROJECT_DIR$/front/html/profil.html" />
         <option value="$PROJECT_DIR$/front/js/profil-js.html" />
         <option value="$PROJECT_DIR$/back/utils/dateUtils.js" />
@@ -250,13 +261,16 @@
         <option value="$PROJECT_DIR$/back/player.js" />
         <option value="$PROJECT_DIR$/front/html/invalid.html" />
         <option value="$PROJECT_DIR$/front/js/compo-js.html" />
-        <option value="$PROJECT_DIR$/front/html/backoffice.html" />
         <option value="$PROJECT_DIR$/front/html/team.html" />
         <option value="$PROJECT_DIR$/front/html/unauthorized.html" />
         <option value="$PROJECT_DIR$/back/backoffice.js" />
         <option value="$PROJECT_DIR$/back/invalidUser.js" />
         <option value="$PROJECT_DIR$/back/unauthorized.js" />
+        <option value="$PROJECT_DIR$/back/front.js" />
+        <option value="$PROJECT_DIR$/back/team.js" />
+        <option value="$PROJECT_DIR$/front/html/backoffice.html" />
         <option value="$PROJECT_DIR$/front/html/nav.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -286,28 +300,6 @@
             <path>
               <item name="barbeucLeague" type="b2602c69:ProjectViewProjectNode" />
               <item name="barbeucLeague" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="barbeucLeague" type="b2602c69:ProjectViewProjectNode" />
-              <item name="barbeucLeague" type="462c0819:PsiDirectoryNode" />
-              <item name="back" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="barbeucLeague" type="b2602c69:ProjectViewProjectNode" />
-              <item name="barbeucLeague" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="barbeucLeague" type="b2602c69:ProjectViewProjectNode" />
-              <item name="barbeucLeague" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="barbeucLeague" type="b2602c69:ProjectViewProjectNode" />
-              <item name="barbeucLeague" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -395,7 +387,7 @@
       <workItem from="1567062691257" duration="6810000" />
       <workItem from="1567071354006" duration="13770000" />
       <workItem from="1567109978816" duration="5186000" />
-      <workItem from="1567149070123" duration="7952000" />
+      <workItem from="1567149070123" duration="10213000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring 3">
       <created>1567072496201</created>
@@ -422,7 +414,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47024000" />
+    <option name="totallyTimeSpent" value="49285000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -431,10 +423,12 @@
     <todo-panel id="all">
       <are-packages-shown value="true" />
       <is-autoscroll-to-source value="true" />
+      <is-preview-enabled value="true" />
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Capture Tool" order="0" />
       <window_info id="Designer" order="1" />
@@ -442,7 +436,7 @@
       <window_info id="Image Layers" order="3" />
       <window_info id="Web" order="4" show_stripe_button="false" side_tool="true" />
       <window_info id="JavaEE:App" order="5" show_stripe_button="false" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.18272775" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.18272775" />
       <window_info active="true" anchor="bottom" id="Problems" order="0" visible="true" weight="0.3293247" />
       <window_info anchor="bottom" id="SonarLint" order="1" show_stripe_button="false" weight="0.5159292" />
       <window_info anchor="bottom" id="Messages" order="2" sideWeight="0.49947917" weight="0.33539823" />
@@ -464,7 +458,7 @@
       <window_info anchor="bottom" id="Event Log" order="18" sideWeight="0.5003062" side_tool="true" weight="0.32920355" />
       <window_info anchor="bottom" id="Docker" order="19" show_stripe_button="false" />
       <window_info anchor="bottom" id="TunnelliJ" order="20" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="21" sideWeight="0.4996938" visible="true" weight="0.32920355" />
+      <window_info anchor="bottom" id="Terminal" order="21" sideWeight="0.4996938" visible="true" weight="0.32920355" />
       <window_info anchor="right" id="Key Promoter X" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" show_stripe_button="false" weight="0.25" />
@@ -488,20 +482,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="refactoring 5" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/front/html/error.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/html/desinscription.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="10" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/html/confirmation.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -525,9 +505,6 @@
           <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/error.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/back/fullMatch.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -555,13 +532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/front.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -750,27 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/html/unauthorized.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12">
-          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/html/team.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/html/invalid.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -785,6 +734,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/back/error.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/front.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/team.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/html/backoffice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1470">
+          <caret line="98" column="17" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/html/team.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/back/unauthorized.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -792,24 +779,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/backoffice.js">
+    <entry file="file://$PROJECT_DIR$/front/html/unauthorized.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/html/backoffice.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="103" column="48" selection-start-line="103" selection-start-column="48" selection-end-line="103" selection-end-column="48" />
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front/html/nav.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        <state relative-caret-position="420">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/backoffice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
         </state>
       </provider>
     </entry>
