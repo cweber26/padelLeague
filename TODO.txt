@@ -18,6 +18,7 @@
 // Page effectif
 // Bouton pour admin pour inscrire etc... un joueur
 // Mettre un joueur invité "fantome"
+// Page historique match
 
 //EN COURS//
 // Mail du mois : Vainqueur Nouveaux meilleur joueur etc... A EMBELLIR

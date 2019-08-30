@@ -16,8 +16,8 @@ function doGet(e) {
     Route.path("stat", loadPageStat);
     Route.path("record", loadPageRecord);
     Route.path("error", loadPageError);
-    Route.path("backoffice", loadPageBackoffice)
-    Route.path("team", loadPageTeam)
+    Route.path("backoffice", loadPageBackoffice);
+    Route.path("team", loadPageTeam);
 
     if (!isValidUser(param)) {
         return loadPageInvalidUser();

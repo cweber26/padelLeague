@@ -1,4 +1,7 @@
 
 function loadPageInvalidUser() {
-    return render("front/page/invalid", {mail: param.mail, key: param.key});
+    return render("front/page/invalid", "invalidUser",{
+        mail: param.mail,
+        key: param.key
+    });
 }

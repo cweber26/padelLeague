@@ -92,20 +92,21 @@ function getNewPlayerInCompo() {
 
 
 function loadPageProfil() {
-    var player = getPlayerWithMail(param.mail);
-    var mailList = {};
-    if (param.isAdmin) {
-        mailList = playersTeamMailList();
+    var player;
+    if(param.profilMail && param.isAdmin) {
+        player = getPlayerWithMail(param.profilMail);
+    } else {
+        player = getPlayerWithMail(param.mail);
     }
     return render("front/page/profil", "Barbeuc : Profil", {
         mail: param.mail,
         key: param.key,
         player: player,
         admin: param.isAdmin,
-        mailList: mailList,
         testing: rangeModeTest.getValue()
     });
 }
+
 
 // noinspection JSUnusedGlobalSymbols
 function updateProfil(user) {

@@ -6,18 +6,13 @@
     <?!= include("front/css/css"); ?>
     <?!= includeWithArgs("front/page/nav", {mail: mail, key: key, admin: admin, testing: testing}); ?>
 </head>
-
 <body>
     <div class="container">
     <div class="row"></div>
         <div class="row">
             <div class="input-field col s12">
-                <? if(admin) { ?>
-                <input id="mail" type="text" class="autocomplete" value="<?=mail?>">
-                <? } else { ?>
-                <input id="mail" type="text" class="validate" value="<?=mail?>" disabled>
-                <? } ?>
-                <input id="key" type="text" class="validate" value="<?=key?>" disabled hidden>
+                <input id="mail" type="text" class="validate" value="<?=player.mail?>" disabled>
+                <input id="key" type="text" class="validate" value="<?=player.keyWithSecurity?>" disabled hidden>
                 <label for="mail">Mail</label>
             </div>
         </div>
@@ -41,11 +36,7 @@
             <div class="switch input-field col s3">
                 <label>
                     Disponible
-                    <? if(player.isUnavailable) { ?>
-                     <input id="indispo" type="checkbox" checked>
-                    <? } else { ?>
-                     <input id="indispo" type="checkbox">
-                    <? } ?>
+                    <input id="indispo" type="checkbox"  <? if(player.isUnavailable) { ?>checked<? } ?>>
                     <span class="lever"></span> Indisponible
                 </label>
             </div>
@@ -71,51 +62,31 @@
             </div>
             <div class="switch input-field col s1">
                 <label>
-                    <? if(player.mondaySelected) { ?>
-                    <input id="lundi" type="checkbox" class="filled-in" checked="checked"/>
-                    <? } else { ?>
-                    <input id="lundi" type="checkbox" class="filled-in"/>
-                    <? } ?>
+                    <input id="lundi" type="checkbox" class="filled-in" <? if(player.mondaySelected) { ?>checked="checked"<? } ?>/>
                     <span>Lundi</span>
                 </label>
             </div>
             <div class="switch input-field col s1">
                 <label>
-                    <? if(player.tuesdaySelected) { ?>
-                    <input id="mardi" type="checkbox" class="filled-in" checked="checked"/>
-                    <? } else { ?>
-                    <input id="mardi" type="checkbox" class="filled-in"/>
-                    <? } ?>
+                    <input id="mardi" type="checkbox" class="filled-in" <? if(player.tuesdaySelected) { ?>checked="checked"<? } ?>/>
                     <span>Mardi</span>
                 </label>
             </div>
             <div class="switch input-field col s1">
                 <label>
-                    <? if(player.wednesdaySelected) { ?>
-                    <input id="mercredi" type="checkbox" class="filled-in" checked="checked"/>
-                    <? } else { ?>
-                    <input id="mercredi" type="checkbox" class="filled-in"/>
-                    <? } ?>
+                    <input id="mercredi" type="checkbox" class="filled-in" <? if(player.wednesdaySelected) { ?>checked="checked"<? } ?>/>
                     <span>Mercredi</span>
                 </label>
             </div>
             <div class="switch input-field col s1">
                 <label>
-                    <? if(player.thursdaySelected) { ?>
-                    <input id="jeudi" type="checkbox" class="filled-in" checked="checked"/>
-                    <? } else { ?>
-                    <input id="jeudi" type="checkbox" class="filled-in"/>
-                    <? } ?>
+                    <input id="jeudi" type="checkbox" class="filled-in" <? if(player.thursdaySelected) { ?>checked="checked"<? } ?>/>
                     <span>Jeudi</span>
                 </label>
             </div>
             <div class="switch input-field col s1">
                 <label>
-                    <? if(player.fridaySelected) { ?>
-                    <input id="vendredi" type="checkbox" class="filled-in" checked="checked"/>
-                    <? } else { ?>
-                    <input id="vendredi" type="checkbox" class="filled-in"/>
-                    <? } ?>
+                    <input id="vendredi" type="checkbox" class="filled-in" <? if(player.fridaySelected) { ?>checked="checked"<? } ?>/>
                     <span>Vendredi</span>
                 </label>
             </div>
@@ -125,57 +96,21 @@
             <div class="input-field col s6">
                 <select id="site" required>
                     <option disabled>Choisi ton lieu de départ</option>
-                    <? if(player.site=="Campus") { ?>
-                    <option selected>Campus</option>
-                    <? } else { ?>
-                    <option>Campus</option>
-                    <? } ?>
-                    <? if(player.site=="Btwin") { ?>
-                    <option selected>Btwin</option>
-                    <? } else { ?>
-                    <option>Btwin</option>
-                    <? } ?>
-                    <? if(player.site=="Croix") { ?>
-                    <option selected>Croix</option>
-                    <? } else { ?>
-                    <option>Croix</option>
-                    <? } ?>
-                    <? if(player.site=="V2") { ?>
-                    <option selected>V2</option>
-                    <? } else { ?>
-                    <option>V2</option>
-                    <? } ?>
-                    <? if(player.site=="Autre") { ?>
-                    <option selected>Autre</option>
-                    <? } else { ?>
-                    <option>Autre</option>
-                    <? } ?>
+                    <option <? if(player.site=="Campus") { ?> selected <? } ?>>Campus</option>
+                    <option <? if(player.site=="Btwin") { ?> selected <? } ?>>Btwin</option>
+                    <option <? if(player.site=="Croix") { ?> selected <? } ?>>Croix</option>
+                    <option <? if(player.site=="V2") { ?> selected <? } ?>>V2</option>
+                    <option <? if(player.site=="Autre") { ?> selected <? } ?>>Autre</option>
                 </select>
                 <label>Lieu</label>
             </div>
             <div class="input-field col s6">
                 <select id="poste" required>
                     <option disabled selected value="">Choisi ton poste préféré</option>
-                    <? if(player.position=="Attaquant") { ?>
-                    <option selected>Attaquant</option>
-                    <? } else { ?>
-                    <option>Attaquant</option>
-                    <? } ?>
-                    <? if(player.position=="Défenseur") { ?>
-                    <option selected>Défenseur</option>
-                    <? } else { ?>
-                    <option>Défenseur</option>
-                    <? } ?>
-                    <? if(player.position=="Polyvalent") { ?>
-                    <option selected>Polyvalent</option>
-                    <? } else { ?>
-                    <option>Polyvalent</option>
-                    <? } ?>
-                    <? if(player.position=="Gardien") { ?>
-                    <option selected>Gardien</option>
-                    <? } else { ?>
-                    <option>Gardien</option>
-                    <? } ?>
+                    <option <? if(player.position=="Attaquant") { ?> selected <? } ?>>Attaquant</option>
+                    <option <? if(player.position=="Défenseur") { ?> selected <? } ?>>Défenseur</option>
+                    <option <? if(player.position=="Polyvalent") { ?> selected <? } ?>>Polyvalent</option>
+                    <option <? if(player.position=="Gardien") { ?> selected <? } ?>>Gardien</option>
                 </select>
                 <label>Poste</label>
             </div>
@@ -190,41 +125,25 @@
                 </p>
                 <p>
                     <label>
-                        <? if(player.levelDribble=="1") { ?>
-                        <input value="1" id="dribble" name="dribble" type="radio" checked required/>
-                        <? } else { ?>
-                        <input value="1" id="dribble" name="dribble" type="radio" required/>
-                        <? } ?>
+                        <input value="1" id="dribble" name="dribble" type="radio" <? if(player.levelDribble=="1") { ?> checked <? } ?> required/>
                         <span>C'est pas mon truc</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <? if(player.levelDribble=="2") { ?>
-                        <input value="2" id="dribble" name="dribble" type="radio" checked/>
-                        <? } else { ?>
-                        <input value="2" id="dribble" name="dribble" type="radio"/>
-                        <? } ?>
+                        <input value="2" id="dribble" name="dribble" type="radio" <? if(player.levelDribble=="2") { ?> checked <? } ?>/>
                         <span>Je me débrouille</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <? if(player.levelDribble=="3") { ?>
-                        <input value="3" id="dribble" name="dribble" type="radio" checked/>
-                        <? } else { ?>
-                        <input value="3" id="dribble" name="dribble" type="radio"/>
-                        <? } ?>
+                        <input value="3" id="dribble" name="dribble" type="radio" <? if(player.levelDribble=="3") { ?> checked <? } ?>/>
                         <span>J'en abuse parfois (je dribble dans la mauvaise direction)</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <? if(player.levelDribble=="4") { ?>
-                        <input value="4" id="dribble" name="dribble" type="radio" checked/>
-                        <? } else { ?>
-                        <input value="4" id="dribble" name="dribble" type="radio"/>
-                        <? } ?>
+                        <input value="4" id="dribble" name="dribble" type="radio" <? if(player.levelDribble=="4") { ?> checked <? } ?>/>
                         <span>Je maitrise</span>
                     </label>
                 </p>
@@ -237,41 +156,25 @@
                 </p>
                 <p>
                     <label>
-                        <? if(player.levelFrappe=="1") { ?>
-                        <input value="1" id="frappe" name="frappe" type="radio" checked required/>
-                        <? } else { ?>
-                        <input value="1" id="frappe" name="frappe" type="radio" required/>
-                        <? } ?>
+                        <input value="1" id="frappe" name="frappe" type="radio" <? if(player.levelFrappe=="1") { ?> checked <? } ?> required/>
                         <span>C'est pas mon truc</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <? if(player.levelFrappe=="2") { ?>
-                        <input value="2" id="frappe" name="frappe" type="radio" checked/>
-                        <? } else { ?>
-                        <input value="2" id="frappe" name="frappe" type="radio"/>
-                        <? } ?>
+                        <input value="2" id="frappe" name="frappe" type="radio" <? if(player.levelFrappe=="2") { ?> checked <? } ?>/>
                         <span>Uniquement proche du but</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <? if(player.levelFrappe=="3") { ?>
-                        <input value="3" id="frappe" name="frappe" type="radio" checked/>
-                        <? } else { ?>
-                        <input value="3" id="frappe" name="frappe" type="radio"/>
-                        <? } ?>
+                        <input value="3" id="frappe" name="frappe" type="radio" <? if(player.levelFrappe=="3") { ?> checked <? } ?>/>
                         <span>J'en abuse parfois (je frappe dans la mauvaise direction)<br>De près et de loin mais c’est pas toujours précis</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <? if(player.levelFrappe=="4") { ?>
-                        <input value="4" id="frappe" name="frappe" type="radio" checked/>
-                        <? } else { ?>
-                        <input value="4" id="frappe" name="frappe" type="radio"/>
-                        <? } ?>
+                        <input value="4" id="frappe" name="frappe" type="radio" <? if(player.levelFrappe=="4") { ?> checked <? } ?>/>
                         <span>Je frappe précisément de loin et de près</span>
                     </label>
                 </p>
@@ -284,41 +187,25 @@
                 </p>
                 <p>
                     <label>
-                        <? if(player.levelDefense=="1") { ?>
-                        <input value="1" id="defense" name="defense" type="radio" checked required/>
-                        <? } else { ?>
-                        <input value="1" id="defense" name="defense" type="radio" required/>
-                        <? } ?>
+                        <input value="1" id="defense" name="defense" type="radio" <? if(player.levelDefense=="1") { ?> checked <? } ?> required/>
                         <span>C'est pas mon truc</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <? if(player.levelDefense=="2") { ?>
-                        <input value="2" id="defense" name="defense" type="radio" checked/>
-                        <? } else { ?>
-                        <input value="2" id="defense" name="defense" type="radio"/>
-                        <? } ?>
+                        <input value="2" id="defense" name="defense" type="radio" <? if(player.levelDefense=="2") { ?> checked <? } ?> />
                         <span>Uniquement lorsque le ballon est proche.<br>Si je suis dribblé ou si je perd la balle je ne suis pas toujours mon joueur </span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <? if(player.levelDefense=="3") { ?>
-                        <input value="3" id="defense" name="defense" type="radio" checked/>
-                        <? } else { ?>
-                        <input value="3" id="defense" name="defense" type="radio"/>
-                        <? } ?>
+                        <input value="3" id="defense" name="defense" type="radio" <? if(player.levelDefense=="3") { ?> checked <? } ?> />
                         <span>Je me place et je suis mon joueur jusqu’à la fin de l’action.<br>Quand je suis en attaque je ne fais pas toujours l’effort de revenir</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <? if(player.levelDefense=="4") { ?>
-                        <input value="4" id="defense" name="defense" type="radio" checked/>
-                        <? } else { ?>
-                        <input value="4" id="defense" name="defense" type="radio"/>
-                        <? } ?>
+                        <input value="4" id="defense" name="defense" type="radio" <? if(player.levelDefense=="4") { ?> checked <? } ?> />
                         <span>Je me place et je suis mon joueur jusqu’à la fin de l’action.<br>Je fais toujours l’effort de revenir ou j’ai tendance à rester en défense lorsque mon équipe attaque</span>
                     </label>
                 </p>
@@ -327,6 +214,9 @@
         <div class="row">
             <a id="updateProfil" class="buttonGreen">Update</a>
         </div>
+        <!-- TODO ajout autre information si profil admin -->
+        <!-- TODO ajout bouton de suppression -->
+        <!-- TODO ajout bouton de création -->
     </div>
     <div class="fixed-action-btn direction-top active" style="bottom: 45px; right: 24px;">
         <a data-target="helper" class="btn-floating btn-large waves-effect waves-light modal-trigger green lighten-2 pulse"><i class="material-icons">help_outline</i></a>
@@ -353,6 +243,6 @@
     </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<?!= includeWithArgs("front/js/profil-js", {mailList: mailList}); ?>
+<?!= include("front/js/profil-js"); ?>
 <?!= include("front/js/nav-js"); ?>
 </html>

@@ -1,0 +1,226 @@
+<script>
+    sortTableTeamChar(0);
+
+    function redirectProfilPage(element) {
+        var mail;
+        var parameter = {};
+        google.script.url.getLocation(function (location) {
+            mail = element.parentNode.parentNode.firstChild.textContent;
+            parameter = location.parameter;
+            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=profil&mail=" + String(parameter.mail) + "&key=" + String(parameter.key)+"&profilMail="+String(mail);
+        });
+    }
+
+
+    function inscriptionTeam(element) {
+        M.toast({ html: "En cours" });
+        var mail = element.parentNode.parentNode.firstChild.textContent;
+        google.script.run.withSuccessHandler(inscriptionPlayer).withFailureHandler(displayErrorActionTeam).getPlayerWithMail(mail);
+    }
+
+    function inscriptionPlayer(player) {
+        var parameter = {
+            mail: player.mail,
+            key: player.keyWithSecurity,
+            answer: "Oui"
+        };
+        google.script.run.withSuccessHandler(displaySuccessActionTeam).withFailureHandler(displayErrorActionTeam).inscription(parameter);
+    }
+
+    function desinscriptionTeam(element) {
+        M.toast({ html: "En cours" });
+        var mail = element.parentNode.parentNode.firstChild.textContent;
+        google.script.run.withSuccessHandler(desinscriptionPlayer).withFailureHandler(displayErrorActionTeam).getPlayerWithMail(mail);
+    }
+
+    function desinscriptionPlayer(player) {
+        var parameter = {
+            mail: player.mail,
+            key: player.keyWithSecurity,
+            answer: "Non"
+        };
+        google.script.run.withSuccessHandler(displaySuccessActionTeam).withFailureHandler(displayErrorActionTeam).inscription(parameter);
+    }
+
+    function confirmationTeam(element) {
+        M.toast({ html: "En cours" });
+        var mail = element.parentNode.parentNode.firstChild.textContent;
+        google.script.run.withSuccessHandler(confirmationPlayer).withFailureHandler(displayErrorActionTeam).getPlayerWithMail(mail);
+    }
+
+    function confirmationPlayer(player) {
+        var parameter = {
+            mail: player.mail,
+            key: player.keyWithSecurity,
+            answer: "Oui"
+        };
+        google.script.run.withSuccessHandler(displaySuccessActionTeam).withFailureHandler(displayErrorActionTeam).confirmation(parameter);
+    }
+
+
+    function retractationTeam(element) {
+        M.toast({ html: "En cours" });
+        var mail = element.parentNode.parentNode.firstChild.textContent;
+        google.script.run.withSuccessHandler(retractationPlayer).withFailureHandler(displayErrorActionTeam).getPlayerWithMail(mail);
+    }
+
+    function retractationPlayer(player) {
+        var parameter = {
+            mail: player.mail,
+            key: player.keyWithSecurity,
+            answer: "Non"
+        };
+        google.script.run.withSuccessHandler(displaySuccessActionTeam).withFailureHandler(displayErrorActionTeam).confirmation(parameter);
+    }
+
+    function displaySuccessActionTeam() {
+        M.toast({ html: "Success !!!" });
+    }
+
+    function displayErrorActionTeam() {
+        M.toast({ html: "Erreur !!!" });
+    }
+
+    function sortTableTeamNumber(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("team");
+        switching = true;
+        // Set the sorting direction to ascending:
+        dir = "asc";
+        /* Make a loop that will continue until
+        no switching has been done: */
+        while (switching) {
+            // Start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /* Loop through all table rows (except the
+            first, which contains table headers): */
+            for (i = 1; i < (rows.length - 1); i++) {
+                // Start by saying there should be no switching:
+                shouldSwitch = false;
+                /* Get the two elements you want to compare,
+                one from current row and one from the next: */
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                /* Check if the two rows should switch place,
+                based on the direction, asc or desc: */
+
+                if (x.innerHTML === "") {
+                    x.innerHTML = "99";
+                }
+                if (y.innerHTML === "") {
+                    y.innerHTML = "99";
+                }
+                if (n === 1) {
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            // If so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            // If so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                } else {
+                    if (dir == "asc") {
+                        if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                            // If so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                            // If so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+
+                }
+                if (x.innerHTML === "99") {
+                    x.innerHTML = "";
+                }
+                if (y.innerHTML === "99") {
+                    y.innerHTML = "";
+                }
+            }
+            if (shouldSwitch) {
+                /* If a switch has been marked, make the switch
+                and mark that a switch has been done: */
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                // Each time a switch is done, increase this count by 1:
+                switchcount++;
+            } else {
+                /* If no switching has been done AND the direction is "asc",
+                set the direction to "desc" and run the while loop again. */
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+
+    function sortTableTeamChar(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("team");
+        switching = true;
+        // Set the sorting direction to ascending:
+        dir = "asc";
+        /* Make a loop that will continue until
+        no switching has been done: */
+        while (switching) {
+            // Start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /* Loop through all table rows (except the
+            first, which contains table headers): */
+            for (i = 1; i < (rows.length - 1); i++) {
+                // Start by saying there should be no switching:
+                shouldSwitch = false;
+                /* Get the two elements you want to compare,
+                one from current row and one from the next: */
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                /* Check if the two rows should switch place,
+                based on the direction, asc or desc: */
+
+
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        // If so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        // If so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+
+            }
+            if (shouldSwitch) {
+                /* If a switch has been marked, make the switch
+                and mark that a switch has been done: */
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                // Each time a switch is done, increase this count by 1:
+                switchcount++;
+            } else {
+                /* If no switching has been done AND the direction is "asc",
+                set the direction to "desc" and run the while loop again. */
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+</script>
