@@ -9,7 +9,6 @@ function loadPageTeam() {
     data.forEach(function (p) {
         tableTeam += "<tr>"
             + "<td id='mail'>" + p[0] + "</td>"
-            + "<td>" + p[1] + "</td>"
             + "<td>" + p[2] + "</td>"
             + "<td>" + p[3] + "</td>"
             + "<td>" + p[6] + "</td>"
@@ -42,7 +41,7 @@ function loadPageTeam() {
         mail: param.mail,
         key: param.key,
         admin: param.isAdmin,
-        testing: rangeModeTest.getValue(),
+        testing: isParameterTrue("modeTest"),
         tableTeam: tableTeam
     })
 

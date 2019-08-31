@@ -19,7 +19,7 @@
             </th></tr>
             </table>
         </div>
-        <? if(nbAvailableSlots<5 && nbAvailableSlots>0) { ?>
+        <? if(nbAvailableSlots<=5 && nbAvailableSlots>0) { ?>
         <div class="row">
             <h4 class="title">Il reste <?=nbAvailableSlots?> place(s)</h4>
         </div>

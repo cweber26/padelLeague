@@ -103,7 +103,7 @@ function loadPageProfil() {
         key: param.key,
         player: player,
         admin: param.isAdmin,
-        testing: rangeModeTest.getValue()
+        testing: isParameterTrue("modeTest")
     });
 }
 
@@ -238,4 +238,18 @@ function replaceInSheet(values, to_replace, replace_with) {
         });
         values[row] = replaced_values;
     }
+}
+
+function playersInTheMatchMail() {
+    if(parametersMap.get("numberPlayerInMatch")>0) {
+        return parametersMap.get("matchPlayerMailList").split(',');
+    }
+    return [];
+}
+
+function playersInWaitingListMail() {
+    if(parametersMap.get("numberPlayerInWaitingList")>0) {
+        return parametersMap.get("waitingListPlayerMailList").split(',');
+    }
+    return [];
 }

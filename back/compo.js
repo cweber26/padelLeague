@@ -1,24 +1,9 @@
-function saveMatchCompo() {
-    rangeMatchDate.setValue(nextMatchDate);
-    rangeMatchCompo.setValues(rangeCompoUpdated.getValues());
-    rangeScoreRed.clearContent();
-    rangeScoreBlue.clearContent();
-}
-
-function updateMatchCompo() {
-    if(!rangeMatchDate.isBlank()) {
-        rangeMatchDate.setValue(nextMatchDate);
-        rangeMatchCompo.setValues(rangeCompoUpdated.getValues());
-    }
-}
-
-
 function loadPageCompo() {
     var players = [];
     var confirmations = [];
     var effectif = "";
     var listeAttente = "";
-    if (nbPlayersAvailable > 0) {
+    if (parametersMap.get("numberPlayerInMatch") > 0) {
         var data = playersInTheMatchForFinalCompo();
         data.forEach(function (p) {
             players.push(p[1]);
@@ -35,20 +20,14 @@ function loadPageCompo() {
             }
         });
     }
-    if (nbPlayersWaiting > 0) {
+    if (parametersMap.get("numberPlayerInWaitingList") > 0) {
         playersInWaitingListMail().forEach(function (m) {
+            Logger.log(m);
             var player = getPlayerWithMail(m);
             listeAttente += "<tr>"
                 + "<td>" + player.fullName + "</td>"
                 + "</tr>";
         });
-    }
-    var score = {};
-    if (!rangeScoreBlue.isBlank()) {
-        score.blue = rangeScoreBlue.getValue();
-    }
-    if (!rangeScoreRed.isBlank()) {
-        score.red = rangeScoreRed.getValue();
     }
 
     return render("front/page/compo", "Barbeuc : Composition", {
@@ -56,14 +35,23 @@ function loadPageCompo() {
         key: param.key,
         date: matchDayGapInFrench(true),
         compo: players,
-        inscriptionPhase: !rangeSending1.isBlank(),
-        confirmationPhase: !rangeReminder.isBlank(),
+        inscriptionPhase: isParameterNotBlank("mailSendingPrio1"),
+        confirmationPhase: isParameterNotBlank("mailSendingConfirmation"),
+        scoreSaved: isParameterNotBlank("scoreSaved"),
         confirmations: confirmations,
         effectif: effectif,
         listeAttente: listeAttente,
         admin: param.isAdmin,
-        score: score,
-        cancelMatch: rangeCancelMatch.getValue(),
-        testing: rangeModeTest.getValue()
+        cancelMatch: parametersMap.get("isMatchCancel"),
+        testing: isParameterTrue("modeTest"),
+        scoreRed: parametersMap.get("lastScoreRed"),
+        scoreBlue: parametersMap.get("lastScoreBlue")
     });
+}
+
+
+function playersInTheMatchForFinalCompo() {
+    if (parametersMap.get("numberPlayerInMatch") > 0) {
+        return sheetComposition.getRange(13, 2, parametersMap.get("numberPlayerMatch"), 11).getValues();
+    }
 }

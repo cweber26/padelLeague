@@ -1,17 +1,12 @@
 function controlAndCancelOrRelaunch() {
-    if (rangeCancelMatch.isBlank() && rangeControl.isBlank()) {
-        if ((nbPlayersAvailable > 0 && nbPlayersAvailable < nbLimitPlayers)) {
-            Logger.log("Automatic cancel. nbPlayersAvailable : "+nbPlayersAvailable+" / nbLimitPlayers : "+nbLimitPlayers);
+    if (!isMatchCancel() && isParameterBlank("controlDone")) {
+        if ((parametersMap.get("numberPlayerInMatch") > 0 && parametersMap.get("numberPlayerInMatch") < parametersMap.get("minPlayerForAutoCancelation"))) {
             cancelMatchAndSendMail(true);
-
-
-
             sendMailForAdmin("Pense à annuler le match " + matchDayGapInFrench(true),
 
                 "<h1><a href='https://my.urbansoccer.fr/user'>UrbanSoccer</a></h1>");
 
-        } else if (nbPlayersAvailable >= nbLimitPlayers && nbPlayersAvailable < nbMaxPlayers) {
-            Logger.log("Automatic relaunch. nbPlayersAvailable : "+nbPlayersAvailable+" / nbLimitPlayers : "+nbLimitPlayers);
+        } else if (parametersMap.get("numberPlayerInMatch") >= parametersMap.get("minPlayerForAutoCancelation") && parametersMap.get("numberPlayerInMatch") < parametersMap.get("numberPlayerMatch")) {
             sendInscriptionMailForAPrio(3);
         }
         logRunDate("control");

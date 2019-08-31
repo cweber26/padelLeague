@@ -1,5 +1,5 @@
 function sendMailForAdmin(subject, contentHtml) {
-    var mails = mailsAdmin.split(',');
+    var mails = parametersMap.get("adminMailList").split(',');
     for (var i in mails) {
         var player = getPlayerWithMail(mails[i]);
         sendMailForAnAdmin(player, subject, contentHtml);
@@ -15,10 +15,10 @@ function sendMailForAnAdmin(player, subject, contentHtml) {
 }
 
 function sendMail(mail, subject, html) {
-    if (!modeTest) {
+    if (isParameterFalse("modeTest")) {
         MailApp.sendEmail({
             to: mail,
-            subject: applicationName + " " + subject,
+            subject: parametersMap.get("applicationName") + " " + subject,
             htmlBody: getFinalBody(mail, html)
         });
     } else {
@@ -31,10 +31,10 @@ function getFinalBody(mail, html) {
 }
 
 function sendTestMail(mail, subject, html) {
-    if (mail.indexOf(mailTester) > -1) {
+    if (mail.indexOf(parametersMap.get("mailTester")) > -1) {
         MailApp.sendEmail({
-            to: mailTester,
-            subject: "⚠️Test⚠️ " + applicationName + " " + subject,
+            to: parametersMap.get("mailTester"),
+            subject: "⚠️Test⚠️ " + parametersMap.get("applicationName") + " " + subject,
             htmlBody: getFinalBody(mail, html)
         });
     }
@@ -60,12 +60,12 @@ function getUrlMail(player) {
 
 function getStadiumInfo() {
     return {
-        name: stadiumName,
-        address: address,
-        urlAddress: urlAddress,
-        cost: costMatch,
-        reservationName: reservationName,
-        beginGameHour: beginGameHour,
-        infoGame: infoGame
+        name: parametersMap.get("nextMatchStadiumName"),
+        address: parametersMap.get("nextMatchStadiumAddress"),
+        urlAddress: parametersMap.get("nextMatchStadiumUrlMaps"),
+        cost: parametersMap.get("nextMatchStadiumCost"),
+        reservationName: parametersMap.get("nextMatchReservationName"),
+        beginGameHour: parametersMap.get("nextMatchBeginGameHour"),
+        infoGame: parametersMap.get("nextMatchComment")
     };
 }

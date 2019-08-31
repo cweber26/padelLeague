@@ -1,5 +1,5 @@
 function playerNameInSheetResultFilter() {
-    return sheetResultFilter.getRange(4, 1, sheetResultFilter.getRange("A4:A").getValues().filter(String).length, 1).getValues();
+    return sheetResultFilter.getRange(1, 1, sheetResultFilter.getRange("A1:A").getValues().filter(String).length, 1).getValues();
 }
 
 // noinspection JSUnusedGlobalSymbols
@@ -16,7 +16,7 @@ function stats(players) {
 }
 
 function statsForAPlayer(playerName) {
-    var resultFilterColumn = 13;
+    var resultFilterColumn = 12;
     var row = getRowSheetResultFilter(playerName);
     var serie = sheetResultFilter.getRange(row, resultFilterColumn + 4, 1, sheetResultFilter.getLastColumn()).getValues()[0].filter(String);
     var maxWin = 0;
@@ -71,7 +71,7 @@ function getRowSheetResultFilter(playerName) {
     var playerNames = playerNameInSheetResultFilter();
     for (var i = 0; i < playerNames.length; i++) {
         if (playerNames[i][0] == playerName) {
-            return i + 4;
+            return i+1;
         }
     }
 }
@@ -101,6 +101,6 @@ function loadPageStat() {
         key: param.key,
         table: stats,
         admin: param.isAdmin,
-        testing: rangeModeTest.getValue()
+        testing: isParameterTrue("modeTest")
     });
 }

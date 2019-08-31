@@ -1,5 +1,5 @@
 function sendInscriptionMailForAPrio(prio) {
-    if (rangeCancelMatch.isBlank() && nbAvailableSlots > 0) {
+    if (!isMatchCancel() && parametersMap.get("numberAvailableSlotInMatch") > 0) {
         var playersList = playersTeamList();
         for (var i in playersList) {
             var player = initPlayer(playersList[i]);
@@ -14,12 +14,12 @@ function sendInscriptionMailForAPrio(prio) {
 function sendInscriptionMailForAPlayer(player) {
     var body = includeWithArgs("front/mail/mailInscription", {
         date: matchDayGapInFrench(true),
-        nbAvailableSlots: nbAvailableSlots,
+        nbAvailableSlots: parametersMap.get("numberAvailableSlotInMatch"),
         urlMail: getUrlMail(player),
         stadium: getStadiumInfo(),
         evalToDo: !player.haveDoneAutoEvaluation
     });
-    sendMail(player.mail, "Inscription au match de Footsal du " + nextMatchDayFrench + " ✅", body);
+    sendMail(player.mail, "Inscription au match de Footsal du " + parametersMap.get("nextMatchDateFrench") + " ✅", body);
 }
 
 
@@ -60,7 +60,7 @@ function inscription(parameter) {
         sheetInscription.getRange(row, 3).setValue(parameter.key);
         sheetInscription.getRange(row, 4).setValue(parameter.answer);
 
-        if (nbPlayersAvailable == (nbMaxPlayers - 1) && parameter.answer == "Oui") {
+        if (parametersMap.get("numberPlayerInMatch") == (parametersMap.get("numberPlayerMatch") - 1) && parameter.answer == "Oui") {
             sendMatchCompletMail();
             createCalendarEvent();
         }

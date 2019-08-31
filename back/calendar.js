@@ -1,13 +1,13 @@
 function createCalendarEvent() {
-    if (rangeGoogleEvent.isBlank()) {
+    if (isParameterBlank("creationGoogleEvent")) {
         var calendar = CalendarApp.getDefaultCalendar();
         var begin = new Date(Utilities.formatDate(nextMatchDate, "Europe/Paris", "MM/dd/yyyy") + " 12:00:00");
         var end = new Date(Utilities.formatDate(nextMatchDate, "Europe/Paris", "MM/dd/yyyy") + " 14:00:00");
-        var mails = playersInTheMatchMails;
-        if (modeTest) {
-            mails = mailTester;
+        var mails = parametersMap.get("matchPlayerMailList");
+        if (parametersMap.get("modeTest")) {
+            mails = parametersMap.get("mailTester");
         }
-        calendar.createEvent(applicationName, begin, end, {location: address, guests: mails, sendInvites: false});
+        calendar.createEvent(parametersMap.get("applicationName"), begin, end, {location: parametersMap.get("nextMatchStadiumAddress"), guests: mails, sendInvites: false});
         logRunDate("googleEvent");
     }
 }
@@ -23,9 +23,9 @@ function deleteCalendarEvent() {
     var end = new Date(Utilities.formatDate(nextMatchDate, "Europe/Paris", "MM/dd/yyyy") + " 14:00:00");
     var events = calendar.getEvents(begin, end);
     for (var i in events) {
-        if (events[i].getTitle() == applicationName) {
+        if (events[i].getTitle() == parametersMap.get("applicationName")) {
             events[i].deleteEvent();
         }
     }
-    rangeGoogleEvent.clearContent();
+    clearParameterValue("creationGoogleEvent");
 }

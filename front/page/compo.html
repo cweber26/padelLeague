@@ -84,49 +84,47 @@
 
     <? if(admin) { ?>
     <div class="row">
-        <div class="input-field col s4"></div>
-        <div class="input-field col s2">
-            <label for="scoreRouge">Rouge</label><input id="scoreRouge" type="number" class="validate" value="<?=score.red?>" required>
+        <div class="input-field col s2 offset-s4">
+            <label for="scoreRouge">Rouge</label><input id="scoreRouge" type="number" class="validate" value="<?=scoreRed?>" required>
         </div>
         <div class="input-field col s2">
-            <label for="scoreBleu">Bleu</label><input id="scoreBleu" type="number" class="validate" value="<?=score.blue?>" required>
+            <label for="scoreBleu">Bleu</label><input id="scoreBleu" type="number" class="validate" value="<?=scoreBlue?>" required>
         </div>
     </div>
     <div class="row">
-        <div class="input-field col s4"></div>
-        <div class="input-field col s4">
-            <a id="score" class="buttonGreen">Score</a>
+        <div class="input-field col s4 offset-s4">
+            <a id="score" class="buttonGreen" onclick="saveScoreCheckJs()">Score</a>
         </div>
     </div>
-    <? } else if(score.red && score.blue) { ?>
+    <? } else if(scoreRed && scoreBlue) { ?>
     <div class="row">
         <div class="mainScore valign-wrapper">
-            <div class="score red lighten-2"><?=score.red?></div>
-            <div class="score blue lighten-2"><?=score.blue?></div>
+            <div class="score red lighten-2"><?=scoreRed?></div>
+            <div class="score blue lighten-2"><?=scoreBlue?></div>
         </div>
     </div>
-    <? } ?>
+    <?}?>
+
     <? if(inscriptionPhase && !confirmationPhase) { ?>
     <div class="row">
-        <div class="input-field col s4"></div>
-        <div class="input-field col s2">
-            <a id="inscription" class="buttonGreen">Inscription</a>
+        <div class="input-field col s2 offset-s4">
+            <a id="inscription" class="buttonGreen" onclick="inscriptionJs()">Inscription</a>
         </div>
         <div class="input-field col s2">
-            <a id="desinscription" class="buttonRed">Désinscription</a>
+            <a id="desinscription" class="buttonRed" onclick="desinscriptionJs()">Désinscription</a>
         </div>
     </div>
-    <? } else if(confirmationPhase) { ?>
+    <? } else if(confirmationPhase && !scoreSaved) { ?>
     <div class="row">
-        <div class="input-field col s4"></div>
-        <div class="input-field col s2">
-            <a id="confirmation" class="buttonGreen">Confirmation</a>
+        <div class="input-field col s2 offset-s4">
+            <a id="confirmation" class="buttonGreen" onclick="confirmationJs()">Confirmation</a>
         </div>
         <div class="input-field col s2">
-            <a id="deconfirmation" class="buttonRed">Désinscription</a>
+            <a id="deconfirmation" class="buttonRed" onclick="retractationJs()">Désinscription</a>
         </div>
     </div>
     <? } ?>
+
     <? if (effectif != "") { ?>
     <div class="row">
         <table id="equipes" class="centered highlight">
@@ -166,31 +164,33 @@
     <? } ?>
     <? } ?>
     <? if(admin) { ?>
+    <div class="row"><h4>Admin action</h4></div>
     <div class="row">
         <div class="col s3">
-            <a id="sendPrio1" class="buttonGreen">Envoyer mail prio 1</a>
+            <a id="sendPrio1" class="buttonGreen" onclick="sendPrio1Js()">Envoyer mail prio 1</a>
         </div>
         <div class="col s3">
-            <a id="sendPrio2" class="buttonGreen">Envoyer mail prio 2</a>
+            <a id="sendPrio2" class="buttonGreen" onclick="sendPrio2Js()">Envoyer mail prio 2</a>
         </div>
         <div class="col s3">
-            <a id="sendPrio3" class="buttonGreen">Envoi mail prio 3</a>
+            <a id="sendPrio3" class="buttonGreen" onclick="sendPrio3Js()">Envoi mail prio 3</a>
         </div>
         <div class="col s3">
-            <a id="sendReminder" class="buttonGreen">Envoi mail Rappel</a>
+            <a id="sendReminder" class="buttonGreen" onclick="sendReminderJs()">Envoi mail rappel</a>
         </div>
     </div>
     <div class="row">
         <div class="col s3">
-            <a id="sendConfirmation" class="buttonGreen">Envoi mail Confirmation</a>
+            <a id="sendConfirmation" class="buttonGreen" onclick="sendConfirmationJs()">Envoi mail confirmation</a>
         </div>
         <div class="col s3">
-            <a id="cleaning" class="buttonRed">Purger le match</a>
+            <a id="cleaning" class="buttonRed" onclick="cleaningJs()">Purger le match</a>
         </div>
         <div class="col s3">
-            <a id="cancelMatch" class="buttonRed">Annuler le Match</a>
+            <a id="cancelMatch" class="buttonRed" onclick="cancelMatchJs()">Annuler le match</a>
         </div>
     </div>
+    <!-- TODO ajout table inscription ordre -->
     <? } ?>
 </div>
 

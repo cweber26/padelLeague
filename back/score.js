@@ -2,9 +2,9 @@
 function saveScore(scoreValue) {
     if (scoreValue.rouge && scoreValue.bleu) {
         var row = sheetResult.getRange("A1:A").getValues().filter(String).length + 2;
-        var players = rangeMatchCompo.getValues();
-        if (sheetResult.getRange(row - 1, 1).getValue().getTime() != rangeMatchDate.getValue().getTime()) {
-            sheetResult.getRange(row, 1).setValue(rangeMatchDate.getValue());
+        var players = playersInTheMatchForFinalCompo();
+        if (sheetResult.getRange(row - 1, 1).getValue().getTime() != parametersMap.get("nextMatchDate").getTime()) {
+            sheetResult.getRange(row, 1).setValue(parametersMap.get("nextMatchDate"));
             sheetResult.getRange(row, 2).setValue(players[0][0]);
             sheetResult.getRange(row, 3).setValue(players[1][0]);
             sheetResult.getRange(row, 4).setValue(players[2][0]);
@@ -15,14 +15,15 @@ function saveScore(scoreValue) {
             sheetResult.getRange(row, 9).setValue(players[7][0]);
             sheetResult.getRange(row, 10).setValue(players[8][0]);
             sheetResult.getRange(row, 11).setValue(players[9][0]);
-        } else if (sheetResult.getRange(row - 1, 1).getValue().getTime() == rangeMatchDate.getValue().getTime()) {
+        } else if (sheetResult.getRange(row - 1, 1).getValue().getTime() == parametersMap.get("nextMatchDate").getTime()) {
             row = row - 1;
         }
         sheetResult.getRange(row, 12).setValue(scoreValue.rouge);
         sheetResult.getRange(row, 13).setValue(scoreValue.bleu);
-        rangeScoreRed.setValue(scoreValue.rouge);
-        rangeScoreBlue.setValue(scoreValue.bleu);
+        updateParameterValue("lastScoreRed", scoreValue.rouge);
+        updateParameterValue("lastScoreBlue", scoreValue.bleu);
+        logRunDate("scoreSaved");
         stats(players);
-        logRunDate("scoreSave");
+
     }
 }

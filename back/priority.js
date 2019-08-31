@@ -4,17 +4,26 @@ function updatePriority() {
 }
 
 function deleteOldPriority() {
-    playersInTheMatchMail().forEach(function (m) {
-            deletePriorityWithMail(m);
-        }
-    );
+    if (isMatchCancel()) {
+        playersInTheMatchMail().forEach(function (m) {
+                deletePriorityWithMail(m);
+            }
+        );
+    }
 }
 
 function saveNewPriority() {
-    playersInWaitingListMail().forEach(function (m) {
-            addPriorityWithMail(m);
-        }
-    );
+    if (!isMatchCancel()) {
+        playersInWaitingListMail().forEach(function (m) {
+                addPriorityWithMail(m);
+            }
+        );
+    } else {
+        playersInTheMatchMail().forEach(function (m) {
+                addPriorityWithMail(m);
+            }
+        );
+    }
 
 }
 
@@ -28,6 +37,7 @@ function addPriorityWithMail(mail) {
 }
 
 function updatePriorityWithMail(mail, value) {
+    Logger.log("updatePriorityWithMail with mail %s and value %s", mail, value);
     var row = getRowSheetTeamWithMail(mail);
     sheetTeam.getRange(row, 24).setValue(value);
 }

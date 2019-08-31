@@ -18,6 +18,6 @@ function loadPageRecord() {
         participation: participation,
         victory: victory,
         lose: lose,
-        testing: rangeModeTest.getValue()
+        testing: isParameterTrue("modeTest")
     });
 }

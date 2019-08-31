@@ -1,22 +1,37 @@
-var currentWeekDay = parseInt(Utilities.formatDate(new Date(), "GMT", "u ### EEEE - dd/MM/yyyy"));
-var nextMatchDate = rangeNextGameDate.getValue();
+var currentWeekDay = parseInt(Utilities.formatDate(new Date(), "Europe/Paris", "u ### EEEE - dd/MM/yyyy"));
+var nextMatchDate = parametersMap.get("nextMatchDate");
 var nextMatchDay = nextMatchDate.getDay();
+var scheduleValues = sheetSchedule.getRange(1, 1).getDataRegion().getValues();
 
 function setNextMatchDate() {
-    switch (currentWeekDay) {
-        case 1:
-            return rangeNextGameDate.setValue(nextDay(3));
-        case 2:
-            return rangeNextGameDate.setValue(nextDay(3));
-        case 3:
-            return rangeNextGameDate.setValue(nextDay(5));
-        case 4:
-            return rangeNextGameDate.setValue(nextDay(5));
-        case 5:
-            return rangeNextGameDate.setValue(nextDay(3));
-        default:
-            return rangeNextGameDate.setValue(nextDay(3));
+    //lundi = 1
+    //dimanche = 7
+    var currentHourTime = Utilities.formatDate(new Date(), "Europe/Paris", "HH");
+
+    var nextDayValue;
+    var firstDay;
+    if (Number(currentHourTime) > 14) {
+        firstDay = (currentWeekDay + 1);
+    } else {
+        firstDay = (currentWeekDay);
     }
+
+    for (var i = 0; i < 7; i++) {
+        var dayToTest = (firstDay+i);
+        if (dayToTest > 7) {
+            dayToTest -=7;
+        }
+        if(isADayWithMatch(dayToTest)){
+            nextDayValue = nextDay(dayToTest);
+            break;
+        }
+    }
+
+    updateParameterValue("nextMatchDate", nextDayValue);
+}
+
+function isADayWithMatch(dayNumber) {
+    return (scheduleValues[1][dayNumber]);
 }
 
 function nextDay(weekDay) {
@@ -70,15 +85,15 @@ function matchDayGapInFrench(withPronom) {
             }
         default:
             if (withPronom) {
-                return "du " + nextMatchDayFrench;
+                return "du " + parametersMap.get("nextMatchDateFrench");
             } else {
-                return nextMatchDayFrench;
+                return parametersMap.get("nextMatchDateFrench");
             }
     }
 }
 
 function getDateFormat(date) {
-    if(date!="") {
+    if (date != "") {
         return Utilities.formatDate(new Date(date), "GMT", "dd/MM/yy");
     } else {
         return "";
@@ -86,7 +101,7 @@ function getDateFormat(date) {
 }
 
 function getDateTimeFormat(date) {
-    if(date!="") {
+    if (date != "") {
         return Utilities.formatDate(new Date(date), "GMT", "dd/MM/yy HH:mm:ss");
     } else {
         return "";

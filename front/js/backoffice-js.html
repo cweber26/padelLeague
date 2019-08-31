@@ -55,6 +55,9 @@
         parameterApplication.defensiveBonusGap = document.getElementById("defensiveBonusGap").value;
         parameterApplication.modeTest = document.getElementById("modeTest").checked;
         parameterApplication.mailTester = document.getElementById("mailTester").value;
+        parameterApplication.applicationName = document.getElementById("applicationName").value;
+        parameterApplication.nbPlayersMatch = document.getElementById("nbPlayersMatch").value;
+        parameterApplication.nbLimitPlayers = document.getElementById("nbLimitPlayers").value;
 
         console.log(parameterApplication);
 
@@ -64,6 +67,7 @@
 
         function successUpdateParam() {
             M.toast({html: "Mise à jour effectuée"});
+
         }
 
         function failureUpdateParam() {

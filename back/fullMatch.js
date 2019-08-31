@@ -1,6 +1,6 @@
 function sendMatchCompletMail() {
-    if (rangeCancelMatch.isBlank()) {
-        var mails = mailsAdmin.split(',');
+    if (!isMatchCancel()) {
+        var mails = parametersMap.get("adminMailList").split(',');
         for (var i in mails) {
             var player = getPlayerWithMail(mails[i]);
             sendMatchCompletMailForAPlayer(player);
@@ -9,7 +9,7 @@ function sendMatchCompletMail() {
 }
 
 function sendMatchCompletMailForAPlayer(player) {
-    sendMail(player.mail, "Match du " + nextMatchDayFrench + " complet 🤙🤙", includeWithArgs("front/mail/mailMatchComplet", {
+    sendMail(player.mail, "Match du " + parametersMap.get("nextMatchDateFrench") + " complet 🤙🤙", includeWithArgs("front/mail/mailMatchComplet", {
         date: matchDayGapInFrench(true),
         compo: getCompoPlayersListForMail(),
         urlMail: getUrlMail(player)

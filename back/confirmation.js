@@ -1,5 +1,5 @@
 function sendConfirmMail() {
-    if (rangeCancelMatch.isBlank() && rangeConfirmation.isBlank()) {
+    if (!isMatchCancel() && isParameterBlank("mailSendingConfirmation")) {
 
         var mails = playersInTheMatchMail();
         for (var i in mails) {
@@ -13,13 +13,13 @@ function sendConfirmMail() {
 function sendConfirmMailForAPlayer(player, isNewPlayer) {
     var body = includeWithArgs("front/mail/mailConfirmation", {
         date: matchDayGapInFrench(true),
-        nbAvailableSlots: nbAvailableSlots,
+        nbAvailableSlots: parametersMap.get("numberAvailableSlotInMatch"),
         stadium: getStadiumInfo(),
         urlMail: getUrlMail(player),
         isNewPlayer: isNewPlayer,
         compo: getCompoPlayersListForMail(),
-        playersInTheMatchMails: playersInTheMatchMails,
-        subjectMailContact: encodeURIComponent(applicationName + " Conversation du match du" + nextMatchDayFrench)
+        playersInTheMatchMails: parametersMap.get("matchPlayerMailList"),
+        subjectMailContact: encodeURIComponent(parametersMap.get("applicationName") + " Conversation du match du" + parametersMap.get("nextMatchDateFrench"))
     });
     sendMail(player.mail, "Confirmation de présence au match de Footsal " + matchDayGapInFrench(true) + " ✅", body);
 }

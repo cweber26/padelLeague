@@ -1,15 +1,12 @@
 function sendReminderMail() {
-    if (rangeCancelMatch.isBlank() && rangeReminder.isBlank()) {
-        if (nbPlayersAvailable == nbMaxPlayers) {
-            saveMatchCompo();
-        }
+    if (!isMatchCancel() && isParameterBlank("mailSendingReminder")) {
 
         var matchMails = playersInTheMatchMail();
         for (var i in matchMails) {
             sendRemindMailForAPlayer(getPlayerWithMail(matchMails[i]), false);
         }
 
-        if (nbPlayersWaiting > 0) {
+        if (parametersMap.get("numberPlayerInWaitingList") > 0) {
             var waitingListMails = playersInWaitingListMail();
             for (var j in waitingListMails) {
                 sendWaitingListMail(getPlayerWithMail(waitingListMails[j]));
@@ -34,7 +31,7 @@ function sendRemindMailForAPlayer(player, isNewPlayer) {
 function getBodyMailReminder(player, isNewPlayer) {
     return includeWithArgs("front/mail/mailReminder", {
         date: matchDayGapInFrench(true),
-        nbAvailableSlots: nbAvailableSlots,
+        nbAvailableSlots: parametersMap.get("numberAvailableSlotInMatch"),
         compo: getCompoPlayersListForMail(),
         isNewPlayer: isNewPlayer,
         urlMail: getUrlMail(player),
@@ -44,7 +41,7 @@ function getBodyMailReminder(player, isNewPlayer) {
 
 function getCompoPlayersListForMail() {
     var players = [];
-    if (nbPlayersAvailable > 0) {
+    if (parametersMap.get("numberPlayerInMatch") > 0) {
         var data = playersInTheMatchForFinalCompo();
         data.forEach(function (p) {
             players.push(p[1]);

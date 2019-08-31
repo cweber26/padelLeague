@@ -3,12 +3,16 @@ function cleaning() {
         sheetInscription.deleteRows(2, sheetInscription.getLastRow() - 1);
     }
 
-    rangeSending1.clearContent();
-    rangeSending2.clearContent();
-    rangeSending3.clearContent();
-    rangeControl.clearContent();
-    rangeReminder.clearContent();
-    rangeGoogleEvent.clearContent();
-    rangeConfirmation.clearContent();
-    rangeCancelMatch.clearContent();
+    clearParameterValue("mailSendingPrio1");
+    clearParameterValue("mailSendingPrio2");
+    clearParameterValue("mailSendingPrio3");
+    clearParameterValue("controlDone");
+    clearParameterValue("mailSendingReminder");
+    clearParameterValue("creationGoogleEvent");
+    clearParameterValue("mailSendingConfirmation");
+    clearParameterValue("lastScoreBlue");
+    clearParameterValue("lastScoreRed");
+    clearParameterValue("mailSendingConfirmation");
+    clearParameterValue("scoreSaved");
+    updateParameterValue("isMatchCancel", false);
 }
