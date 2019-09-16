@@ -25,11 +25,19 @@ function getRowParameter(name) {
 }
 
 function isParameterBlank(name) {
+  if(parametersMap.get(name)){
     return parametersMap.get(name)=="";
+  } else {
+    return true;
+  }
 }
 
 function isParameterNotBlank(name) {
+  if(parametersMap.get(name)){
     return parametersMap.get(name)!="";
+  } else {
+    return false;
+  }
 }
 
 function isParameterTrue(name) {

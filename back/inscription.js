@@ -36,7 +36,7 @@ function loadPageInscription() {
 
 
 function inscription(parameter) {
-    if (isValid(parameter)) {
+    if (isValidAnswer(parameter)) {
         var playersInTheMatchMailBefore = playersInTheMatchMail();
         if (sheetInscription.getLastRow() > 1) {
             var inscriptions = sheetInscription.getRange(2, 1, sheetInscription.getLastRow(), sheetInscription.getLastColumn()).getValues();
@@ -57,7 +57,7 @@ function inscription(parameter) {
         var row = sheetInscription.getLastRow() + 1;
         sheetInscription.getRange(row, 1).setValue(new Date(Date.now()));
         sheetInscription.getRange(row, 2).setValue(parameter.mail);
-        sheetInscription.getRange(row, 3).setValue(parameter.key);
+        sheetInscription.getRange(row, 3).setValue(parameter.key); //TODO supprimer la clef dans la page d'inscription / le check fait de base au chargement des pages est suffisant / ne pas oublié de changer la modification de la clef dans la page de modification du profil si mail modifié
         sheetInscription.getRange(row, 4).setValue(parameter.answer);
 
         if (parametersMap.get("numberPlayerInMatch") == (parametersMap.get("numberPlayerMatch") - 1) && parameter.answer == "Oui") {
@@ -69,19 +69,9 @@ function inscription(parameter) {
 }
 
 
-function isValid(parameter) {
+function isValidAnswer(parameter) {
     if (parameter.answer != "Oui" && parameter.answer != "Non") {
-        return false;
-    }
-    var rowPlayer = getRowSheetTeamWithMail(parameter.mail);
-    // noinspection RedundantIfStatementJS
-    if (!rowPlayer) {
-        return false;
+        throw "La réponse ne peut être que Oui ou Non";
     }
     return true;
-}
-
-
-function isKeyValid(keyToCheck, key) {
-    return keyToCheck == (key * 2 + 10) || keyToCheck == "666";
 }

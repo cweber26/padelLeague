@@ -2,6 +2,7 @@
 var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
 var sheetTeam = spreadsheet.getSheetByName("Team");
 var sheetInscription = spreadsheet.getSheetByName("Inscription");
+var sheetInscriptionFilter = spreadsheet.getSheetByName("InscriptionFilter");
 var sheetResult = spreadsheet.getSheetByName("Result");
 var sheetResultFilter = spreadsheet.getSheetByName("ResultFilter");
 var sheetRecordFilter = spreadsheet.getSheetByName("RecordFilter");
@@ -15,8 +16,8 @@ var parametersMap = loadParametersMap();
 
 function loadParametersMap() {
     var parametersMap = new Map();
-    sheetParameters.getRange(1,1).getDataRegion().getValues().forEach(function(d) {
-        parametersMap.set(d[0],d[1]);
+    sheetParameters.getRange(1,1).getDataRegion().getValues().forEach(function(p) {
+        parametersMap.set(p[0],p[1]);
     });
     return parametersMap;
 }

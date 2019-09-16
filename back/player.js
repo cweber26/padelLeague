@@ -25,36 +25,38 @@ function getPlayerWithMail(mail) {
             return initPlayer(playerLine);
         }
     }
+    throw "mail " + mail + " inconnu";
 }
 
 function initPlayer(playerLine) {
-    return {
-        mail: playerLine[0],
-        key: playerLine[1],
-        keyWithSecurity: (playerLine[1] * 2 + 10),
-        firstName: playerLine[2],
-        lastName: playerLine[3],
-        fullName: playerLine[4],
-        shortfullName: playerLine[5],
-        nickName: playerLine[6],
-        isUnavailable: playerLine[7],
-        endDateOfUnavailibility: playerLine[8],
-        mondaySelected: playerLine[9],
-        tuesdaySelected: playerLine[10],
-        wednesdaySelected: playerLine[11],
-        thursdaySelected: playerLine[12],
-        fridaySelected: playerLine[13],
-        site: playerLine[14],
-        position: playerLine[15],
-        levelDribble: playerLine[16],
-        levelFrappe: playerLine[17],
-        levelDefense: playerLine[18],
-        haveDoneAutoEvaluation: playerLine[19],
-        haveAlreadyAnswer: playerLine[20],
-        prioValue: playerLine[21],
-        isAdmin: playerLine[22],
-        isPrioritary: playerLine[23]
-    };
+    Logger.log(playerLine);
+    var player = {};
+    player.mail = playerLine[0];
+    player.key = playerLine[1];
+    player.keyWithSecurity = (playerLine[1] * 2 + 10);
+    player.firstName = playerLine[2];
+    player.lastName = playerLine[3];
+    player.fullName = playerLine[4];
+    player.shortfullName = playerLine[5];
+    player.nickName = playerLine[6];
+    player.isUnavailable = playerLine[7];
+    player.endDateOfUnavailibility = playerLine[8];
+    player.mondaySelected = playerLine[9];
+    player.tuesdaySelected = playerLine[10];
+    player.wednesdaySelected = playerLine[11];
+    player.thursdaySelected = playerLine[12];
+    player.fridaySelected = playerLine[13];
+    player.site = playerLine[14];
+    player.position = playerLine[15];
+    player.levelDribble = playerLine[16];
+    player.levelFrappe = playerLine[17];
+    player.levelDefense = playerLine[18];
+    player.haveDoneAutoEvaluation = playerLine[19];
+    player.haveAlreadyAnswer = playerLine[20];
+    player.prioValue = playerLine[21];
+    player.isAdmin = playerLine[22];
+    player.isPrioritary = playerLine[23];
+    return player;
 }
 
 function isValidUser(param) {
@@ -68,6 +70,11 @@ function isValidUser(param) {
         }
     }
     return false;
+}
+
+
+function isKeyValid(keyToCheck, key) {
+    return keyToCheck == (key * 2 + 10) || keyToCheck == "666";
 }
 
 
@@ -98,6 +105,7 @@ function loadPageProfil() {
     } else {
         player = getPlayerWithMail(param.mail);
     }
+    Logger.log(player);
     return render("front/page/profil", "Barbeuc : Profil", {
         mail: param.mail,
         key: param.key,
@@ -111,9 +119,10 @@ function loadPageProfil() {
 // noinspection JSUnusedGlobalSymbols
 function updateProfil(user) {
 
-    var row = getRowSheetTeamWithMail(user.mail);
+    var row = getRowSheetTeamWithMail(user.oldMail);
 
     if (user.key == (sheetTeam.getRange(row, 2).getValue() * 2 + 10)) {
+        var mail = user.mail;
         var firstName = user.prenom;
         var lastName = user.nom;
         var nickName = user.surnom;
@@ -135,6 +144,9 @@ function updateProfil(user) {
         var levelDribble = user.dribble;
         var levelFrappe = user.frappe;
         var levelDefense = user.defense;
+        var priorityLevel = user.priorityLevel;
+        var isAnAdmin = user.isAnAdmin;
+        var haveAPriority = user.haveAPriority;
 
         var oldFirstName = sheetTeam.getRange(row, 3).getValue();
         var oldLastName = sheetTeam.getRange(row, 4).getValue();
@@ -194,7 +206,27 @@ function updateProfil(user) {
         }
         if (levelDribble && levelFrappe && levelDefense) {
             sheetTeam.getRange(row, 20).setValue(true);
+        } else {
+            sheetTeam.getRange(row, 20).setValue(false);
         }
+        if(priorityLevel)  {
+            sheetTeam.getRange(row, 22).setValue(priorityLevel)
+        }
+        if(isAnAdmin) {
+            sheetTeam.getRange(row, 23).setValue(true)
+        } else {
+            sheetTeam.getRange(row, 23).setValue(false);
+        }
+        if(haveAPriority) {
+            sheetTeam.getRange(row, 24).setValue(true)
+        } else {
+            sheetTeam.getRange(row, 24).setValue(false);
+        }
+
+        if(user.oldMail != mail) {
+            updateMailProfilAndRefresh(user.oldMail, mail, user.key, row);
+        }
+
     } else {
         throw "clef non valide";
     }
@@ -229,6 +261,18 @@ function updateNameProfil(oldFirstName, firstName, oldLastName, lastName, row) {
     replaceInSheet(resultValues, oldFullName, newFullName);
     rangeResult.setValues(resultValues);
 }
+
+// met à jour le mail et la clef dans la page d'inscriptions
+function updateMailProfilAndRefresh(oldMail, newMail, oldKey, row) {
+    sheetTeam.getRange(row, 1).setValue(newMail);
+    var newKey = (sheetTeam.getRange(row, 2).getValue() * 2 + 10);
+    var rangeInscriptionMailAndKey = sheetInscription.getRange(2, 2, sheetInscription.getLastRow(), 2);
+    var inscriptionMailAndKeyValues = rangeInscriptionMailAndKey.getValues();
+    replaceInSheet(inscriptionMailAndKeyValues, oldMail, newMail);
+    replaceInSheet(inscriptionMailAndKeyValues, oldKey, newKey);
+    rangeInscriptionMailAndKey.setValues(inscriptionMailAndKeyValues);
+}
+
 
 function replaceInSheet(values, to_replace, replace_with) {
     var replaced_values;

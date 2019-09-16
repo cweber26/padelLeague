@@ -18,63 +18,65 @@
         <?}?>
     </div>
     <div class="row">
-        <div class="field">
-            <div class="zone1 valign-wrapper">
-                <div class="joueur red z-depth-3">
-                    <?= compo[0] ?><? if(confirmations[0] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
-                </div>
-            </div>
-            <div class="zone2">
-                <div class="zoneGauche valign-wrapper">
+        <div class="col s12 m8 offset-m2 l6 offset-l3 xl4 offset-xl4">
+            <div class="field">
+                <div class="zone1 valign-wrapper">
                     <div class="joueur red z-depth-3">
-                        <?= compo[1] ?><? if(confirmations[1] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                        <?= compo[0] ?><? if(confirmations[0] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
                     </div>
                 </div>
-                <div class="zoneDroite valign-wrapper">
-                    <div class="joueur red z-depth-3">
-                        <?= compo[2] ?><? if(confirmations[2] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                <div class="zone2">
+                    <div class="zoneGauche valign-wrapper">
+                        <div class="joueur red z-depth-3">
+                            <?= compo[1] ?><? if(confirmations[1] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                        </div>
+                    </div>
+                    <div class="zoneDroite valign-wrapper">
+                        <div class="joueur red z-depth-3">
+                            <?= compo[2] ?><? if(confirmations[2] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="zone2">
-                <div class="zoneGauche valign-wrapper">
-                    <div class="joueur red z-depth-3">
-                        <?= compo[3] ?><? if(confirmations[3] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                <div class="zone2">
+                    <div class="zoneGauche valign-wrapper">
+                        <div class="joueur red z-depth-3">
+                            <?= compo[3] ?><? if(confirmations[3] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                        </div>
+                    </div>
+                    <div class="zoneDroite valign-wrapper">
+                        <div class="joueur red z-depth-3">
+                            <?= compo[4] ?><? if(confirmations[4] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                        </div>
                     </div>
                 </div>
-                <div class="zoneDroite valign-wrapper">
-                    <div class="joueur red z-depth-3">
-                        <?= compo[4] ?><? if(confirmations[4] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                <div class="zone2">
+                    <div class="zoneGauche valign-wrapper">
+                        <div class="joueur blue z-depth-3">
+                            <?= compo[5] ?><? if(confirmations[5] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                        </div>
+                    </div>
+                    <div class="zoneDroite valign-wrapper">
+                        <div class="joueur blue z-depth-3">
+                            <?= compo[6] ?><? if(confirmations[6] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="zone2">
-                <div class="zoneGauche valign-wrapper">
+                <div class="zone2">
+                    <div class="zoneGauche valign-wrapper">
+                        <div class="joueur blue z-depth-3">
+                            <?= compo[7] ?><? if(confirmations[7] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                        </div>
+                    </div>
+                    <div class="zoneDroite valign-wrapper">
+                        <div class="joueur blue z-depth-3">
+                            <?= compo[8] ?><? if(confirmations[8] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="zone1 valign-wrapper">
                     <div class="joueur blue z-depth-3">
-                        <?= compo[5] ?><? if(confirmations[5] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
+                        <?= compo[9] ?><? if(confirmations[9] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
                     </div>
-                </div>
-                <div class="zoneDroite valign-wrapper">
-                    <div class="joueur blue z-depth-3">
-                        <?= compo[6] ?><? if(confirmations[6] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
-                    </div>
-                </div>
-            </div>
-            <div class="zone2">
-                <div class="zoneGauche valign-wrapper">
-                    <div class="joueur blue z-depth-3">
-                        <?= compo[7] ?><? if(confirmations[7] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
-                    </div>
-                </div>
-                <div class="zoneDroite valign-wrapper">
-                    <div class="joueur blue z-depth-3">
-                        <?= compo[8] ?><? if(confirmations[8] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
-                    </div>
-                </div>
-            </div>
-            <div class="zone1 valign-wrapper">
-                <div class="joueur blue z-depth-3">
-                    <?= compo[9] ?><? if(confirmations[9] == "Oui") { ?> <i class='tiny material-icons'>check</i><? } ?>
                 </div>
             </div>
         </div>
@@ -84,15 +86,15 @@
 
     <? if(admin) { ?>
     <div class="row">
-        <div class="input-field col s2 offset-s4">
+        <div class="input-field col s6 l2 offset-l4">
             <label for="scoreRouge">Rouge</label><input id="scoreRouge" type="number" class="validate" value="<?=scoreRed?>" required>
         </div>
-        <div class="input-field col s2">
+        <div class="input-field col s6 l2">
             <label for="scoreBleu">Bleu</label><input id="scoreBleu" type="number" class="validate" value="<?=scoreBlue?>" required>
         </div>
     </div>
     <div class="row">
-        <div class="input-field col s4 offset-s4">
+        <div class="input-field col s8 offset-s2 l4 offset-l4">
             <a id="score" class="buttonGreen" onclick="saveScoreCheckJs()">Score</a>
         </div>
     </div>
@@ -107,19 +109,19 @@
 
     <? if(inscriptionPhase && !confirmationPhase) { ?>
     <div class="row">
-        <div class="input-field col s2 offset-s4">
+        <div class="input-field col s6 l2 offset-l4">
             <a id="inscription" class="buttonGreen" onclick="inscriptionJs()">Inscription</a>
         </div>
-        <div class="input-field col s2">
+        <div class="input-field col s6 l2">
             <a id="desinscription" class="buttonRed" onclick="desinscriptionJs()">Désinscription</a>
         </div>
     </div>
     <? } else if(confirmationPhase && !scoreSaved) { ?>
     <div class="row">
-        <div class="input-field col s2 offset-s4">
+        <div class="input-field col s6 l2 offset-l4">
             <a id="confirmation" class="buttonGreen" onclick="confirmationJs()">Confirmation</a>
         </div>
-        <div class="input-field col s2">
+        <div class="input-field col s6 l2">
             <a id="deconfirmation" class="buttonRed" onclick="retractationJs()">Désinscription</a>
         </div>
     </div>
@@ -164,7 +166,9 @@
     <? } ?>
     <? } ?>
     <? if(admin) { ?>
-    <div class="row"><h4>Admin action</h4></div>
+    <div class="row">
+        <h4>Admin action</h4>
+    </div>
     <div class="row">
         <div class="col s3">
             <a id="sendPrio1" class="buttonGreen" onclick="sendPrio1Js()">Envoyer mail prio 1</a>
@@ -190,7 +194,28 @@
             <a id="cancelMatch" class="buttonRed" onclick="cancelMatchJs()">Annuler le match</a>
         </div>
     </div>
-    <!-- TODO ajout table inscription ordre -->
+    <? if (inscriptionTable != "") { ?>
+    <div>
+        <h4>Inscriptions</h4>
+    </div>
+    <div class="row">
+        <table id="inscriptionTable" class="centered highlight">
+            <thead>
+            <tr>
+                <th>Mail</th>
+                <th>Heure</th>
+                <th>Priorité</th>
+                <th>Participation</th>
+                <th>Inscription</th>
+                <th>Confirmation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?!=inscriptionTable?>
+            </tbody>
+        </table>
+    </div>
+    <? } ?>
     <? } ?>
 </div>
 

@@ -27,7 +27,7 @@ function sendConfirmMailForAPlayer(player, isNewPlayer) {
 function loadPageConfirmation() {
     if (param.answer == "Oui") {
         return render("front/page/confirmation", "confirmation",{mail: param.mail, key: param.key, admin: param.isAdmin});
-    } else {
+    } else if (param.answer == "Non") {
         return render("front/page/desinscription", "desinscription",{mail: param.mail, key: param.key, admin: param.isAdmin});
     }
 }
@@ -38,7 +38,7 @@ function confirmation(parameter) {
     var inscriptions = sheetInscription.getRange(2, 1, sheetInscription.getLastRow(), sheetInscription.getLastColumn()).getValues();
     for (var i in inscriptions) {
         var inscription = inscriptions[i];
-        if (inscription[1] == parameter.mail && (inscription[2] == parameter.key || parameter.key == "666")) {
+        if (inscription[1] == parameter.mail) {
             var row = Number(i) + 2;
             sheetInscription.getRange(row, 5).setValue(new Date(Date.now()));
             sheetInscription.getRange(row, 6).setValue(parameter.answer);

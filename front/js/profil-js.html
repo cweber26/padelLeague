@@ -1,7 +1,6 @@
 <script>
 
     document.getElementById("indispo").addEventListener("change", switchIndispoDate);
-    document.getElementById("updateProfil").addEventListener("click", update);
 
     document.addEventListener('DOMContentLoaded', function () {
         var selectBoxes = document.querySelectorAll('select');
@@ -15,7 +14,7 @@
     });
 
 
-    function update() {
+    function updateProfilCheck() {
         var toValidate = {
             prenom: "Le prenom doit être rempli",
             nom: "Le nom doit être rempli",
@@ -52,6 +51,7 @@
     function updateProfil() {
         var user = {};
         user.mail = document.getElementById("mail").value;
+        user.oldMail = document.getElementById("oldMail").value;
         user.key = document.getElementById("key").value;
         user.prenom = document.getElementById("prenom").value;
         user.nom = document.getElementById("nom").value;
@@ -68,6 +68,15 @@
         user.dribble = document.querySelector('input[name="dribble"]:checked').value;
         user.frappe = document.querySelector('input[name="frappe"]:checked').value;
         user.defense = document.querySelector('input[name="defense"]:checked').value;
+        if(document.getElementById("priorityLevel")){
+            user.priorityLevel = document.getElementById("priorityLevel").value;
+        }
+        if(document.getElementById("isAnAdmin")) {
+            user.isAnAdmin = document.getElementById("isAnAdmin").checked;
+        }
+        if(document.getElementById("haveAPriority")) {
+            user.haveAPriority = document.getElementById("haveAPriority").checked;
+        }
 
         console.log(user);
         M.toast({html: "En cours de modification"});
