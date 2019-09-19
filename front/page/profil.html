@@ -222,11 +222,12 @@
     <div class="row">
         <div class="input-field col s4">
             <select id="priorityLevel">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+                <option value="1">Toujours convoqué</option>
+                <option value="2">Convoqué si besoin (première relance)</option>
+                <option value="3">Convoqué si besoin (deuxième relance) </option>
+                <option value="9">Jamais convoqué</option>
             </select>
-            <label for="priorityLevel">Priority</label>
+            <label for="priorityLevel">Convocation</label>
         </div>
         <div class="switch input-field col s4">
             <label>
@@ -237,7 +238,7 @@
         <div class="switch input-field col s4">
             <label>
                 <input id="haveAPriority" type="checkbox" class="filled-in" <? if(player.isPrioritary) { ?>checked="checked"<? } ?>/>
-                <span>Have a priority</span>
+                <span>A une prio pour le prochain match</span>
             </label>
         </div>
     </div>

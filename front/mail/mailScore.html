@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <?!= include("front/page/head"); ?>
+    <?!= include("front/css/css"); ?>
+</head>
+
+<body>
+<div class="container">
+    <?!= includeWithArgs("front/mail/mailHeader", {urlMail: urlMail}); ?>
+    <div class="row">
+        <h2 class="title">N'oublie pas de saisir le score pour le match <?= date ?></h2>
+    </div>
+    <?!= includeWithArgs("front/mail/mailCompo", {compo: compo}) ?>
+    <?!= includeWithArgs("front/mail/mailFooter", {urlMail: urlMail}); ?>
+</div>
+</body>
+</html>
+
+

@@ -27,8 +27,34 @@ function loadPageBackoffice() {
     log.reminder = getDateTimeFormat(parametersMap.get("mailSendingReminder"));
     log.googleEvent = getDateTimeFormat(parametersMap.get("creationGoogleEvent"));
     log.confirmation = getDateTimeFormat(parametersMap.get("mailSendingConfirmation"));
+    log.team = getDateTimeFormat(parametersMap.get("teamSaved"));
     log.score = getDateTimeFormat(parametersMap.get("scoreSaved"));
 
+    var schedule = "";
+    sheetSchedule.getRange(2, 1, 1, 8).getValues().forEach(function (s) {
+        schedule += "<tr>"
+            + "<td>" + s[0] + "</td>"
+            + "<td>" + checkbox(s[1]) + "</td>"
+            + "<td>" + checkbox(s[2]) + "</td>"
+            + "<td>" + checkbox(s[3]) + "</td>"
+            + "<td>" + checkbox(s[4]) + "</td>"
+            + "<td>" + checkbox(s[5]) + "</td>"
+            + "<td>" + checkbox(s[6]) + "</td>"
+            + "<td>" + checkbox(s[7]) + "</td>"
+            + "</tr>";
+    });
+    sheetSchedule.getRange(3, 1, 12, 8).getValues().forEach(function (s) {
+        schedule += "<tr>"
+            + "<td>" + s[0] + "</td>"
+            + "<td>" + s[1] + "</td>"
+            + "<td>" + s[2] + "</td>"
+            + "<td>" + s[3] + "</td>"
+            + "<td>" + s[4] + "</td>"
+            + "<td>" + s[5] + "</td>"
+            + "<td>" + s[6] + "</td>"
+            + "<td>" + s[7] + "</td>"
+            + "</tr>";
+    });
 
     return render("front/page/backoffice", "Barbeuc : BackOffice", {
         mail: param.mail,
@@ -37,6 +63,7 @@ function loadPageBackoffice() {
         player: player,
         param: parameterApplication,
         log: log,
+        schedule: schedule,
         testing: isParameterTrue("modeTest")
     });
 }

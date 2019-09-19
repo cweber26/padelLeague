@@ -1,5 +1,11 @@
+function createEventIfMatchIsFull() {
+    if (!isMatchCancel() && isParameterBlank("creationGoogleEvent") && parametersMap.get("numberPlayerInMatch") == parametersMap.get("numberPlayerMatch")) {
+        sendMatchCompletMail();
+        createCalendarEvent();
+    }
+}
+
 function createCalendarEvent() {
-    //TODO bug le dernier inscrits n'est pas pris en compte dans la liste des invités. Car le parametersMap.get("matchPlayerMailList") n'est pas à jour lors de l'init
     if (isParameterBlank("creationGoogleEvent")) {
         var calendar = CalendarApp.getDefaultCalendar();
         var begin = new Date(Utilities.formatDate(nextMatchDate, "Europe/Paris", "MM/dd/yyyy") + " 12:00:00");

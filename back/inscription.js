@@ -60,11 +60,6 @@ function inscription(parameter) {
         sheetInscription.getRange(row, 3).setValue(parameter.key); //TODO supprimer la clef dans la page d'inscription / le check fait de base au chargement des pages est suffisant / ne pas oublié de changer la modification de la clef dans la page de modification du profil si mail modifié
         sheetInscription.getRange(row, 4).setValue(parameter.answer);
 
-        if (parametersMap.get("numberPlayerInMatch") == (parametersMap.get("numberPlayerMatch") - 1) && parameter.answer == "Oui") {
-            sendMatchCompletMail();
-            createCalendarEvent();
-        }
-
     }
 }
 

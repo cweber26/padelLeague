@@ -1,4 +1,4 @@
-
+// noinspection JSUnusedGlobalSymbols
 function execBatch() {
     var nextStep = getNextStep();
     if(isTimeForStep(nextStep)){
@@ -13,29 +13,29 @@ function getNextStep() {
         return 2;
     } else if(isParameterBlank("mailSendingPrio3")){
         return 3;
-    } else if(isParameterBlank("mailSendingReminder")){
-        return 4;
-    } else if(isParameterBlank("mailSendingPrio1")){
-        return 5;
     } else if(isParameterBlank("controlDone")){
-        return 6;
+        return 4;
+    } else if(isParameterBlank("mailSendingReminder")){
+        return 5;
     } else if(isParameterBlank("mailSendingConfirmation")){
+        return 6;
+    } else if(isParameterBlank("teamSaved")){
         return 7;
-    } else if(isParameterBlank("scoreSaved")){
-        return 8;
     } else {
-      return 9;
+      return 8;
     }
 }
 
 function isTimeForStep(step) {
+    var nextMatchDay = parametersMap.get("nextMatchDate").getDay();
+    var column = nextMatchDay + 1;
     var row = step + 4;
-    var column = currentWeekDay + 1;
-    var rangeStepHour = sheetSchedule.getRange(row, column);
-    if (!rangeStepHour.isBlank()) {
-        var hourStep = Utilities.formatDate(rangeStepHour.getValue(), "Europe/Paris", "HH:mm");
-        var currentHourTime = Utilities.formatDate(new Date(), "Europe/Paris", "HH:mm");
-        if (currentHourTime >= hourStep) {
+    var nextStepDate = sheetSchedule.getRange(row, column).getValue();
+    var nextStepDay = nextStepDate.substring(0, 3);
+    var nextStepHour = nextStepDate.substring(4, 9);
+    var currentDay = Utilities.formatDate(new Date(), "Europe/Paris", "E");
+    if(currentDay == nextStepDay) {
+        if(currentHour >= nextStepHour) {
             return true;
         }
     }
@@ -49,68 +49,35 @@ function execStep(step) {
             sendInscriptionMailForAPrio(1);
             break;
         case 2:
+            createEventIfMatchIsFull();
             sendInscriptionMailForAPrio(2);
             break;
         case 3:
+            createEventIfMatchIsFull();
             sendInscriptionMailForAPrio(3);
             break;
         case 4:
+            createEventIfMatchIsFull();
             controlAndCancelOrRelaunch();
             break;
         case 5:
+            createEventIfMatchIsFull();
             sendReminderMail();
             break;
         case 6:
+            createEventIfMatchIsFull();
             sendConfirmMail();
             break;
         case 7:
-            //TODO enregistrer la date de match de match et l'équipe
+            saveTeam();
             break;
         case 8:
+            sendScoreMail();
             updatePriority();
             setNextMatchDate();
             cleaning();
             break;
     }
-}
-
-// noinspection JSUnusedGlobalSymbols
-function initialisationMatch() {
-    updatePriority();
-    cleaning();
-    setNextMatchDate();
-    deleteUnavaibility();
-    envoiInscriptionGroup1();
-}
-
-// noinspection JSUnusedGlobalSymbols
-function envoiInscriptionGroup1() {
-    sendInscriptionMailForAPrio(1);
-}
-
-// noinspection JSUnusedGlobalSymbols
-function envoiInscriptionGroup2() {
-    sendInscriptionMailForAPrio(2);
-}
-
-// noinspection JSUnusedGlobalSymbols
-function envoiInscriptionGroup3() {
-    sendInscriptionMailForAPrio(3);
-}
-
-// noinspection JSUnusedGlobalSymbols
-function autoAnnulation() {
-    controlAndCancelOrRelaunch();
-}
-
-// noinspection JSUnusedGlobalSymbols
-function rappelMatch() {
-    sendReminderMail();
-}
-
-// noinspection JSUnusedGlobalSymbols
-function confirmationMatch() {
-    sendConfirmMail();
 }
 
 // noinspection JSUnusedGlobalSymbols

@@ -2,28 +2,31 @@
 function logRunDate(type) {
     switch (type) {
         case 1:
-            updateParameterValue("mailSendingPrio1",new Date(Date.now()));
+            updateParameterValue("mailSendingPrio1", new Date(Date.now()));
             break;
         case 2:
-            updateParameterValue("mailSendingPrio2",new Date(Date.now()));
+            updateParameterValue("mailSendingPrio2", new Date(Date.now()));
             break;
         case 3:
-            updateParameterValue("mailSendingPrio3",new Date(Date.now()));
+            updateParameterValue("mailSendingPrio3", new Date(Date.now()));
             break;
         case "reminder":
-            updateParameterValue("mailSendingReminder",new Date(Date.now()));
+            updateParameterValue("mailSendingReminder", new Date(Date.now()));
             break;
         case "control":
-            updateParameterValue("controlDone",new Date(Date.now()));
+            updateParameterValue("controlDone", new Date(Date.now()));
             break;
         case "confirmation":
-            updateParameterValue("mailSendingConfirmation",new Date(Date.now()));
+            updateParameterValue("mailSendingConfirmation", new Date(Date.now()));
             break;
         case "googleEvent":
-            updateParameterValue("creationGoogleEvent",new Date(Date.now()));
+            updateParameterValue("creationGoogleEvent", new Date(Date.now()));
+            break;
+        case "teamSaved":
+            updateParameterValue("teamSaved", new Date(Date.now()));
             break;
         case "scoreSaved":
-            updateParameterValue("scoreSaved",new Date(Date.now()));
+            updateParameterValue("scoreSaved", new Date(Date.now()));
             break;
     }
 }

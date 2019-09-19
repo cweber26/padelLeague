@@ -1,4 +1,4 @@
-var currentWeekDay = parseInt(Utilities.formatDate(new Date(), "Europe/Paris", "u ### EEEE - dd/MM/yyyy"));
+var currentWeekDay = parseInt(Utilities.formatDate(new Date(), "Europe/Paris", "u"));
 var nextMatchDate = parametersMap.get("nextMatchDate");
 var nextMatchDay = nextMatchDate.getDay();
 var scheduleValues = sheetSchedule.getRange(1, 1).getDataRegion().getValues();
@@ -64,13 +64,8 @@ function haveSelectedMatchDay(player, nextMatchDay) {
 }
 
 function matchDayGapInFrench(withPronom) {
-    switch (nextMatchDay - new Date().getDay()) {
-        case -6:
-            if (withPronom) {
-                return "de demain";
-            } else {
-                return "demain";
-            }
+    var daysDiff = parseInt((getDateAt000000(nextMatchDate)-getDateAt000000(new Date()))/ (1000*60*60*24));
+    switch (daysDiff) {
         case 0:
             if (withPronom) {
                 return "de ce midi";
@@ -94,7 +89,7 @@ function matchDayGapInFrench(withPronom) {
 
 function getDateFormat(date) {
     if (date != "") {
-        return Utilities.formatDate(new Date(date), "GMT", "dd/MM/yy");
+        return Utilities.formatDate(new Date(date), "Europe/Paris", "dd/MM/yy");
     } else {
         return "";
     }
@@ -102,7 +97,15 @@ function getDateFormat(date) {
 
 function getDateTimeFormat(date) {
     if (date != "") {
-        return Utilities.formatDate(new Date(date), "GMT", "dd/MM/yy HH:mm:ss");
+        return Utilities.formatDate(new Date(date), "Europe/Paris", "dd/MM/yy HH:mm:ss");
+    } else {
+        return "";
+    }
+}
+
+function getDateAt000000(date) {
+    if (date != "") {
+        return new Date(Utilities.formatDate(new Date(date), "Europe/Paris", "MM/dd/yyyy"));
     } else {
         return "";
     }

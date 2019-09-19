@@ -28,6 +28,18 @@ function getPlayerWithMail(mail) {
     throw "mail " + mail + " inconnu";
 }
 
+function getPlayerWithFullName(fullName) {
+    Logger.log(fullName);
+    var teamList = playersTeamList();
+    for (var i = 0; i < teamList.length; i++) {
+        if (teamList[i][4] == fullName) {
+            var playerLine = sheetTeam.getRange(i + 3, 1, 1, sheetTeam.getLastColumn()).getValues()[0];
+            return initPlayer(playerLine);
+        }
+    }
+    throw "fullName " + fullName + " inconnu";
+}
+
 function initPlayer(playerLine) {
     Logger.log(playerLine);
     var player = {};
@@ -93,7 +105,7 @@ function deleteUnavaibility() {
 
 
 function getNewPlayerInCompo() {
-    var mail = playersInTheMatchMail()[9];
+    var mail = playersInWaitingListMail()[0];
     return getPlayerWithMail(mail);
 }
 

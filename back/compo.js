@@ -27,7 +27,7 @@ function loadPageCompo() {
                 inscriptionTable += "<tr>"
                     + "<td>" + i[0] + "</td>"
                     + "<td>" + i[1] + "</td>"
-                    + "<td>" + i[2] + "</td>"
+                    + "<td>" + checkbox(i[2]) + "</td>"
                     + "<td>" + i[3] + "</td>"
                     + "<td>" + Utilities.formatDate(i[4], "Europe/Paris", "MM/dd/yy HH:mm") + "</td>";
                 if (i[5]) {
@@ -61,15 +61,13 @@ function loadPageCompo() {
         compo: players,
         inscriptionPhase: isParameterNotBlank("mailSendingPrio1"),
         confirmationPhase: isParameterNotBlank("mailSendingConfirmation"),
-        scoreSaved: isParameterNotBlank("scoreSaved"),
+        teamSaved: isParameterNotBlank("teamSaved"),
         confirmations: confirmations,
         effectif: effectif,
         listeAttente: listeAttente,
         admin: param.isAdmin,
         cancelMatch: parametersMap.get("isMatchCancel"),
         testing: isParameterTrue("modeTest"),
-        scoreRed: parametersMap.get("lastScoreRed"),
-        scoreBlue: parametersMap.get("lastScoreBlue"),
         inscriptionTable: inscriptionTable
     });
 }

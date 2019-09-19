@@ -117,14 +117,39 @@
             <time><?=log.googleEvent?></time>
         </div>
         <div class="col s4">
+            <label>Compo sauvegardée</label>
+            <br>
+            <time><?=log.team?></time>
+        </div>
+        <div class="col s4">
             <label>Score sauvegardé</label>
             <br>
             <time><?=log.score?></time>
         </div>
     </div>
-    <!-- TODO ajout tableau joueur backoffice -->
-    <!-- TODO ajout tableau jour backoffice -->
-    <!-- TODO ajout tableau stade backoffice -->
+    <div class="divider"></div>
+    <div class="row">
+        <h4>Planning</h4>
+    </div>
+    <div class="row">
+        <table id="scheduleTable" class="centered highlight">
+            <thead>
+            <tr>
+                <th>Jour</th>
+                <th>Lundi</th>
+                <th>Mardi</th>
+                <th>Mercredi</th>
+                <th>Jeudi</th>
+                <th>Vendredi</th>
+                <th>Samedi</th>
+                <th>Dimanche</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?!=schedule?>
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

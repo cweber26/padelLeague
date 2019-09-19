@@ -75,26 +75,6 @@
         }
     }
 
-    function saveScoreCheckJs() {
-        var toValidate = {
-            scoreRouge: "Le score de l'équipe rouge doit être rempli",
-            scoreBleu: "Le score de l'équipe bleue doit être rempli"
-        };
-        var idKeys = Object.keys(toValidate);
-
-        var allValid = true;
-        idKeys.forEach(function (k) {
-            if (!checkValidity(k, toValidate[k])) {
-                allValid = false;
-            }
-        });
-
-        if (allValid) {
-            saveScoreActionJs();
-        }
-
-    }
-
     function cleaningJs() {
         if (window.confirm("Es tu sûr de vouloir purger toutes les inscriptions ?")) {
             var parameter = {};
@@ -210,40 +190,11 @@
         }
     }
 
-    function checkValidity(elementId, message) {
-        var isValid = document.getElementById(elementId).checkValidity();
-        if (!isValid) {
-            M.toast({
-                html: message
-            });
-            return false;
-        }
-        return true;
-    }
-
-    function saveScoreActionJs() {
-        var scoreValues = {};
-        scoreValues.rouge = document.getElementById("scoreRouge").value;
-        scoreValues.bleu = document.getElementById("scoreBleu").value;
-        M.toast({html: "Enregistrement du score en cours"});
-        M.toast({html: "Recalcul des stats"});
-        google.script.run.withSuccessHandler(saveScoreSuccess).withFailureHandler(saveScoreFailure).saveScore(scoreValues);
-    }
 
     function refreshCompoPage() {
         google.script.url.getLocation(function (location) {
             window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail=" + String(location.parameter.mail) + "&key=" + String(location.parameter.key);
         });
-    }
-
-    function saveScoreSuccess() {
-        M.toast({html: "Score enregistré"});
-        refreshCompoPage();
-    }
-
-    function saveScoreFailure() {
-        M.toast({html: "Enregistrement du score en erreur!"});
-        refreshCompoPage();
     }
 
     function sortTableCompo(n) {
