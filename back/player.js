@@ -29,7 +29,6 @@ function getPlayerWithMail(mail) {
 }
 
 function getPlayerWithFullName(fullName) {
-    Logger.log(fullName);
     var teamList = playersTeamList();
     for (var i = 0; i < teamList.length; i++) {
         if (teamList[i][4] == fullName) {
@@ -41,7 +40,7 @@ function getPlayerWithFullName(fullName) {
 }
 
 function initPlayer(playerLine) {
-    Logger.log(playerLine);
+    Logger.log("initPlayer : " + playerLine);
     var player = {};
     player.mail = playerLine[0];
     player.key = playerLine[1];
@@ -117,7 +116,6 @@ function loadPageProfil() {
     } else {
         player = getPlayerWithMail(param.mail);
     }
-    Logger.log(player);
     return render("front/page/profil", "Barbeuc : Profil", {
         mail: param.mail,
         key: param.key,
@@ -236,7 +234,9 @@ function updateProfil(user) {
         }
 
         if(user.oldMail != mail) {
-            updateMailProfilAndRefresh(user.oldMail, mail, user.key, row);
+            sheetTeam.getRange(row, 1).setValue(mail);
+            updateMailProfilInInscriptionSheet(user.oldMail, mail);
+            return {mail: mail, key: sheetTeam.getRange(row, 2).getValue() * 2 + 10};
         }
 
     } else {
@@ -275,14 +275,11 @@ function updateNameProfil(oldFirstName, firstName, oldLastName, lastName, row) {
 }
 
 // met à jour le mail et la clef dans la page d'inscriptions
-function updateMailProfilAndRefresh(oldMail, newMail, oldKey, row) {
-    sheetTeam.getRange(row, 1).setValue(newMail);
-    var newKey = (sheetTeam.getRange(row, 2).getValue() * 2 + 10);
-    var rangeInscriptionMailAndKey = sheetInscription.getRange(2, 2, sheetInscription.getLastRow(), 2);
-    var inscriptionMailAndKeyValues = rangeInscriptionMailAndKey.getValues();
-    replaceInSheet(inscriptionMailAndKeyValues, oldMail, newMail);
-    replaceInSheet(inscriptionMailAndKeyValues, oldKey, newKey);
-    rangeInscriptionMailAndKey.setValues(inscriptionMailAndKeyValues);
+function updateMailProfilInInscriptionSheet(oldMail, newMail) {
+    var rangeInscriptionMail = sheetInscription.getRange(2, 1, sheetInscription.getLastRow(), 1);
+    var inscriptionMailValues = rangeInscriptionMail.getValues();
+    replaceInSheet(inscriptionMailValues, oldMail, newMail);
+    rangeInscriptionMail.setValues(inscriptionMailValues);
 }
 
 

@@ -40,7 +40,6 @@ function loadPageCompo() {
     }
     if (parametersMap.get("numberPlayerInWaitingList") > 0) {
         playersInWaitingListMail().forEach(function (m) {
-            Logger.log(m);
             var player = getPlayerWithMail(m);
             if(player) {
                 listeAttente += "<tr>"

@@ -11,6 +11,7 @@
     <?!= includeWithArgs("front/mail/mailHeader", {urlMail: urlMail}); ?>
     <div class="row">
         <h2 class="title">N'oublie pas de saisir le score pour le match <?= date ?></h2>
+        <h3><a class="buttonGreen" style="color: white; width: 198px" href="<?= urlMail.resultat ?>">Score</a></h3>
     </div>
     <?!= includeWithArgs("front/mail/mailCompo", {compo: compo}) ?>
     <?!= includeWithArgs("front/mail/mailFooter", {urlMail: urlMail}); ?>

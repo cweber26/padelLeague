@@ -35,14 +35,15 @@ function loadPageConfirmation() {
 
 
 function confirmation(parameter) {
+    Logger.log("Confirmation for " + parameter.mail + " and answer " + parameter.answer);
     var inscriptions = sheetInscription.getRange(2, 1, sheetInscription.getLastRow(), sheetInscription.getLastColumn()).getValues();
     for (var i in inscriptions) {
         var inscription = inscriptions[i];
-        if (inscription[1] == parameter.mail) {
+        if (inscription[0] == parameter.mail) {
             var row = Number(i) + 2;
-            sheetInscription.getRange(row, 5).setValue(new Date(Date.now()));
-            sheetInscription.getRange(row, 6).setValue(parameter.answer);
-            sheetInscription.getRange(row, 4).setValue(parameter.answer);
+            sheetInscription.getRange(row, 3).setValue(parameter.answer);
+            sheetInscription.getRange(row, 4).setValue(new Date(Date.now()));
+            sheetInscription.getRange(row, 5).setValue(parameter.answer);
             if (parameter.answer == "Non") {
                 actionsToDoIfDesistement();
             }

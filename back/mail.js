@@ -50,6 +50,7 @@ function getUrlMail(player) {
         compo: urlForm + urlFormPage + "compo" + urlFormMail + player.mail + urlFormKey + player.keyWithSecurity,
         stat: urlForm + urlFormPage + "stat" + urlFormMail + player.mail + urlFormKey + player.keyWithSecurity,
         record: urlForm + urlFormPage + "record" + urlFormMail + player.mail + urlFormKey + player.keyWithSecurity,
+        resultat: urlForm + urlFormPage + "resultat" + urlFormMail + player.mail + urlFormKey + player.keyWithSecurity,
         profil: urlForm + urlFormPage + "profil" + urlFormMail + player.mail + urlFormKey + player.keyWithSecurity,
         inscription: urlForm + urlFormPage + "inscription" + urlFormMail + player.mail + urlFormKey + player.keyWithSecurity + urlFormAnswer + "Oui",
         desinscription: urlForm + urlFormPage + "inscription" + urlFormMail + player.mail + urlFormKey + player.keyWithSecurity + urlFormAnswer + "Non",

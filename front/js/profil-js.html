@@ -13,6 +13,13 @@
         });
     });
 
+    document.addEventListener('keypress', function (ev) {
+        if(ev.keyCode === 13) {
+            document.getElementById("updateProfil").click();
+        }
+    });
+
+
 
     function updateProfilCheck() {
         var toValidate = {
@@ -42,7 +49,7 @@
     function checkValidity(elementId, message) {
         var isValid = document.getElementById(elementId).checkValidity();
         if (!isValid) {
-            M.toast({ html: message });
+            M.toast({html: message});
             return false;
         }
         return true;
@@ -68,13 +75,13 @@
         user.dribble = document.querySelector('input[name="dribble"]:checked').value;
         user.frappe = document.querySelector('input[name="frappe"]:checked').value;
         user.defense = document.querySelector('input[name="defense"]:checked').value;
-        if(document.getElementById("priorityLevel")){
+        if (document.getElementById("priorityLevel")) {
             user.priorityLevel = document.getElementById("priorityLevel").value;
         }
-        if(document.getElementById("isAnAdmin")) {
+        if (document.getElementById("isAnAdmin")) {
             user.isAnAdmin = document.getElementById("isAnAdmin").checked;
         }
-        if(document.getElementById("haveAPriority")) {
+        if (document.getElementById("haveAPriority")) {
             user.haveAPriority = document.getElementById("haveAPriority").checked;
         }
 
@@ -84,8 +91,21 @@
 
     }
 
-    function updateProfilSuccess() {
-        M.toast({html: "Profil modifié"});
+    function updateProfilSuccess(newParameter) {
+        google.script.url.getLocation(function (location) {
+            var parameter = location.parameter;
+            console.log(parameter);
+            if (parameter.profilMail) {
+                if(newParameter){
+                    parameter.profilMail = newParameter.mail;
+                }
+                window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=profil&mail=" + String(parameter.mail) + "&key=" + String(parameter.key) + "&profilMail=" + String(parameter.profilMail);
+            } else if (newParameter) {
+                parameter.mail = newParameter.mail;
+                parameter.key = newParameter.key;
+                window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=profil&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
+            }
+        });
     }
 
     function updateProfilFailure() {

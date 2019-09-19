@@ -36,13 +36,14 @@ function loadPageInscription() {
 
 
 function inscription(parameter) {
+    Logger.log("Inscription for " + parameter.mail + " and answer " + parameter.answer);
     if (isValidAnswer(parameter)) {
         var playersInTheMatchMailBefore = playersInTheMatchMail();
         if (sheetInscription.getLastRow() > 1) {
             var inscriptions = sheetInscription.getRange(2, 1, sheetInscription.getLastRow(), sheetInscription.getLastColumn()).getValues();
             for (var i in inscriptions) {
-                if (inscriptions[i][1] == parameter.mail) {
-                    if (inscriptions[i][3] == parameter.answer) {
+                if (inscriptions[i][0] == parameter.mail) {
+                    if (inscriptions[i][2] == parameter.answer) {
                         // user already send us the same answer. we do nothing
                         return;
                     } else {
@@ -55,11 +56,9 @@ function inscription(parameter) {
             }
         }
         var row = sheetInscription.getLastRow() + 1;
-        sheetInscription.getRange(row, 1).setValue(new Date(Date.now()));
-        sheetInscription.getRange(row, 2).setValue(parameter.mail);
-        sheetInscription.getRange(row, 3).setValue(parameter.key); //TODO supprimer la clef dans la page d'inscription / le check fait de base au chargement des pages est suffisant / ne pas oublié de changer la modification de la clef dans la page de modification du profil si mail modifié
-        sheetInscription.getRange(row, 4).setValue(parameter.answer);
-
+        sheetInscription.getRange(row, 1).setValue(parameter.mail);
+        sheetInscription.getRange(row, 2).setValue(new Date(Date.now()));
+        sheetInscription.getRange(row, 3).setValue(parameter.answer);
     }
 }
 
