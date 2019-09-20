@@ -49,19 +49,12 @@
             defense: "Le niveau de défense doit être rempli"
         };
 
-        var idKeys = Object.keys(toValidate);
-
-        var allValid = true;
-        idKeys.forEach(function (k) {
+        Object.keys(toValidate).forEach(function (k) {
             if (!checkValidity(k, toValidate[k])) {
-                allValid = false;
+                return false;
             }
         });
-
-        if (allValid) {
-            return true;
-        }
-        return false;
+        return true;
     }
 
     function checkValidity(elementId, message) {

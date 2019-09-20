@@ -66,25 +66,25 @@
         </div>
         <div class="switch input-field col s1">
             <label>
-                <input id="mardi" type="checkbox" class="filled-in" <? if(!modif ||player.tuesdaySelected) { ?>checked="checked"<? } ?>/>
+                <input id="mardi" type="checkbox" class="filled-in" <? if(!modif || player.tuesdaySelected) { ?>checked="checked"<? } ?>/>
                 <span>Mardi</span>
             </label>
         </div>
         <div class="switch input-field col s1">
             <label>
-                <input id="mercredi" type="checkbox" class="filled-in" <? if(!modif ||player.wednesdaySelected) { ?>checked="checked"<? } ?>/>
+                <input id="mercredi" type="checkbox" class="filled-in" <? if(!modif || player.wednesdaySelected) { ?>checked="checked"<? } ?>/>
                 <span>Mercredi</span>
             </label>
         </div>
         <div class="switch input-field col s1">
             <label>
-                <input id="jeudi" type="checkbox" class="filled-in" <? if(!modif ||player.thursdaySelected) { ?>checked="checked"<? } ?>/>
+                <input id="jeudi" type="checkbox" class="filled-in" <? if(!modif || player.thursdaySelected) { ?>checked="checked"<? } ?>/>
                 <span>Jeudi</span>
             </label>
         </div>
         <div class="switch input-field col s1">
             <label>
-                <input id="vendredi" type="checkbox" class="filled-in" <? if(!modif ||player.fridaySelected) { ?>checked="checked"<? } ?>/>
+                <input id="vendredi" type="checkbox" class="filled-in" <? if(!modif || player.fridaySelected) { ?>checked="checked"<? } ?>/>
                 <span>Vendredi</span>
             </label>
         </div>
@@ -211,11 +211,11 @@
     <div class="row">
         <div class="input-field col s4">
             <select id="priorityLevel">
-                <option value="1">Toujours convoqué</option>
-                <option value="2">Convoqué si besoin (première relance)</option>
-                <option value="3">Convoqué si besoin (deuxième relance) </option>
-                <option value="4">Jamais convoqué</option>
-                <option value="9">Joueur archivé</option>
+                <option <? if(modif && player.prioValue=="1") { ?> selected <? } ?> value="1">Toujours convoqué</option>
+                <option <? if(modif && player.prioValue=="2") { ?> selected <? } ?> value="2">Convoqué si besoin (première relance)</option>
+                <option <? if(modif && player.prioValue=="3") { ?> selected <? } ?> value="3">Convoqué si besoin (deuxième relance) </option>
+                <option <? if(modif && player.prioValue=="4") { ?> selected <? } ?> value="4">Jamais convoqué</option>
+                <option <? if(modif && player.prioValue=="9") { ?> selected <? } ?> value="9">Joueur archivé</option>
             </select>
             <label for="priorityLevel">Convocation</label>
         </div>
