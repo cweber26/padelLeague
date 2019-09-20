@@ -63,7 +63,9 @@ function loadPageCompo() {
         admin: param.isAdmin,
         cancelMatch: parametersMap.get("isMatchCancel"),
         testing: isParameterTrue("modeTest"),
-        inscriptionTable: inscriptionTable
+        inscriptionTable: inscriptionTable,
+        stadium: parametersMap.get("nextMatchStadiumName"),
+        urlAddress: parametersMap.get("nextMatchStadiumUrlMaps")
     });
 }
 
