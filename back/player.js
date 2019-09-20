@@ -70,18 +70,21 @@ function isValidUser(param) {
     try {
         var player = getPlayerWithMail(param.mail);
     } catch (error) {
-        return false;
+        return "unknwon";
     }
 
-    if (player) {
-        if (isKeyValid(param.key, player.key) && player.prioValue != 9) {
-            if (player.isAdmin) {
-                param.isAdmin = true;
-            }
-            return true;
-        }
+    if(player.prioValue == 9) {
+        return "archivated";
     }
-    return false;
+
+    if (!isKeyValid(param.key, player.key)) {
+        return "keyInvalid";
+    }
+
+    if (player.isAdmin) {
+            param.isAdmin = true;
+    }
+    return "valid";
 }
 
 

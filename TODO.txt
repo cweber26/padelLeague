@@ -2,11 +2,9 @@ STAND BY
  ajouter une photo du joueur
 
 A FAIRE
- TODO Bouton ajouter profil
  TODO Mettre un joueur invité "fantome"
  TODO gérer le covoiturage via la confirmation
  TODO afficher le stade (logo sur la compo)
- TODO créer une page équipe pour les joureurs non admin
 
 EN COURS
  brancher le vendredi A VALIDER
@@ -60,3 +58,5 @@ Mail du mois : Vainqueur Nouveaux meilleur joueur etc...
  Page historique match OK
  Mail admin pour le score OK
  Bouton supprimer profil OK
+ Bouton ajouter profil OK
+ Créer une page équipe pour les joureurs non admin OK
