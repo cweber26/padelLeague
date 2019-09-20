@@ -66,24 +66,25 @@ function initPlayer(playerLine) {
     return player;
 }
 
-function isValidUser(param) {
+function getStatusUser(param) {
     try {
         var player = getPlayerWithMail(param.mail);
     } catch (error) {
-        return "unknwon";
-    }
-
-    if(player.prioValue == 9) {
-        return "archivated";
+        return "unknow";
     }
 
     if (!isKeyValid(param.key, player.key)) {
         return "keyInvalid";
     }
 
-    if (player.isAdmin) {
-            param.isAdmin = true;
+    if(player.prioValue == 9) {
+        return "archivated";
     }
+
+    if (player.isAdmin) {
+        param.isAdmin = true;
+    }
+
     return "valid";
 }
 
@@ -425,7 +426,7 @@ function sendMailToAdminAboutNewPlayerForAnAdmin(playerAdmin, mailNewPlayer, cre
 }
 
 function loadPageDeletion() {
-    return render("front/page/profilArchived", "suppression", {
+    return render("front/page/profilArchived", "Barbeuc : Profil supprimé", {
         mail: param.mail,
         key: param.key,
         admin: param.isAdmin

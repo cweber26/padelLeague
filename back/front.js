@@ -20,10 +20,12 @@ function doGet(e) {
     Route.path("team", loadPageTeam);
     Route.path("backoffice", loadPageBackoffice);
 
-    if (param.page=="deletion") {
-        return loadPageDeletion();
-    } else if (!isValidUser(param)) {
+    var statusUser = getStatusUser(param);
+
+    if (statusUser == "unknow" || statusUser == "keyInvalid") {
         return loadPageInvalidUser();
+    } else if (statusUser == "archivated") {
+        return loadPageDeletion();
     } else if (Route[param.page]) {
         return Route[param.page]();
     } else {
