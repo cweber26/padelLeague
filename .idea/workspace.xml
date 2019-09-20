@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5d5575c-0efc-49cf-ae86-8ed850f6d9c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front/mail/mailNewProfil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/front.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/front.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/js/profil-js.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/profil-js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/page/compo.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/page/compo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/page/profil.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/page/profil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/page/stat.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/page/stat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/page/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/page/team.html" afterDir="false" />
-    </list>
+    <list default="true" id="e5d5575c-0efc-49cf-ae86-8ed850f6d9c2" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,12 +17,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="144">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/back/front.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/mail/mailForAdmin.html">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/mail/mailNewProfil.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
@@ -395,7 +394,7 @@
       <workItem from="1568827072350" duration="4023000" />
       <workItem from="1568872744238" duration="16969000" />
       <workItem from="1568965955513" duration="29000" />
-      <workItem from="1568974457077" duration="6730000" />
+      <workItem from="1568974457077" duration="6996000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring 3">
       <created>1567072496201</created>
@@ -467,11 +466,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568975610191</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="creation of user">
+      <created>1568981288787</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1568981288787</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143833000" />
+    <option name="totallyTimeSpent" value="144099000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -493,7 +499,7 @@
       <window_info id="Image Layers" order="3" />
       <window_info id="Web" order="4" show_stripe_button="false" side_tool="true" />
       <window_info id="JavaEE:App" order="5" show_stripe_button="false" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.18272775" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.18272775" />
       <window_info active="true" anchor="bottom" id="Problems" order="0" visible="true" weight="0.3293247" />
       <window_info anchor="bottom" id="SonarLint" order="1" show_stripe_button="false" weight="0.5159292" />
       <window_info anchor="bottom" id="Messages" order="2" sideWeight="0.49947917" weight="0.33539823" />
@@ -515,7 +521,7 @@
       <window_info anchor="bottom" id="Event Log" order="18" sideWeight="0.50128865" side_tool="true" weight="0.32920355" />
       <window_info anchor="bottom" id="Docker" order="19" show_stripe_button="false" />
       <window_info anchor="bottom" id="TunnelliJ" order="20" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="21" sideWeight="0.49871135" visible="true" weight="0.32920355" />
+      <window_info anchor="bottom" id="Terminal" order="21" sideWeight="0.49871135" visible="true" weight="0.32920355" />
       <window_info anchor="right" id="Key Promoter X" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" show_stripe_button="false" weight="0.25" />
@@ -582,7 +588,8 @@
     <MESSAGE value="refactoring 5" />
     <MESSAGE value="use parameter map&#10;plus schedule planning&#10;refaction button action" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="creation of user" />
+    <option name="LAST_COMMIT_MESSAGE" value="creation of user" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/back/log.js">
@@ -862,13 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/front.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/js/nav-js.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -912,9 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/mail/mailForAdmin.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/js/profil-js.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
@@ -932,6 +929,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/front/mail/mailForAdmin.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/mail/mailNewProfil.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/back/player.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="601">
@@ -939,10 +946,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/mail/mailNewProfil.html">
+    <entry file="file://$PROJECT_DIR$/back/front.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="195">
+          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
         </state>
       </provider>
     </entry>
