@@ -45,10 +45,6 @@ function loadPageCompo() {
                 listeAttente += "<tr>"
                     + "<td>" + player.fullName + "</td>"
                     + "</tr>";
-            } else {
-                listeAttente += "<tr>"
-                    + "<td>" + m + "</td>" //TODO else to prevent error in case of missing player for an mail
-                    + "</tr>";
             }
         });
     }

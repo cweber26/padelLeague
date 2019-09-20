@@ -96,12 +96,14 @@
             if (parameter.profilMail) {
                 if(newParameter){
                     parameter.profilMail = newParameter.mail;
+                    window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=profil&mail=" + String(parameter.mail) + "&key=" + String(parameter.key) + "&profilMail=" + String(parameter.profilMail);
                 }
-                window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=profil&mail=" + String(parameter.mail) + "&key=" + String(parameter.key) + "&profilMail=" + String(parameter.profilMail);
             } else if (newParameter) {
                 parameter.mail = newParameter.mail;
                 parameter.key = newParameter.key;
                 window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=profil&mail=" + String(parameter.mail) + "&key=" + String(parameter.key);
+            } else {
+                M.toast({html: "Profil modifié"});
             }
         });
     }
@@ -120,6 +122,14 @@
         } else {
             document.getElementById('indispoDate').value = "";
             document.getElementById('indispoDate').setAttribute("disabled", "disabled");
+        }
+    }
+
+    function archiveProfilJs() {
+        if (window.confirm("Es tu sûr de vouloir supprimer ?")) {
+            var mail = document.getElementById("mail").value;
+            google.script.run.archiveProfil(mail);
+            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=deletion";
         }
     }
 

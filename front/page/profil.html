@@ -225,7 +225,8 @@
                 <option value="1">Toujours convoqué</option>
                 <option value="2">Convoqué si besoin (première relance)</option>
                 <option value="3">Convoqué si besoin (deuxième relance) </option>
-                <option value="9">Jamais convoqué</option>
+                <option value="4">Jamais convoqué</option>
+                <option value="9">Joueur archivé</option>
             </select>
             <label for="priorityLevel">Convocation</label>
         </div>
@@ -244,10 +245,11 @@
     </div>
     <? } ?>
     <div class="row">
-        <a id="updateProfil" class="buttonGreen" onclick="updateProfilCheck()">Update</a>
+        <a id="updateProfil" class="buttonGreen" onclick="updateProfilCheck()">Mettre à jour</a>
     </div>
-    <!-- TODO ajout bouton de suppression -->
-    <!-- TODO ajout bouton de création -->
+    <div class="row">
+        <a id="archiveProfil" class="buttonRed" onclick="archiveProfilJs()">Supprimer</a>
+    </div>
 </div>
 <div class="fixed-action-btn direction-top active" style="bottom: 45px; right: 24px;">
     <a data-target="helper" class="btn-floating btn-large waves-effect waves-light modal-trigger green lighten-2 pulse"><i class="material-icons">help_outline</i></a>

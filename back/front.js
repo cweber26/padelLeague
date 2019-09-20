@@ -15,16 +15,17 @@ function doGet(e) {
     Route.path("compo", loadPageCompo);
     Route.path("stat", loadPageStat);
     Route.path("record", loadPageRecord);
-    Route.path("error", loadPageError);
-    Route.path("backoffice", loadPageBackoffice);
-    Route.path("team", loadPageTeam);
     Route.path("resultat", loadPageResultat);
+    Route.path("team", loadPageTeam);
+    Route.path("backoffice", loadPageBackoffice);
 
-    if (!isValidUser(param)) {
+    if (param.page=="deletion") {
+        return loadPageDeletion();
+    } else if (!isValidUser(param)) {
         return loadPageInvalidUser();
     } else if (Route[param.page]) {
         return Route[param.page]();
     } else {
-        return loadPageCompo();
+        return loadPageUnknowPage();
     }
 }

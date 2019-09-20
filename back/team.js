@@ -1,9 +1,4 @@
 function loadPageTeam() {
-
-    if (!param.isAdmin) {
-        return loadPageUnauthorized();
-    }
-
     var tableTeam = "";
     var data = playersTeamList();
     data.forEach(function (p) {
@@ -28,13 +23,15 @@ function loadPageTeam() {
             + "<td>" + checkbox(p[20]) + "</td>"
             + "<td>" + p[21] + "</td>"
             + "<td>" + checkbox(p[22]) + "</td>"
-            + "<td>" + checkbox(p[23]) + "</td>"
-            + "<td>" + buttonModificationProfil() + "</td>"
-            + "<td>" + buttonInscriptionTeam() + "</td>"
-            + "<td>" + buttonDesinscriptionTeam() + "</td>"
-            + "<td>" + buttonConfirmationTeam() + "</td>"
-            + "<td>" + buttonRetractationTeam() + "</td>"
-            + "</tr>";
+            + "<td>" + checkbox(p[23]) + "</td>";
+        if (param.isAdmin) {
+            tableTeam += "<td>" + buttonModificationProfil() + "</td>"
+                + "<td>" + buttonInscriptionTeam() + "</td>"
+                + "<td>" + buttonDesinscriptionTeam() + "</td>"
+                + "<td>" + buttonConfirmationTeam() + "</td>"
+                + "<td>" + buttonRetractationTeam() + "</td>";
+        }
+        tableTeam += "</tr>";
     });
 
     return render("front/page/team", "Barbeuc : Team", {
@@ -48,7 +45,7 @@ function loadPageTeam() {
 }
 
 function checkbox(value) {
-    if(value) {
+    if (value) {
         return "<input type=checkbox checked=checked /><span></span>";
     } else {
         return "<input type=checkbox /><span></span>";
@@ -58,15 +55,19 @@ function checkbox(value) {
 function buttonModificationProfil() {
     return "<a id=redirectProfilPage class=smallButtonGreen onclick=redirectProfilPage(this)>Profil</a>";
 }
+
 function buttonInscriptionTeam() {
     return "<a id=inscriptionTeam class=smallButtonGreen onclick=inscriptionTeam(this)>Inscription</a>";
 }
+
 function buttonDesinscriptionTeam() {
     return "<a id=desinscriptionTeam class=smallButtonRed onclick=desinscriptionTeam(this)>Désinscription</a>";
 }
+
 function buttonConfirmationTeam() {
     return "<a id=confirmationTeam class=smallButtonGreen onclick=confirmationTeam(this)>Confirmation</a>";
 }
+
 function buttonRetractationTeam() {
     return "<a id=retractationTeam class=smallButtonRed onclick=retractationTeam(this)>Retractation</a>";
 }

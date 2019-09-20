@@ -33,11 +33,13 @@
             <th onclick="sortTableTeamNumber(18)" style="cursor:pointer">Prio</th>
             <th onclick="sortTableTeamChar(19)" style="cursor:pointer">Admin</th>
             <th onclick="sortTableTeamChar(20)" style="cursor:pointer">Prioritaire</th>
+            <? if(admin) { ?>
             <th> Profil </th>
             <th> Inscription </th>
             <th> Désincription </th>
             <th> Confirmation </th>
             <th> Rétractation </th>
+            <? } ?>
         </tr>
         </thead>
         <tbody>

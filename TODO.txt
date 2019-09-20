@@ -1,23 +1,15 @@
-LISTE
-
 STAND BY
  ajouter une photo du joueur
- brancher le vendredi
- lien vers page de paiement urban
- gérer le covoiturage
 
 A FAIRE
- TODO Faire du tri dans les joueurs
- TODO Gérer envoi de mail selon le décalage de jour avec le prochain match
- TODO Bouton supprimer profil
  TODO Bouton ajouter profil
  TODO Mettre un joueur invité "fantome"
- TODO Page historique match
- TODO Changer priorisation
- TODO mail admin pour le score
+ TODO gérer le covoiturage via la confirmation
+ TODO afficher le stade (logo sur la compo)
+ TODO créer une page équipe pour les joureurs non admin
 
 EN COURS
-
+ brancher le vendredi A VALIDER
 
 FAIT
 Mail du mois : Vainqueur Nouveaux meilleur joueur etc...
@@ -63,4 +55,8 @@ Mail du mois : Vainqueur Nouveaux meilleur joueur etc...
  sauvegarder les joueurs en liste d'attente dans l'onglet TEAM OK
   Prendre 1ère réponse oui si dernière réponse est oui OK
  Règles du foot OK
-
+ Gérer envoi de mail selon le décalage de jour avec le prochain match OK
+ Changer priorisation au quart d'heure
+ Page historique match OK
+ Mail admin pour le score OK
+ Bouton supprimer profil OK

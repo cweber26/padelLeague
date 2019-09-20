@@ -71,9 +71,14 @@ function initPlayer(playerLine) {
 }
 
 function isValidUser(param) {
-    var player = getPlayerWithMail(param.mail);
+    try {
+        var player = getPlayerWithMail(param.mail);
+    } catch (error) {
+        return false;
+    }
+
     if (player) {
-        if (isKeyValid(param.key, player.key)) {
+        if (isKeyValid(param.key, player.key) && player.prioValue != 9) {
             if (player.isAdmin) {
                 param.isAdmin = true;
             }
@@ -305,4 +310,10 @@ function playersInWaitingListMail() {
         return parametersMap.get("waitingListPlayerMailList").split(',');
     }
     return [];
+}
+
+// noinspection JSUnusedGlobalSymbols
+function archiveProfil(mail) {
+    var row = getRowSheetTeamWithMail(mail);
+    sheetTeam.getRange(row, 22).setValue(9);
 }
