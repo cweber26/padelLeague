@@ -10,6 +10,7 @@ function doGet(e) {
     param = e.parameters;
 
     Route.path("profil", loadPageProfil);
+    Route.path("newProfil", loadPageNewProfil);
     Route.path("inscription", loadPageInscription);
     Route.path("confirmation", loadPageConfirmation);
     Route.path("compo", loadPageCompo);

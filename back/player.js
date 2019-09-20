@@ -1,7 +1,3 @@
-function playersTeamMailList() {
-    return sheetTeam.getRange(3, 1, sheetTeam.getRange("A3:A").getValues().filter(String).length, 1).getValues()
-}
-
 function playersTeamList() {
     return sheetTeam.getRange(3, 1, sheetTeam.getRange("A3:A").getValues().filter(String).length, sheetTeam.getLastColumn()).getValues()
 }
@@ -126,10 +122,21 @@ function loadPageProfil() {
         key: param.key,
         player: player,
         admin: param.isAdmin,
+        modif: true,
         testing: isParameterTrue("modeTest")
     });
 }
 
+
+function loadPageNewProfil() {
+    return render("front/page/profil", "Barbeuc : Profil", {
+        mail: param.mail,
+        key: param.key,
+        admin: param.isAdmin,
+        modif: false,
+        testing: isParameterTrue("modeTest")
+    });
+}
 
 // noinspection JSUnusedGlobalSymbols
 function updateProfil(user) {
@@ -316,4 +323,100 @@ function playersInWaitingListMail() {
 function archiveProfil(mail) {
     var row = getRowSheetTeamWithMail(mail);
     sheetTeam.getRange(row, 22).setValue(9);
+}
+
+// noinspection JSUnusedGlobalSymbols
+function createProfil(user, creatorMail) {
+    if(getRowSheetTeamWithMail(user.mail)) {
+        return "Le mail est déjà utilisé";
+    }
+    var row = sheetTeam.getRange("A3:A").getValues().filter(String).length + 3;
+
+    sheetTeam.getRange(row, 1).setValue(user.mail);
+    sheetTeam.getRange(row, 3).setValue(user.prenom);
+    sheetTeam.getRange(row, 4).setValue(user.nom);
+    sheetTeam.getRange(row, 7).setValue(user.surnom);
+
+    var unavailable = user.indispo;
+    var dateEuropeFormat = user.indispoDate;
+    var year = dateEuropeFormat.substring(6, 10);
+    var month = dateEuropeFormat.substring(3, 5);
+    var day = dateEuropeFormat.substring(0, 2);
+    var endDate = new Date(year, month - 1, day);
+    if (unavailable) {
+        sheetTeam.getRange(row, 8).setValue(true);
+        sheetTeam.getRange(row, 9).setValue(new Date(Utilities.formatDate(endDate, "Europe/Paris", "MM/dd/yy")));
+    } else {
+        sheetTeam.getRange(row, 8).setValue(false);
+        sheetTeam.getRange(row, 9).setValue("");
+    }
+
+    if (user.lundi) {
+        sheetTeam.getRange(row, 10).setValue(true);
+    } else {
+        sheetTeam.getRange(row, 10).setValue(false);
+    }
+    if (user.mardi) {
+        sheetTeam.getRange(row, 11).setValue(true);
+    } else {
+        sheetTeam.getRange(row, 11).setValue(false);
+    }
+    if (user.mercredi) {
+        sheetTeam.getRange(row, 12).setValue(true);
+    } else {
+        sheetTeam.getRange(row, 12).setValue(false);
+    }
+    if (user.jeudi) {
+        sheetTeam.getRange(row, 13).setValue(true);
+    } else {
+        sheetTeam.getRange(row, 13).setValue(false);
+    }
+    if (user.vendredi) {
+        sheetTeam.getRange(row, 14).setValue(true);
+    } else {
+        sheetTeam.getRange(row, 14).setValue(false);
+    }
+    sheetTeam.getRange(row, 15).setValue(user.site);
+    sheetTeam.getRange(row, 16).setValue(user.poste);
+    sheetTeam.getRange(row, 17).setValue(user.dribble);
+    sheetTeam.getRange(row, 18).setValue(user.frappe);
+    sheetTeam.getRange(row, 19).setValue(user.defense);
+    sheetTeam.getRange(row, 20).setValue(true);
+    sheetTeam.getRange(row, 22).setValue(user.priorityLevel)
+
+    if (user.isAnAdmin) {
+        sheetTeam.getRange(row, 23).setValue(true)
+    } else {
+        sheetTeam.getRange(row, 23).setValue(false);
+    }
+    if (user.haveAPriority) {
+        sheetTeam.getRange(row, 24).setValue(true)
+    } else {
+        sheetTeam.getRange(row, 24).setValue(false);
+    }
+
+    sendMailToNewUser(user.mail);
+    sendMailToAdminAboutNewPlayer(user.mail, creatorMail);
+}
+
+function sendMailToNewUser(mail) {
+    var player = getPlayerWithMail(mail);
+    sendMail(player.mail, "Bienvenue " , includeWithArgs("front/mail/mailNewProfil", {
+        urlMail: getUrlMail(player)
+    }));
+}
+
+function sendMailToAdminAboutNewPlayer(mailNewPlayer, creatorMail) {
+    var mailsAdmin = parametersMap.get("adminMailList").split(',');
+    for (var i in mailsAdmin) {
+        var playerAdmin = getPlayerWithMail(mailsAdmin[i]);
+        sendMailToAdminAboutNewPlayerForAnAdmin(playerAdmin, mailNewPlayer, creatorMail);
+    }
+}
+
+function sendMailToAdminAboutNewPlayerForAnAdmin(playerAdmin, mailNewPlayer, creatorMail) {
+    sendMail(playerAdmin.mail, "Nouveau Joueur" , includeWithArgs("front/mail/mailForAdmin", {
+        html: "<h3>Le joueur " + mailNewPlayer + " vient d'être créé par " + creatorMail + "</h3>",
+        urlMail: getUrlMail(playerAdmin)
+    }));
 }

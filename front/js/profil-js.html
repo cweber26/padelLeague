@@ -15,14 +15,33 @@
 
     document.addEventListener('keypress', function (ev) {
         if(ev.keyCode === 13) {
-            document.getElementById("updateProfil").click();
+            if(document.getElementById("updateProfil")) {
+                document.getElementById("updateProfil").click();
+            } else if (document.getElementById("createProfil")) {
+                document.getElementById("createProfil").click();
+            }
         }
     });
 
     function updateProfilCheck() {
+        if(profilInfosAreOk()){
+            updateProfil();
+        }
+    }
+
+    function createProfilCheck() {
+        console.log("createProfilCheck");
+        if(profilInfosAreOk()){
+            createProfil();
+        }
+    }
+
+    function profilInfosAreOk() {
         var toValidate = {
+            mail: "Le mail doit être rempli",
             prenom: "Le prenom doit être rempli",
             nom: "Le nom doit être rempli",
+            surnom: "Le surnom doit être rempli",
             site: "Le site doit être choisi",
             poste: "Le poste doit être choisi",
             dribble: "Le niveau de dribble doit être rempli",
@@ -40,8 +59,9 @@
         });
 
         if (allValid) {
-            updateProfil();
+            return true;
         }
+        return false;
     }
 
     function checkValidity(elementId, message) {
@@ -110,6 +130,59 @@
 
     function updateProfilFailure() {
         M.toast({html: "Clef non valide"});
+    }
+
+    function createProfil() {
+        var user = {};
+        user.mail = document.getElementById("mail").value;
+        user.prenom = document.getElementById("prenom").value;
+        user.nom = document.getElementById("nom").value;
+        user.surnom = document.getElementById("surnom").value;
+        user.indispo = document.getElementById("indispo").checked;
+        user.indispoDate = document.getElementById("indispoDate").value;
+        user.lundi = document.getElementById("lundi").checked;
+        user.mardi = document.getElementById("mardi").checked;
+        user.mercredi = document.getElementById("mercredi").checked;
+        user.jeudi = document.getElementById("jeudi").checked;
+        user.vendredi = document.getElementById("vendredi").checked;
+        user.site = document.getElementById("site").value;
+        user.poste = document.getElementById("poste").value;
+        user.dribble = document.querySelector('input[name="dribble"]:checked').value;
+        user.frappe = document.querySelector('input[name="frappe"]:checked').value;
+        user.defense = document.querySelector('input[name="defense"]:checked').value;
+        if (document.getElementById("priorityLevel")) {
+            user.priorityLevel = document.getElementById("priorityLevel").value;
+        }
+        if (document.getElementById("isAnAdmin")) {
+            user.isAnAdmin = document.getElementById("isAnAdmin").checked;
+        }
+        if (document.getElementById("haveAPriority")) {
+            user.haveAPriority = document.getElementById("haveAPriority").checked;
+        }
+
+        console.log(user);
+        M.toast({html: "En cours de création"});
+        google.script.url.getLocation(function (location) {
+            var parameter = location.parameter;
+            google.script.run.withSuccessHandler(createProfilSuccess).withFailureHandler(createProfilFailure).createProfil(user, parameter.mail);
+        });
+
+    }
+
+    function createProfilSuccess(message) {
+        if(message) {
+            M.toast({html: message});
+        } else {
+            M.toast({html: "Profil créé : l'utilisateur recevra les mails selon le type de convation choisi", displayLength: 10000});
+        }
+    }
+
+    function createProfilFailure() {
+        if(message) {
+            M.toast({html: message});
+        } else {
+            M.toast({html: "Création du profil en erreur"});
+        }
     }
 
     function switchIndispoDate() {

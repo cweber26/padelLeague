@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <?!= include("front/page/head"); ?>
+    <?!= include("front/css/css"); ?>
+</head>
+
+<body>
+<div class="container">
+    <?!= includeWithArgs("front/mail/mailHeader", {urlMail: urlMail}); ?>
+    <div class="row">
+        <h2 class="title">Bienvenue</h2>
+        <h4 class="title">Utilise les icones si dessous pour te connecter au site</h4>
+    </div>
+    <?!= includeWithArgs("front/mail/mailFooter", {urlMail: urlMail}); ?>
+</div>
+</body>
+</html>
+
+

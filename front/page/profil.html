@@ -11,38 +11,38 @@
     <div class="row"></div>
     <div class="row">
         <div class="input-field col s12">
-            <input id="mail" type="text" class="validate" value="<?=player.mail?>" required>
+            <input id="mail" type="text" class="validate" <? if(modif) { ?> value="<?=player.mail?>" <? } ?> required>
+            <? if(modif) { ?>
             <input id="oldMail" type="text" class="validate" value="<?=player.mail?>" disabled hidden>
             <input id="key" type="text" class="validate" value="<?=player.keyWithSecurity?>" disabled hidden>
+            <? } ?>
             <label for="mail">Mail</label>
         </div>
     </div>
-    <!-- ROW -->
     <div class="row">
         <div class="input-field col s4">
-            <input id="prenom" type="text" class="validate" value="<?=player.firstName?>" required>
+            <input id="prenom" type="text" class="validate" <? if(modif) { ?> value="<?=player.firstName?>" <? } ?> required>
             <label for="prenom">Prénom</label>
         </div>
         <div class="input-field col s4">
-            <input id="nom" type="text" class="validate" value="<?=player.lastName?>" required>
+            <input id="nom" type="text" class="validate" <? if(modif) { ?> value="<?=player.lastName?>" <? } ?> required>
             <label for="nom">Nom</label>
         </div>
         <div class="input-field col s4">
-            <input id="surnom" type="text" class="validate" value="<?=player.nickName?>" required>
+            <input id="surnom" type="text" class="validate" <? if(modif) { ?> value="<?=player.nickName?>" <? } ?> required>
             <label for="surnom">Surnom</label>
         </div>
     </div>
-    <!-- ROW -->
     <div class="row">
         <div class="switch input-field col s3">
             <label>
                 Disponible
-                <input id="indispo" type="checkbox"  <? if(player.isUnavailable) { ?>checked<? } ?>>
+                <input id="indispo" type="checkbox"  <? if(modif && player.isUnavailable) { ?>checked<? } ?>>
                 <span class="lever"></span> Indisponible
             </label>
         </div>
         <div class="input-field col s3">
-            <? if(player.endDateOfUnavailibility) { ?>
+            <? if(modif && player.endDateOfUnavailibility) { ?>
             <script> document.addEventListener('DOMContentLoaded', function () {
                 var datePicker = document.getElementById('indispoDate');
                 M.Datepicker.init(datePicker, {
@@ -60,69 +60,58 @@
         </div>
         <div class="switch input-field col s1">
             <label>
-                <input id="lundi" type="checkbox" class="filled-in" <? if(player.mondaySelected) { ?>checked="checked"<? } ?>/>
+                <input id="lundi" type="checkbox" class="filled-in" <? if(!modif || player.mondaySelected) { ?>checked="checked"<? } ?>/>
                 <span>Lundi</span>
             </label>
         </div>
         <div class="switch input-field col s1">
             <label>
-                <input id="mardi" type="checkbox" class="filled-in" <? if(player.tuesdaySelected) { ?>checked="checked"<? } ?>/>
+                <input id="mardi" type="checkbox" class="filled-in" <? if(!modif ||player.tuesdaySelected) { ?>checked="checked"<? } ?>/>
                 <span>Mardi</span>
             </label>
         </div>
         <div class="switch input-field col s1">
             <label>
-                <input id="mercredi" type="checkbox" class="filled-in" <? if(player.wednesdaySelected) { ?>checked="checked"<? } ?>/>
+                <input id="mercredi" type="checkbox" class="filled-in" <? if(!modif ||player.wednesdaySelected) { ?>checked="checked"<? } ?>/>
                 <span>Mercredi</span>
             </label>
         </div>
         <div class="switch input-field col s1">
             <label>
-                <input id="jeudi" type="checkbox" class="filled-in" <? if(player.thursdaySelected) { ?>checked="checked"<? } ?>/>
+                <input id="jeudi" type="checkbox" class="filled-in" <? if(!modif ||player.thursdaySelected) { ?>checked="checked"<? } ?>/>
                 <span>Jeudi</span>
             </label>
         </div>
         <div class="switch input-field col s1">
             <label>
-                <input id="vendredi" type="checkbox" class="filled-in" <? if(player.fridaySelected) { ?>checked="checked"<? } ?>/>
+                <input id="vendredi" type="checkbox" class="filled-in" <? if(!modif ||player.fridaySelected) { ?>checked="checked"<? } ?>/>
                 <span>Vendredi</span>
             </label>
         </div>
     </div>
-    <!-- ROW -->
     <div class="row">
         <div class="input-field col s6">
             <select id="site" required>
-                <option disabled>Choisi ton lieu de départ</option>
-                <option
-                <? if(player.site=="Campus") { ?> selected <? } ?>>Campus</option>
-                <option
-                <? if(player.site=="Btwin") { ?> selected <? } ?>>Btwin</option>
-                <option
-                <? if(player.site=="Croix") { ?> selected <? } ?>>Croix</option>
-                <option
-                <? if(player.site=="V2") { ?> selected <? } ?>>V2</option>
-                <option
-                <? if(player.site=="Autre") { ?> selected <? } ?>>Autre</option>
+                <option disabled selected value="">Choisi ton lieu de départ</option>
+                <option <? if(modif && player.site=="Campus") { ?> selected <? } ?>>Campus</option>
+                <option <? if(modif && player.site=="Btwin") { ?> selected <? } ?>>Btwin</option>
+                <option <? if(modif && player.site=="Croix") { ?> selected <? } ?>>Croix</option>
+                <option <? if(modif && player.site=="V2") { ?> selected <? } ?>>V2</option>
+                <option <? if(modif && player.site=="Autre") { ?> selected <? } ?>>Autre</option>
             </select>
             <label for="site">Lieu</label>
         </div>
         <div class="input-field col s6">
             <select id="poste" required>
                 <option disabled selected value="">Choisi ton poste préféré</option>
-                <option
-                <? if(player.position=="Attaquant") { ?> selected <? } ?>>Attaquant</option>
-                <option
-                <? if(player.position=="Défenseur") { ?> selected <? } ?>>Défenseur</option>
-                <option
-                <? if(player.position=="Polyvalent") { ?> selected <? } ?>>Polyvalent</option>
-                <option
-                <? if(player.position=="Gardien") { ?> selected <? } ?>>Gardien</option>
+                <option <? if(modif && player.position=="Attaquant") { ?> selected <? } ?>>Attaquant</option>
+                <option <? if(modif && player.position=="Défenseur") { ?> selected <? } ?>>Défenseur</option>
+                <option <? if(modif && player.position=="Polyvalent") { ?> selected <? } ?>>Polyvalent</option>
+                <option <? if(modif && player.position=="Gardien") { ?> selected <? } ?>>Gardien</option>
             </select>
             <label for="poste">Poste</label>
         </div>
     </div>
-    <!-- ROW -->
     <div class="row">
         <div class="col s4">
             <p>
@@ -132,25 +121,25 @@
             </p>
             <p>
                 <label>
-                    <input value="1" id="dribble" name="dribble" type="radio" <? if(player.levelDribble=="1") { ?> checked <? } ?> required/>
+                    <input value="1" id="dribble" name="dribble" type="radio" <? if(modif && player.levelDribble=="1") { ?> checked <? } ?> required/>
                     <span>C'est pas mon truc</span>
                 </label>
             </p>
             <p>
                 <label>
-                    <input value="2" id="dribble" name="dribble" type="radio" <? if(player.levelDribble=="2") { ?> checked <? } ?>/>
+                    <input value="2" id="dribble" name="dribble" type="radio" <? if(modif && player.levelDribble=="2") { ?> checked <? } ?>/>
                     <span>Je me débrouille</span>
                 </label>
             </p>
             <p>
                 <label>
-                    <input value="3" id="dribble" name="dribble" type="radio" <? if(player.levelDribble=="3") { ?> checked <? } ?>/>
+                    <input value="3" id="dribble" name="dribble" type="radio" <? if(modif && player.levelDribble=="3") { ?> checked <? } ?>/>
                     <span>J'en abuse parfois (je dribble dans la mauvaise direction)</span>
                 </label>
             </p>
             <p>
                 <label>
-                    <input value="4" id="dribble" name="dribble" type="radio" <? if(player.levelDribble=="4") { ?> checked <? } ?>/>
+                    <input value="4" id="dribble" name="dribble" type="radio" <? if(modif && player.levelDribble=="4") { ?> checked <? } ?>/>
                     <span>Je maitrise</span>
                 </label>
             </p>
@@ -163,25 +152,25 @@
             </p>
             <p>
                 <label>
-                    <input value="1" id="frappe" name="frappe" type="radio" <? if(player.levelFrappe=="1") { ?> checked <? } ?> required/>
+                    <input value="1" id="frappe" name="frappe" type="radio" <? if(modif && player.levelFrappe=="1") { ?> checked <? } ?> required/>
                     <span>C'est pas mon truc</span>
                 </label>
             </p>
             <p>
                 <label>
-                    <input value="2" id="frappe" name="frappe" type="radio" <? if(player.levelFrappe=="2") { ?> checked <? } ?>/>
+                    <input value="2" id="frappe" name="frappe" type="radio" <? if(modif && player.levelFrappe=="2") { ?> checked <? } ?>/>
                     <span>Uniquement proche du but</span>
                 </label>
             </p>
             <p>
                 <label>
-                    <input value="3" id="frappe" name="frappe" type="radio" <? if(player.levelFrappe=="3") { ?> checked <? } ?>/>
+                    <input value="3" id="frappe" name="frappe" type="radio" <? if(modif && player.levelFrappe=="3") { ?> checked <? } ?>/>
                     <span>J'en abuse parfois (je frappe dans la mauvaise direction)<br>De près et de loin mais c’est pas toujours précis</span>
                 </label>
             </p>
             <p>
                 <label>
-                    <input value="4" id="frappe" name="frappe" type="radio" <? if(player.levelFrappe=="4") { ?> checked <? } ?>/>
+                    <input value="4" id="frappe" name="frappe" type="radio" <? if(modif && player.levelFrappe=="4") { ?> checked <? } ?>/>
                     <span>Je frappe précisément de loin et de près</span>
                 </label>
             </p>
@@ -194,31 +183,31 @@
             </p>
             <p>
                 <label>
-                    <input value="1" id="defense" name="defense" type="radio" <? if(player.levelDefense=="1") { ?> checked <? } ?> required/>
+                    <input value="1" id="defense" name="defense" type="radio" <? if(modif && player.levelDefense=="1") { ?> checked <? } ?> required/>
                     <span>C'est pas mon truc</span>
                 </label>
             </p>
             <p>
                 <label>
-                    <input value="2" id="defense" name="defense" type="radio" <? if(player.levelDefense=="2") { ?> checked <? } ?> />
+                    <input value="2" id="defense" name="defense" type="radio" <? if(modif && player.levelDefense=="2") { ?> checked <? } ?> />
                     <span>Uniquement lorsque le ballon est proche.<br>Si je suis dribblé ou si je perd la balle je ne suis pas toujours mon joueur </span>
                 </label>
             </p>
             <p>
                 <label>
-                    <input value="3" id="defense" name="defense" type="radio" <? if(player.levelDefense=="3") { ?> checked <? } ?> />
+                    <input value="3" id="defense" name="defense" type="radio" <? if(modif && player.levelDefense=="3") { ?> checked <? } ?> />
                     <span>Je me place et je suis mon joueur jusqu’à la fin de l’action.<br>Quand je suis en attaque je ne fais pas toujours l’effort de revenir</span>
                 </label>
             </p>
             <p>
                 <label>
-                    <input value="4" id="defense" name="defense" type="radio" <? if(player.levelDefense=="4") { ?> checked <? } ?> />
+                    <input value="4" id="defense" name="defense" type="radio" <? if(modif && player.levelDefense=="4") { ?> checked <? } ?> />
                     <span>Je me place et je suis mon joueur jusqu’à la fin de l’action.<br>Je fais toujours l’effort de revenir ou j’ai tendance à rester en défense lorsque mon équipe attaque</span>
                 </label>
             </p>
         </div>
     </div>
-    <? if(admin) { ?>
+    <? if(!modif || admin) { ?>
     <div class="row">
         <div class="input-field col s4">
             <select id="priorityLevel">
@@ -232,26 +221,32 @@
         </div>
         <div class="switch input-field col s4">
             <label>
-                <input id="isAnAdmin" type="checkbox" class="filled-in" <? if(player.isAdmin) { ?>checked="checked"<? } ?>/>
+                <input id="isAnAdmin" type="checkbox" class="filled-in" <? if(modif && player.isAdmin) { ?>checked="checked"<? } ?> <? if(!admin) { ?>disabled<? } ?>/>
                 <span>Admin User</span>
             </label>
         </div>
         <div class="switch input-field col s4">
             <label>
-                <input id="haveAPriority" type="checkbox" class="filled-in" <? if(player.isPrioritary) { ?>checked="checked"<? } ?>/>
+                <input id="haveAPriority" type="checkbox" class="filled-in" <? if(modif && player.isPrioritary) { ?>checked="checked"<? } ?> <? if(!admin) { ?>disabled<? } ?>/>
                 <span>A une prio pour le prochain match</span>
             </label>
         </div>
     </div>
     <? } ?>
+    <? if(modif) { ?>
     <div class="row">
         <a id="updateProfil" class="buttonGreen" onclick="updateProfilCheck()">Mettre à jour</a>
     </div>
     <div class="row">
         <a id="archiveProfil" class="buttonRed" onclick="archiveProfilJs()">Supprimer</a>
     </div>
+    <? } else { ?>
+    <div class="row">
+        <a id="createProfil" class="buttonGreen" onclick="createProfilCheck()">Créer</a>
+    </div>
+    <? } ?>
 </div>
-<div class="fixed-action-btn direction-top active" style="bottom: 45px; right: 24px;">
+<div class="fixed-action-btn direction-top active" style="bottom: 25px; right: 25px;">
     <a data-target="helper" class="btn-floating btn-large waves-effect waves-light modal-trigger green lighten-2 pulse"><i class="material-icons">help_outline</i></a>
 </div>
 <div id="helper" class="modal">
