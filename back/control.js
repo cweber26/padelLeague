@@ -9,6 +9,6 @@ function controlAndCancelOrRelaunch() {
         } else if (parametersMap.get("numberPlayerInMatch") >= parametersMap.get("minPlayerForAutoCancelation") && parametersMap.get("numberPlayerInMatch") < parametersMap.get("numberPlayerMatch")) {
             sendInscriptionMailForAPrio(3);
         }
-        logRunDate("control");
+        updateParameterValue("controlDone", new Date(Date.now()));
     }
 }

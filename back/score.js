@@ -16,7 +16,7 @@ function saveTeam() {
     sheetResult.getRange(row, 9).setValue(players[7][0]);
     sheetResult.getRange(row, 10).setValue(players[8][0]);
     sheetResult.getRange(row, 11).setValue(players[9][0]);
-    logRunDate("teamSaved");
+    updateParameterValue("teamSaved", new Date(Date.now()));
 }
 
 // noinspection JSUnusedGlobalSymbols
@@ -37,7 +37,7 @@ function saveScore(scoreValue) {
                     }
                 });
 
-                logRunDate("scoreSaved");
+                updateParameterValue("scoreSaved", new Date(Date.now()));
                 break;
             }
         }

@@ -8,7 +8,17 @@ function sendInscriptionMailForAPrio(prio) {
             }
         }
     }
-    logRunDate(prio);
+    switch (prio) {
+        case 1:
+            updateParameterValue("mailSendingPrio1", new Date(Date.now()));
+            break;
+        case 2:
+            updateParameterValue("mailSendingPrio2", new Date(Date.now()));
+            break;
+        case 3:
+            updateParameterValue("mailSendingPrio3", new Date(Date.now()));
+            break;
+    }
 }
 
 function sendInscriptionMailForAPlayer(player) {

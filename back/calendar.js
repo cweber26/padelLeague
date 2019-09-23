@@ -15,7 +15,7 @@ function createCalendarEvent() {
             mails = parametersMap.get("mailTester");
         }
         calendar.createEvent(parametersMap.get("applicationName"), begin, end, {location: parametersMap.get("nextMatchStadiumAddress"), guests: mails, sendInvites: false});
-        logRunDate("googleEvent");
+        updateParameterValue("creationGoogleEvent", new Date(Date.now()));
     }
 }
 

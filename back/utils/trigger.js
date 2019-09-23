@@ -1,7 +1,9 @@
 // noinspection JSUnusedGlobalSymbols
 function execBatch() {
     var nextStep = getNextStep();
+    Logger.log("nextStep "+ nextStep);
     if(isTimeForStep(nextStep)){
+        Logger.log("isTimeForStep "+ nextStep);
         execStep(nextStep);
     }
 }
@@ -35,7 +37,9 @@ function isTimeForStep(step) {
     var nextStepHour = nextStepDate.substring(4, 9);
     var currentDay = Utilities.formatDate(new Date(), "Europe/Paris", "E");
     var currentHour = Utilities.formatDate(new Date(), "Europe/Paris", "HH");
+    Logger.log("currentDay " + currentDay + "/ nextStepDay " + nextStepDay);
     if(currentDay == nextStepDay) {
+        Logger.log("currentHour " + currentHour + "/ nextStepHour " + nextStepHour);
         if(currentHour >= nextStepHour) {
             return true;
         }
@@ -44,6 +48,7 @@ function isTimeForStep(step) {
 }
 
 function execStep(step) {
+    Logger.log("execStep "+ nextStep);
     switch (step) {
         case 1:
             deleteUnavaibility();

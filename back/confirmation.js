@@ -6,7 +6,7 @@ function sendConfirmMail() {
             var player = getPlayerWithMail(mails[i]);
             sendConfirmMailForAPlayer(player, false);
         }
-        logRunDate("confirmation");
+        updateParameterValue("mailSendingConfirmation", new Date(Date.now()));
     }
 }
 

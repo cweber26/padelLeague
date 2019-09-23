@@ -12,7 +12,7 @@ function sendReminderMail() {
                 sendWaitingListMail(getPlayerWithMail(waitingListMails[j]));
             }
         }
-        logRunDate("reminder");
+        updateParameterValue("mailSendingReminder", new Date(Date.now()));
     }
 }
 
