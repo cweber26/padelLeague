@@ -1,6 +1,5 @@
-TODO Mettre un joueur invité "fantome"
+TODO mettre un joueur invité "fantome"
 TODO gérer le covoiturage via la confirmation
-TODO accès au profil via la compo
 TODO visu niveau pour admin sur la compo
 TODO améliorer l'ergonomie des boutons admin sur la compo (menu déroulant)
 

@@ -34,6 +34,7 @@ function isTimeForStep(step) {
     var nextStepDay = nextStepDate.substring(0, 3);
     var nextStepHour = nextStepDate.substring(4, 9);
     var currentDay = Utilities.formatDate(new Date(), "Europe/Paris", "E");
+    var currentHour = Utilities.formatDate(new Date(), "Europe/Paris", "HH");
     if(currentDay == nextStepDay) {
         if(currentHour >= nextStepHour) {
             return true;
