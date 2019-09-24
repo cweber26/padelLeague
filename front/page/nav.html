@@ -1,3 +1,16 @@
+<ul id="dropdownBO" class="dropdown-content" width="400px">
+    <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=backoffice&mail=<?=mail?>&key=<?=key?>">Parameters</a></li>
+    <li class="divider"></li>
+    <li><a onclick="sendPrio1Js()">Envoyer mail prio 1</a></li>
+    <li><a onclick="sendPrio2Js()">Envoyer mail prio 2</a></li>
+    <li><a onclick="sendPrio3Js()">Envoyer mail prio 3</a></li>
+    <li><a onclick="sendReminderJs()">Envoyer mail rappel</a></li>
+    <li><a onclick="sendConfirmationJs()">Envoyer mail confirmation</a></li>
+    <li><a onclick="cleaningJs()" style="color: #e57373">Purge match</a></li>
+    <li><a onclick="cancelMatchJs()" style="color: #e57373">Cancel match</a></li>
+    <li class="divider"></li>
+    <li><a onclick="switchMode()"><?if(testing){?>Prod mode<?} else {?>Test mode<?}?></a></li>
+</ul>
 <nav>
     <div class="nav-wrapper <?if(!admin || !testing){?>green<?} else {?>red<?}?> lighten-2">
         <a class="brand-logo">Barbeuc League<?if(admin && testing){?>  ⚠️ Test ⚠️ <?}?></a>
@@ -10,7 +23,7 @@
             <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=profil&mail=<?=mail?>&key=<?=key?>">Profil</a></li>
             <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=team&mail=<?=mail?>&key=<?=key?>">Equipe</a></li>
             <?if(admin){?>
-            <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=backoffice&mail=<?=mail?>&key=<?=key?>">BackOffice</a></li>
+            <li><a class="dropdown-trigger" data-target="dropdownBO">BackOffice<i class="material-icons right">arrow_drop_down</i></a></li>
             <?}?>
         </ul>
         <ul class="sidenav" id="mobile-demo">
@@ -21,7 +34,7 @@
             <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=profil&mail=<?=mail?>&key=<?=key?>">Profil</a></li>
             <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=team&mail=<?=mail?>&key=<?=key?>">Equipe</a></li>
             <?if(admin){?>
-            <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=backoffice&mail=<?=mail?>&key=<?=key?>">BackOffice</a></li>
+
             <?}?>
         </ul>
     </div>

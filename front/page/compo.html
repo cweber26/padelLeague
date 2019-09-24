@@ -123,6 +123,7 @@
             </tbody>
         </table>
     </div>
+    <? } ?>
     <? if(listeAttente != "") { ?>
     <div class="row">
         <div class="col s3">
@@ -141,36 +142,6 @@
         </div>
     </div>
     <? } ?>
-    <? } ?>
-    <? if(admin) { ?>
-    <div class="row">
-        <h4>Admin action</h4>
-    </div>
-    <div class="row">
-        <div class="col s3">
-            <a id="sendPrio1" class="buttonGreen" onclick="sendPrio1Js()">Envoyer mail prio 1</a>
-        </div>
-        <div class="col s3">
-            <a id="sendPrio2" class="buttonGreen" onclick="sendPrio2Js()">Envoyer mail prio 2</a>
-        </div>
-        <div class="col s3">
-            <a id="sendPrio3" class="buttonGreen" onclick="sendPrio3Js()">Envoi mail prio 3</a>
-        </div>
-        <div class="col s3">
-            <a id="sendReminder" class="buttonGreen" onclick="sendReminderJs()">Envoi mail rappel</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s3">
-            <a id="sendConfirmation" class="buttonGreen" onclick="sendConfirmationJs()">Envoi mail confirmation</a>
-        </div>
-        <div class="col s3">
-            <a id="cleaning" class="buttonRed" onclick="cleaningJs()">Purger le match</a>
-        </div>
-        <div class="col s3">
-            <a id="cancelMatch" class="buttonRed" onclick="cancelMatchJs()">Annuler le match</a>
-        </div>
-    </div>
     <? if (inscriptionTable != "") { ?>
     <div>
         <h4>Inscriptions</h4>
@@ -192,7 +163,6 @@
             </tbody>
         </table>
     </div>
-    <? } ?>
     <? } ?>
 </div>
 

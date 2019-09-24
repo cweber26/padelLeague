@@ -4,6 +4,122 @@
         M.Sidenav.init(sidenav);
         var modal = document.querySelectorAll('.modal');
         M.Modal.init(modal);
+        var dropdown = document.querySelectorAll('.dropdown-trigger');
+        var instances = M.Dropdown.init(dropdown);
+        console.log(instances);
     });
-</script>    
+
+    function cleaningJs() {
+        if (window.confirm("Es tu sûr de vouloir purger toutes les inscriptions ?")) {
+            var parameter = {};
+            google.script.url.getLocation(function (location) {
+                parameter = location.parameter;
+                M.toast({html: "Purge en cours"});
+                google.script.run.withSuccessHandler(successCleaning).withFailureHandler(failCleaning).cleaning();
+            });
+
+            function successCleaning() {
+                M.toast({html: "Purge éffectuée"});
+            }
+
+            function failCleaning() {
+                M.toast({html: "Purge en erreur"});
+            }
+        }
+    }
+
+    function sendPrio1Js() {
+        if (window.confirm("Es tu sûr de vouloir envoyer les inscriptions aux joueurs de la prio 1 ?")) {
+            M.toast({html: "Envoi en cours"});
+            google.script.run.withSuccessHandler(successSend1).withFailureHandler(failSend1).envoiInscriptionGroup1();
+        }
+
+        function successSend1() {
+            M.toast({html: "Mails envoyés"});
+        }
+
+        function failSend1() {
+            M.toast({html: "Envoi en erreur"});
+        }
+    }
+
+    function sendPrio2Js() {
+        if (window.confirm("Es tu sûr de vouloir envoyer les inscriptions aux joueurs de la prio 2 ?")) {
+            M.toast({html: "Envoi en cours"});
+            google.script.run.withSuccessHandler(successSend2).withFailureHandler(failSend2).envoiInscriptionGroup2();
+        }
+
+        function successSend2() {
+            M.toast({html: "Mails envoyés"});
+        }
+
+        function failSend2() {
+            M.toast({html: "Envoi en erreur"});
+        }
+    }
+
+    function sendPrio3Js() {
+        if (window.confirm("Es tu sûr de vouloir envoyer les inscriptions aux joueurs de la prio 3 ?")) {
+            M.toast({html: "Envoi en cours"});
+            google.script.run.withSuccessHandler(successSend3).withFailureHandler(failSend3).envoiInscriptionGroup3();
+        }
+
+        function successSend3() {
+            M.toast({html: "Mails envoyés"});
+        }
+
+        function failSend3() {
+            M.toast({html: "Envoi en erreur"});
+        }
+    }
+
+    function sendReminderJs() {
+        if (window.confirm("Es tu sûr de vouloir envoyer les rappels aux joueurs ?")) {
+            M.toast({html: "Envoi en cours"});
+            google.script.run.withSuccessHandler(successSend3).withFailureHandler(failSend3).rappelMatch();
+        }
+
+        function successSend3() {
+            M.toast({html: "Mails envoyés"});
+        }
+
+        function failSend3() {
+            M.toast({html: "Envoi en erreur"});
+        }
+    }
+    function sendConfirmationJs() {
+        if (window.confirm("Es tu sûr de vouloir envoyer les confirmations aux joueurs ?")) {
+            M.toast({html: "Envoi en cours"});
+            google.script.run.withSuccessHandler(successSend3).withFailureHandler(failSend3).confirmationMatch();
+        }
+
+        function successSend3() {
+            M.toast({html: "Mails envoyés"});
+        }
+
+        function failSend3() {
+            M.toast({html: "Envoi en erreur"});
+        }
+    }
+
+    function cancelMatchJs() {
+        if (window.confirm("Es tu sûr de vouloir annuler le match ?")) {
+            var parameter = {};
+            google.script.url.getLocation(function (location) {
+                parameter = location.parameter;
+                M.toast({html: "Annulation en cours"});
+                google.script.run.withSuccessHandler(successSend3).withFailureHandler(failSend3).cancelMatchAndSendMail(false);
+            });
+
+            function successSend3() {
+                M.toast({html: "Match annulé"});
+                M.toast({html: "Mails d'annulation envoyés"});
+            }
+
+            function failSend3() {
+                M.toast({html: "Annulation du match en erreur"});
+            }
+        }
+    }
+</script>
 
