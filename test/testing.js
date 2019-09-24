@@ -28,7 +28,7 @@ function testConfirmation() {
     var playersList = playersTeamList();
     for (var i = 0; i < 15; i++) {
         var player = initPlayer(playersList[i]);
-        confirmation({mail: player.mail, key: player.keyWithSecurity, answer: "Oui"});
+        confirmation({mail: player.mail, key: player.keyWithSecurity, answer: "Oui", carSharing: "sharing"});
     }
 }
 
@@ -51,5 +51,5 @@ function testMails() {
 // noinspection JSUnusedGlobalSymbols
 function testMail() {
     var player = getPlayerWithMail("cedric.weber@decathlon.com");
-    sendMailForAnAdmin(player, "subject test", "<h2>html test</h2>");
+    sendConfirmMailForAPlayer(player, false);
 }

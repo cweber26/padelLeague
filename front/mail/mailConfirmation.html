@@ -19,11 +19,30 @@
     <div class="row">
         <table style="margin:auto; width:400px">
             <tr>
-                <th style="width:50%">
-                    <a class="buttonGreen" style="color: white; width: 198px" href="<?=urlMail.confirmation?>">Je confirme</a>
+                <th>
+                    <a class="buttonGreen" style="color: white;" href="<?=urlMail.confirmationCarAlone?>">
+                        Je confirme<br><span style="font-size: 13px">Je viens seul</span><br><div class="logoCarAloneWhite"></div>
+                    </a>
                 </th>
-                <th style="width:50%">
-                    <a class="buttonRed" style="color:white; width: 198px" href="<?=urlMail.deconfirmation?>">Plus dispo</a>
+            </tr>
+            <tr>
+                <th>
+                    <a class="buttonGreen" style="color: white;" href="<?=urlMail.confirmationCarSharing?>">
+                        Je confirme<br>
+                        <span style="font-size: 13px">J'ai de la place dans ma voiture</span><br><div class="logoCarSharingWhite"></div>
+                    </a>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <a class="buttonGreen" style="color: white;" href="<?=urlMail.confirmationCarNeed?>">
+                        Je confirme<br><span style="font-size: 13px">J'ai besoin d'un chauffeur</span><br><div class="logoCarNeedWhite"></div>
+                    </a>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <a class="buttonRed" style="color:white;" href="<?=urlMail.deconfirmation?>">Plus dispo</a>
                 </th>
             </tr>
         </table>

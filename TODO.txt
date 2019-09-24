@@ -1,5 +1,4 @@
 TODO mettre un joueur invité "fantome"
-TODO gérer le covoiturage via la confirmation
 TODO visu niveau pour admin sur la compo
 TODO améliorer l'ergonomie des boutons admin sur la compo (menu déroulant)
 
@@ -8,56 +7,3 @@ EN COURS
 
 STAND BY
  ajouter une photo du joueur
-
-FAIT
-Mail du mois : Vainqueur Nouveaux meilleur joueur etc...
- Utiliser des templates pour les mails 
- Bloquer la composition à partir du rappel si un nouveau joueur s'inscrit (si il est plus prioritaire) 
- Faire les niveaux selon attaque défence 
- faire les compositions selon l'assiduité 
- compo automatique 
- ajouter un rdv au mail 
- controler la réponse unique pour le choix de la compo 
- stats 
- enregistrer les résultats de matchs 
- affichage 5 derniers résultats 
- mettre un objet par default pour le "contacter moi" 
- gérer le cas du match nul dans les stats 
- ajout d'un surnom 
- améliorer l'affichage des équipes dans le mail de confirmation 
- mettre le pourcentage de la composition choisie 
- ajouter range match annulé + mention ANNULE sur la compo 
- Mettre classement sur compo 
- Améliorer la création des compositions 
-  Faire compo type 
-  Par classement 
-  Par niveau 
-  Par positionnement ( att def mil gardien polyvalent) 
- Record + série de victoire défaite etc... 
- faire un logo 
- Mettre indispo au lieu de blessé avec une date de fin possible 
- Changer le mail de yeria 
- Utiliser la fonction encoreURLComponent() au lieu des replaces 
- Mettre une etoile sur le joueur en forme 
- alerting 
-  10 joueurs -> et envoyer le mail de compo directement 
-  désistement si plus à 10 joueurs 
- définir admin dans Team + envoyer les mail admin aux admin 
- ajouter la configuration : 
-  match  jour  lieu  tarif  etc... 
-  activation mail (control  confirmation  rappel) 
- permettre au joueur de modifier sa config 
- Utilise une clef chiffré pour les form plutôt qu’un mail 
- Amélioration des filtres de réponse au form 
- Mettre de vérification sur l'ajout de la compo au result et à la saisie des scores 
- sauvegarder les joueurs en liste d'attente dans l'onglet TEAM 
-  Prendre 1ère réponse oui si dernière réponse est oui 
- Règles du foot 
- Gérer envoi de mail selon le décalage de jour avec le prochain match 
- Changer priorisation au quart d'heure
- Page historique match 
- Mail admin pour le score 
- Bouton supprimer profil 
- Bouton ajouter profil 
- Créer une page équipe pour les joureurs non admin 
- afficher le stade (logo sur la compo) 

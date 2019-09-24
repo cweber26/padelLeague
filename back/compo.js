@@ -14,9 +14,10 @@ function loadPageCompo() {
                     + "<td>" + p[9] + "</td>"
                     + "<td>" + p[0] + "</td>"
                     + "<td>" + p[1] + "</td>"
-                    + "<td>" + p[6] + "</td>"
                     + "<td>" + p[7] + "</td>"
                     + "<td>" + getSerieLumieres(p[8]) + "</td>"
+                    + "<td>" + p[6] + "</td>"
+                    + "<td>" + getLogoCar(p[11]) + "</td>"
                     + "</tr>";
             }
         });
@@ -71,12 +72,25 @@ function loadPageCompo() {
 
 function playersInTheMatchForFinalCompo() {
     if (parametersMap.get("numberPlayerInMatch") > 0) {
-        return sheetComposition.getRange(13, 2, parametersMap.get("numberPlayerMatch"), 11).getValues();
+        return sheetComposition.getRange(13, 2, parametersMap.get("numberPlayerMatch"), 13).getValues();
     }
 }
 
 function inscriptions() {
     if (parametersMap.get("numberPlayerInMatch") > 0) {
         return sheetInscriptionFilter.getRange(1, 7).getDataRegion().getValues();
+    }
+}
+
+function getLogoCar(type) {
+    switch (type) {
+        case "sharing":
+            return "<div class=logoCarSharingBlack></div>";
+        case "alone":
+            return "<div class=logoCarAloneBlack></div>";
+        case "need":
+            return "<div class=logoCarNeedBlack></div>";
+        default :
+            return "";
     }
 }
