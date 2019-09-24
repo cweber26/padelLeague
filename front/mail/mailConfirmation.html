@@ -30,7 +30,7 @@
     </div>
     <br>
     <? if(nbAvailableSlots===0) { ?> <?!= includeWithArgs("front/mail/mailCompo", {compo: compo}) ?> <? } ?>
-    <?!= includeWithArgs("front/mail/mailStadiumInfo", {stadium: stadium, withDetail: true}) ?>
+    <?!= includeWithArgs("front/utils/stadiumInfo", {stadium: stadium, withDetail: true}) ?>
     <h4><a href="mailto:<?=playersInTheMatchMails?>?subject=<?!=subjectMailContact?>" style="text-decoration: none; color: #81c784; font-weight: bold;">Contacter l'équipe du jour via mail</a></h4>
     <?!= includeWithArgs("front/mail/mailFooter", {urlMail: urlMail}); ?>
 </div>

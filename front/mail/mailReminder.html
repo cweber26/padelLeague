@@ -24,7 +24,7 @@
         <h3>Il nous manque encore <?=nbAvailableSlots?> joueurs mais le match est conservé pour le moment.</h3>
         <h3> N'hésite pas à chercher des joueurs disponibles et à me contacter</h3>
         <? } ?>
-        <?!= includeWithArgs("front/mail/mailStadiumInfo", {stadium: stadium, withDetail: false}) ?>
+        <?!= includeWithArgs("front/utils/stadiumInfo", {stadium: stadium, withDetail: false}) ?>
         <?!= includeWithArgs("front/mail/mailFooter", {urlMail: urlMail}); ?>
     </div>
 </body>

@@ -64,8 +64,7 @@ function loadPageCompo() {
         cancelMatch: parametersMap.get("isMatchCancel"),
         testing: isParameterTrue("modeTest"),
         inscriptionTable: inscriptionTable,
-        stadium: parametersMap.get("nextMatchStadiumName"),
-        urlAddress: parametersMap.get("nextMatchStadiumUrlMaps")
+        stadium: getStadiumInfo()
     });
 }
 

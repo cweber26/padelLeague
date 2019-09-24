@@ -19,6 +19,8 @@
             </th></tr>
             </table>
         </div>
+        <div class="row"></div>
+        <?!= includeWithArgs("front/utils/stadiumInfo", {stadium: stadium, withDetail: false}) ?>
         <? if(nbAvailableSlots<=5 && nbAvailableSlots>0) { ?>
         <div class="row">
             <h4 class="title">Il reste <?=nbAvailableSlots?> place(s)</h4>

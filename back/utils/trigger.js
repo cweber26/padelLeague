@@ -36,11 +36,13 @@ function isTimeForStep(step) {
     var nextStepDay = nextStepDate.substring(0, 3);
     var nextStepHour = nextStepDate.substring(4, 9);
     var currentDay = Utilities.formatDate(new Date(), "Europe/Paris", "E");
-    var currentHour = Utilities.formatDate(new Date(), "Europe/Paris", "HH");
-    Logger.log("currentDay " + currentDay + "/ nextStepDay " + nextStepDay);
+    var currentHour = Utilities.formatDate(new Date(), "Europe/Paris", "HH:mm");
+    Logger.log("currentDay " + currentDay + " / nextStepDay " + nextStepDay);
     if(currentDay == nextStepDay) {
-        Logger.log("currentHour " + currentHour + "/ nextStepHour " + nextStepHour);
+        Logger.log("same day for the next step");
+        Logger.log("currentHour " + currentHour + " / nextStepHour " + nextStepHour);
         if(currentHour >= nextStepHour) {
+            Logger.log("after or equal time (hour) for the next step");
             return true;
         }
     }
@@ -48,7 +50,7 @@ function isTimeForStep(step) {
 }
 
 function execStep(step) {
-    Logger.log("execStep "+ nextStep);
+    Logger.log("execStep "+ step);
     switch (step) {
         case 1:
             deleteUnavaibility();

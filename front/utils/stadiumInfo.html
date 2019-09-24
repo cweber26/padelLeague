@@ -1,0 +1,20 @@
+<div class="row"></div>
+<? if(stadium.name=="Urban Soccer") { ?>
+<div class="row">
+    <a href="<?=stadium.urlAddress?>">
+        <div class="logoUrban"></div>
+    </a>
+</div>
+<? } else if(stadium.name=="Footsal Pro") { ?>
+<div class="row">
+    <a href="<?=stadium.urlAddress?>">
+        <div class="logoFootsal"></div>
+    </a>
+</div>
+<? } ?>
+<? if(withDetail) { ?>
+<h4>
+    Début de match à <?=stadium.beginGameHour?>
+    <br>A ton arrivé n'oublie pas de payer ta place (<?=stadium.cost?>) sur la réservation <?=stadium.reservationName?>
+</h4>
+<? } ?>
