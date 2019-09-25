@@ -4,33 +4,20 @@ var nextMatchDay = nextMatchDate.getDay();
 var scheduleValues = sheetSchedule.getRange(1, 1).getDataRegion().getValues();
 
 function setNextMatchDate() {
-    //lundi = 1
-    //dimanche = 7
-    var currentHourTime = Utilities.formatDate(new Date(), "Europe/Paris", "HH");
-
-    var nextDayValue;
-    var firstDay;
-    if (Number(currentHourTime) > 14) {
-        firstDay = (currentWeekDay + 1);
-    } else {
-        firstDay = (currentWeekDay);
-    }
-
-    for (var i = 0; i < 7; i++) {
-        var dayToTest = (firstDay+i);
-        if (dayToTest > 7) {
-            dayToTest -=7;
-        }
+    //lundi = 1 , dimanche = 7
+    for (var i = 1; i <= 7; i++) {
+        var dayToTest = (currentWeekDay+i);
         if(isADayWithMatch(dayToTest)){
-            nextDayValue = nextDay(dayToTest);
-            break;
+            updateParameterValue("nextMatchDate", nextDay(dayToTest));
+            return;
         }
     }
-
-    updateParameterValue("nextMatchDate", nextDayValue);
 }
 
 function isADayWithMatch(dayNumber) {
+    if (dayNumber > 7) {
+        dayNumber -= 7;
+    }
     return (scheduleValues[1][dayNumber]);
 }
 

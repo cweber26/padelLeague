@@ -33,6 +33,7 @@ function saveScore(scoreValue) {
                 var playersList = sheetResult.getRange(i + 1, 2, 1, 10).getValues();
                 Logger.log("players for stats : " + playersList);
                 playersList[0].forEach(function (fullName) {
+                    Logger.log(fullName);
                     if(fullName) {
                         statsForAPlayer(fullName);
                     }
