@@ -78,23 +78,25 @@ function getRowSheetResultFilter(playerName) {
 
 function loadPageStat() {
     var stats = "";
-    var data = sheetStats.getRange(2, 1, sheetStats.getLastRow() - 1, sheetStats.getLastColumn()).getValues();
+    var data = sheetStats.getRange(2, 1, sheetStats.getLastRow(), sheetStats.getLastColumn()).getValues();
     data.forEach(function (p) {
-        stats += "<tr>"
-            + "<td>" + p[0] + "</td>"
-            + "<td>" + p[1] + "</td>"
-            + "<td>" + p[2] + "</td>"
-            + "<td>" + p[3] + "</td>"
-            + "<td>" + p[4] + "</td>"
-            + "<td>" + p[5] + "</td>"
-            + "<td>" + p[6] + "</td>"
-            + "<td>" + p[7] + "</td>"
-            + "<td>" + p[8] + "</td>"
-            + "<td>" + p[9] + "</td>"
-            + "<td>" + p[12] + "</td>"
-            + "<td>" + p[13] + "</td>"
-            + "<td>" + getLumieres(p) + "</td>"
-            + "</tr>";
+        if(p[1]){
+            stats += "<tr>"
+                + "<td>" + p[0] + "</td>"
+                + "<td>" + p[1] + "</td>"
+                + "<td>" + p[2] + "</td>"
+                + "<td>" + p[3] + "</td>"
+                + "<td>" + p[4] + "</td>"
+                + "<td>" + p[5] + "</td>"
+                + "<td>" + p[6] + "</td>"
+                + "<td>" + p[7] + "</td>"
+                + "<td>" + p[8] + "</td>"
+                + "<td>" + p[9] + "</td>"
+                + "<td>" + p[12] + "</td>"
+                + "<td>" + p[13] + "</td>"
+                + "<td>" + getLumieres(p) + "</td>"
+                + "</tr>";
+        }
     });
     return render("front/page/stat", "Barbeuc : Stats", {
         mail: param.mail,
