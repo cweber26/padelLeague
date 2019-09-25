@@ -3,6 +3,10 @@ TODO visu niveau pour admin sur la compo
 TODO ne pas prendre en compte le test du match annuler et du log de date via actions des boutons
 TODO ajouter boutton switch mode test/prod
 TODO refresh auto après action sur bouton admin
+TODO redimenssionner le logo sur le mail (trop de blanc au dessous)
+TODO finir la refacto des css
+TODO revoir le système de priorisation
+TODO améliorer l'update des paramètres (trop long)
 
 EN COURS
  brancher le vendredi A VALIDER
