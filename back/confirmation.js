@@ -1,12 +1,15 @@
 function sendConfirmMail() {
     if (!isMatchCancel() && isParameterBlank("mailSendingConfirmation")) {
-
-        var mails = playersInTheMatchMail();
-        for (var i in mails) {
-            var player = getPlayerWithMail(mails[i]);
-            sendConfirmMailForAPlayer(player, false);
-        }
+        sendConfirmMailWithoutControl();
         updateParameterValue("mailSendingConfirmation", new Date(Date.now()));
+    }
+}
+
+function sendConfirmMailWithoutControl() {
+    var mails = playersInTheMatchMail();
+    for (var i in mails) {
+        var player = getPlayerWithMail(mails[i]);
+        sendConfirmMailForAPlayer(player, false);
     }
 }
 

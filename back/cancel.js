@@ -1,10 +1,10 @@
 function cancelMatchAndSendMail(isAutoCancel) {
-    updateParameterValue("isMatchCancel", true);
     var playerMails = playersInTheMatchMail();
     for (var i in playerMails) {
         var player = getPlayerWithMail(playerMails[i]);
         sendCancelMatchMailForAPlayer(player, isAutoCancel);
     }
+    updateParameterValue("isMatchCancel", true);
 }
 
 

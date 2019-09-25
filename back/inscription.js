@@ -1,12 +1,6 @@
 function sendInscriptionMailForAPrio(prio) {
     if (!isMatchCancel() && parametersMap.get("numberAvailableSlotInMatch") > 0) {
-        var playersList = playersTeamList();
-        for (var i in playersList) {
-            var player = initPlayer(playersList[i]);
-            if (shouldReceiveInscriptionMail(player, prio)) {
-                sendInscriptionMailForAPlayer(player);
-            }
-        }
+        sendInscriptionMailForAPrioWithoutControl(prio);
     }
     switch (prio) {
         case 1:
@@ -18,6 +12,16 @@ function sendInscriptionMailForAPrio(prio) {
         case 3:
             updateParameterValue("mailSendingPrio3", new Date(Date.now()));
             break;
+    }
+}
+
+function sendInscriptionMailForAPrioWithoutControl(prio) {
+    var playersList = playersTeamList();
+    for (var i in playersList) {
+        var player = initPlayer(playersList[i]);
+        if (shouldReceiveInscriptionMail(player, prio)) {
+            sendInscriptionMailForAPlayer(player);
+        }
     }
 }
 

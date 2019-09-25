@@ -1,18 +1,21 @@
 function sendReminderMail() {
     if (!isMatchCancel() && isParameterBlank("mailSendingReminder")) {
-
-        var matchMails = playersInTheMatchMail();
-        for (var i in matchMails) {
-            sendRemindMailForAPlayer(getPlayerWithMail(matchMails[i]), false);
-        }
-
-        if (parametersMap.get("numberPlayerInWaitingList") > 0) {
-            var waitingListMails = playersInWaitingListMail();
-            for (var j in waitingListMails) {
-                sendWaitingListMail(getPlayerWithMail(waitingListMails[j]));
-            }
-        }
+        sendReminderMailWithoutControl();
         updateParameterValue("mailSendingReminder", new Date(Date.now()));
+    }
+}
+
+function sendReminderMailWithoutControl() {
+    var matchMails = playersInTheMatchMail();
+    for (var i in matchMails) {
+        sendRemindMailForAPlayer(getPlayerWithMail(matchMails[i]), false);
+    }
+
+    if (parametersMap.get("numberPlayerInWaitingList") > 0) {
+        var waitingListMails = playersInWaitingListMail();
+        for (var j in waitingListMails) {
+            sendWaitingListMail(getPlayerWithMail(waitingListMails[j]));
+        }
     }
 }
 

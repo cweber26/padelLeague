@@ -1,19 +1,4 @@
 <script>
-document.getElementById("initStats").addEventListener("click", initStats);
-
-function initStats() {
-    M.toast({ html: "Recalcul des statistiques en cours " });
-    google.script.run.withSuccessHandler(initStatsSuccess).withFailureHandler(initStatsFailure).initStats();
-}
-
-function initStatsSuccess() {
-   M.toast({ html: "Statistiques mise à jour" });
-}
-
-function initStatsFailure() {
-   M.toast({ html: "Erreur durant la mise à jour des stats" });
-}
-
 function sortTableStat(n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = document.getElementById("stat");

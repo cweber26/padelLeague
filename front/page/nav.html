@@ -6,10 +6,12 @@
     <li><a onclick="sendPrio3Js()">Envoyer mail prio 3</a></li>
     <li><a onclick="sendReminderJs()">Envoyer mail rappel</a></li>
     <li><a onclick="sendConfirmationJs()">Envoyer mail confirmation</a></li>
+    <li><a onclick="sendRecordsLastMontJs()">Envoyer mail records dernier mois</a></li>
+    <li><a onclick="recalculateStatsJs()">Recalculer les statistiques</a></li>
     <li><a onclick="cleaningJs()" style="color: #e57373">Purge match</a></li>
     <li><a onclick="cancelMatchJs()" style="color: #e57373">Cancel match</a></li>
     <li class="divider"></li>
-    <li><a onclick="switchMode()"><?if(testing){?>Prod mode<?} else {?>Test mode<?}?></a></li>
+    <li><a onclick="switchModeJs()"><?if(testing){?>Prod mode<?} else {?><span style="color: #e57373">Test mode<?}?></span></a></li>
 </ul>
 <nav>
     <div class="nav-wrapper <?if(!admin || !testing){?>green<?} else {?>red<?}?> lighten-2">
@@ -33,9 +35,6 @@
             <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=record&mail=<?=mail?>&key=<?=key?>">Records</a></li>
             <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=profil&mail=<?=mail?>&key=<?=key?>">Profil</a></li>
             <li><a href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=team&mail=<?=mail?>&key=<?=key?>">Equipe</a></li>
-            <?if(admin){?>
-
-            <?}?>
         </ul>
     </div>
 </nav>

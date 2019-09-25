@@ -88,3 +88,12 @@ function updateParameter(parameterApplication) {
     updateParameterValue("mailTester",parameterApplication.mailTester);
     updateParameterValue("applicationName",parameterApplication.applicationName);
 }
+
+// noinspection JSUnusedGlobalSymbols
+function switchMode() {
+    if(isParameterTrue("modeTest")) {
+        updateParameterValue("modeTest",false);
+    } else {
+        updateParameterValue("modeTest",true);
+    }
+}
