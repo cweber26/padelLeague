@@ -22,6 +22,17 @@ function loadPageCompo() {
             }
         });
     }
+
+    if (parametersMap.get("numberPlayerInWaitingList") > 0) {
+        playersInWaitingListMail().forEach(function (m) {
+            var player = getPlayerWithMail(m);
+            if(player) {
+                listeAttente += "<tr><td>" + player.fullName + "</td></tr>";
+            }
+        });
+    }
+
+    var tabTitle = "Barbeuc : Composition";
     if (param.isAdmin && parametersMap.get("numberPlayerInMatch") > 0) {
         inscriptions().forEach(function (i) {
             if (i[0]) {
@@ -38,19 +49,10 @@ function loadPageCompo() {
                 }
             }
         });
-    }
-    if (parametersMap.get("numberPlayerInWaitingList") > 0) {
-        playersInWaitingListMail().forEach(function (m) {
-            var player = getPlayerWithMail(m);
-            if(player) {
-                listeAttente += "<tr>"
-                    + "<td>" + player.fullName + "</td>"
-                    + "</tr>";
-            }
-        });
+        tabTitle += " (" + parametersMap.get("numberPlayerInMatch") + ")";
     }
 
-    return render("front/page/compo", "Barbeuc : Composition", {
+    return render("front/page/compo", tabTitle, {
         mail: param.mail,
         key: param.key,
         date: matchDayGapInFrench(true),
