@@ -48,7 +48,7 @@
                 var datePicker = document.getElementById('indispoDate');
                 M.Datepicker.init(datePicker, {
                     autoClose: true,
-                    minDate: new Date(Date.now()),
+                    minDate: now(),
                     format: 'dd/mm/yyyy',
                     defaultDate: new Date(<?= Utilities.formatDate(player.endDateOfUnavailibility, "Europe/Paris", "MM/dd/yy") ?>), setDefaultDate:true});});
             </script>

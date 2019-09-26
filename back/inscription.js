@@ -4,13 +4,13 @@ function sendInscriptionMailForAPrio(prio) {
     }
     switch (prio) {
         case 1:
-            updateParameterValue("mailSendingPrio1", new Date(Date.now()));
+            updateParameterValue("mailSendingPrio1", now());
             break;
         case 2:
-            updateParameterValue("mailSendingPrio2", new Date(Date.now()));
+            updateParameterValue("mailSendingPrio2", now());
             break;
         case 3:
-            updateParameterValue("mailSendingPrio3", new Date(Date.now()));
+            updateParameterValue("mailSendingPrio3", now());
             break;
     }
 }
@@ -71,7 +71,7 @@ function inscription(parameter) {
         }
         var row = sheetInscription.getLastRow() + 1;
         sheetInscription.getRange(row, 1).setValue(parameter.mail);
-        sheetInscription.getRange(row, 2).setValue(new Date(Date.now()));
+        sheetInscription.getRange(row, 2).setValue(now());
         sheetInscription.getRange(row, 3).setValue(parameter.answer);
     }
 }

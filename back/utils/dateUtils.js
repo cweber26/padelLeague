@@ -97,3 +97,7 @@ function getDateAt000000(date) {
         return "";
     }
 }
+
+function now() {
+    return new Date(Date.now());
+}

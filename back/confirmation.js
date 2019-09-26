@@ -1,7 +1,7 @@
 function sendConfirmMail() {
     if (!isMatchCancel() && isParameterBlank("mailSendingConfirmation")) {
         sendConfirmMailWithoutControl();
-        updateParameterValue("mailSendingConfirmation", new Date(Date.now()));
+        updateParameterValue("mailSendingConfirmation", now());
     }
 }
 
@@ -46,7 +46,7 @@ function confirmation(parameter) {
         if (inscription[0] == parameter.mail) {
             var row = Number(i) + 2;
             sheetInscription.getRange(row, 3).setValue(parameter.answer);
-            sheetInscription.getRange(row, 4).setValue(new Date(Date.now()));
+            sheetInscription.getRange(row, 4).setValue(now());
             sheetInscription.getRange(row, 5).setValue(parameter.answer);
             sheetInscription.getRange(row, 6).setValue(parameter.carSharing);
             if (parameter.answer == "Non") {

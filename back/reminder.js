@@ -1,7 +1,7 @@
 function sendReminderMail() {
     if (!isMatchCancel() && isParameterBlank("mailSendingReminder")) {
         sendReminderMailWithoutControl();
-        updateParameterValue("mailSendingReminder", new Date(Date.now()));
+        updateParameterValue("mailSendingReminder", now());
     }
 }
 
