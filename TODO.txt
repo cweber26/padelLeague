@@ -3,5 +3,4 @@ TODO mettre un joueur invité "fantome"
 TODO visu niveau pour admin sur la compo
 TODO revoir le système de priorisation
 TODO améliorer l'update des paramètres (trop long)
-TODO check les règles de gestion pour la création du rdv
 TODO améliorer le mail envoyé à l'admin dans le cas d'un désistement

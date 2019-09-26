@@ -5,6 +5,13 @@ function createEventIfMatchIsFull() {
     }
 }
 
+function updateCalendarEvent() {
+    if(!isMatchCancel() && isParameterNotBlank("creationGoogleEvent")){
+        deleteCalendarEvent();
+        createCalendarEvent();
+    }
+}
+
 function createCalendarEvent() {
     if (isParameterBlank("creationGoogleEvent")) {
         var calendar = CalendarApp.getDefaultCalendar();
@@ -17,11 +24,6 @@ function createCalendarEvent() {
         calendar.createEvent(parametersMap.get("applicationName"), begin, end, {location: parametersMap.get("nextMatchStadiumAddress"), guests: mails, sendInvites: false});
         updateParameterValue("creationGoogleEvent", now());
     }
-}
-
-function updateCalendarEvent() {
-    deleteCalendarEvent();
-    createCalendarEvent();
 }
 
 function deleteCalendarEvent() {
