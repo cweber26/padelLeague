@@ -11,7 +11,7 @@
     <div class="container">
     <?!= includeWithArgs("front/mail/mailHeader", {urlMail: urlMail}); ?>
         <div class="row">
-            <h3 class="alert">Le match <?=date?> a été <?if(isAutoCancel){?>automatiquement annulé en raison d'un manque de joueurs (moins de <?=nbLimitPlayers?> inscrits)<?}else{?>manuellement annulé<?}?> </h3>
+            <h2 class="alert">Le match <?=date?> a été <?if(isAutoCancel){?>automatiquement annulé en raison d'un manque de joueurs (moins de <?=nbLimitPlayers?> inscrits)<?}else{?>manuellement annulé<?}?> </h2>
         </div>
     <?!= includeWithArgs("front/mail/mailFooter", {urlMail: urlMail}); ?>
     </div>
