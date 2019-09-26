@@ -48,7 +48,7 @@ function confirmation(parameter) {
             sheetInscription.getRange(row, 3).setValue(parameter.answer);
             sheetInscription.getRange(row, 4).setValue(new Date(Date.now()));
             sheetInscription.getRange(row, 5).setValue(parameter.answer);
-            sheetInscription.getRange(row, 6).setValue(parameter.carSharing)
+            sheetInscription.getRange(row, 6).setValue(parameter.carSharing);
             if (parameter.answer == "Non") {
                 actionsToDoIfDesistement();
             }

@@ -4,6 +4,7 @@ function cancelMatchAndSendMail(isAutoCancel) {
         var player = getPlayerWithMail(playerMails[i]);
         sendCancelMatchMailForAPlayer(player, isAutoCancel);
     }
+    deleteCalendarEvent();
     updateParameterValue("isMatchCancel", true);
 }
 

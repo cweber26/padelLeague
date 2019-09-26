@@ -5,6 +5,8 @@ TODO ajouter boutton switch mode test/prod
 TODO refresh auto après action sur bouton admin
 TODO revoir le système de priorisation
 TODO améliorer l'update des paramètres (trop long)
+TODO check les règles de gestion pour la création du rdv
+TODO paramétrer le mail de rappel d'annulation de réservation pour l'admin
 
 EN COURS
  brancher le vendredi A VALIDER
