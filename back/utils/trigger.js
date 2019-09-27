@@ -6,6 +6,9 @@ function execBatch() {
         Logger.log("isTimeForStep "+ nextStep);
         execStep(nextStep);
     }
+    if(nextStep>2) {
+        createEventIfMatchIsFull();
+    }
 }
 
 function getNextStep() {
@@ -57,23 +60,18 @@ function execStep(step) {
             sendInscriptionMailForAPrio(1);
             break;
         case 2:
-            createEventIfMatchIsFull();
             sendInscriptionMailForAPrio(2);
             break;
         case 3:
-            createEventIfMatchIsFull();
             sendInscriptionMailForAPrio(3);
             break;
         case 4:
-            createEventIfMatchIsFull();
             controlAndCancelOrRelaunch();
             break;
         case 5:
-            createEventIfMatchIsFull();
             sendReminderMail();
             break;
         case 6:
-            createEventIfMatchIsFull();
             sendConfirmMail();
             break;
         case 7:
