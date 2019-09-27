@@ -11,6 +11,5 @@ function cleaning() {
     clearParameterValue("creationGoogleEvent");
     clearParameterValue("mailSendingConfirmation");
     clearParameterValue("teamSaved");
-    clearParameterValue("scoreSaved");
     updateParameterValue("isMatchCancel", false);
 }

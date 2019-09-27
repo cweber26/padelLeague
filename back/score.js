@@ -40,8 +40,6 @@ function saveScore(scoreValue) {
                         statsForAPlayer(fullName);
                     }
                 });
-
-                updateParameterValue("scoreSaved", now());
                 break;
             }
         }

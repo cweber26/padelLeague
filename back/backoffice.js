@@ -28,7 +28,6 @@ function loadPageBackoffice() {
     log.googleEvent = getDateTimeFormat(parametersMap.get("creationGoogleEvent"));
     log.confirmation = getDateTimeFormat(parametersMap.get("mailSendingConfirmation"));
     log.team = getDateTimeFormat(parametersMap.get("teamSaved"));
-    log.score = getDateTimeFormat(parametersMap.get("scoreSaved"));
 
     var schedule = "";
     sheetSchedule.getRange(2, 1, 1, 8).getValues().forEach(function (s) {
