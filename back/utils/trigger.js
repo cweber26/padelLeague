@@ -3,7 +3,6 @@ function execBatch() {
     var nextStep = getNextStep();
     Logger.log("nextStep "+ nextStep);
     if(isTimeForStep(nextStep)){
-        Logger.log("isTimeForStep "+ nextStep);
         execStep(nextStep);
     }
     if(nextStep>2) {

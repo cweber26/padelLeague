@@ -1,6 +1,8 @@
 function sendConfirmMail() {
-    if (!isMatchCancel() && isParameterBlank("mailSendingConfirmation")) {
-        sendConfirmMailWithoutControl();
+    if (isParameterBlank("mailSendingConfirmation")) {
+        if(!isMatchCancel()){
+            sendConfirmMailWithoutControl();
+        }
         updateParameterValue("mailSendingConfirmation", now());
     }
 }
