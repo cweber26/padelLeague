@@ -16,7 +16,11 @@ function loadPageResultat() {
             if(dateFormated == date) {
                 var playersList = sheetResult.getRange(i+1, 2, 1, 10).getValues();
                 playersList[0].forEach(function (p) {
-                    players.push(getPlayerWithFullName(p).nickName);
+                    if(p) {
+                        players.push(getPlayerWithFullName(p).nickName);
+                    } else {
+                        players.push("");
+                    }
                 });
                 var scoreRed = sheetResult.getRange(i+1, 12).getValue();
                 var scoreBlue = sheetResult.getRange(i+1, 13).getValue();
