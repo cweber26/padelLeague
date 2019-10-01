@@ -4,8 +4,8 @@ function loadPageRecord() {
     var victoryInRow = sheetRecordFilter.getRange(8, 2, 2, 3).getValues();
     var loseInRow = sheetRecordFilter.getRange(11, 2, 2, 3).getValues();
     var participation = sheetRecordFilter.getRange(20, 2, 2, 3).getValues();
-    var victory = sheetRecordFilter.getRange(24, 2, 3, 3).getValues();
-    var lose = sheetRecordFilter.getRange(29, 2, 3, 3).getValues();
+    var victoryLastMonth = sheetRecordFilter.getRange(24, 2, 3, 3).getValues();
+    var loseLastMonth = sheetRecordFilter.getRange(29, 2, 3, 3).getValues();
 
     return render("front/page/record", "Barbeuc : Records", {
         mail: param.mail,
@@ -16,8 +16,8 @@ function loadPageRecord() {
         victoryInRow: victoryInRow,
         loseInRow: loseInRow,
         participation: participation,
-        victory: victory,
-        lose: lose,
+        victoryLastMonth: victoryLastMonth,
+        loseLastMonth: loseLastMonth,
         testing: isParameterTrue("modeTest")
     });
 }
