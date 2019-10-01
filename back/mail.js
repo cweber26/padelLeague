@@ -1,4 +1,4 @@
-function sendMailForAdmin(subject, contentHtml) {
+function sendMailSimple(subject, contentHtml) {
     var mails = parametersMap.get("adminMailList").split(',');
     for (var i in mails) {
         var player = getPlayerWithMail(mails[i]);
@@ -7,7 +7,7 @@ function sendMailForAdmin(subject, contentHtml) {
 }
 
 function sendMailForAnAdmin(player, subject, contentHtml) {
-    var body = includeWithArgs("front/mail/mailForAdmin", {
+    var body = includeWithArgs("front/mail/mailSimple", {
         html: contentHtml,
         urlMail: getUrlMail(player)
     });

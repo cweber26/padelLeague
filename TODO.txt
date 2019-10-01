@@ -12,3 +12,4 @@ TODO visu des joueurs qui refuse sur la compo
 TODO priorisation via nombre de réponse au lieu de participation (nb de match)
 TODO envoyer message back
 TODO envoyer message front
+TODO ajouter lien pour récupérer la clef

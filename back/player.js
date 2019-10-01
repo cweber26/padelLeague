@@ -422,7 +422,7 @@ function sendMailToAdminAboutNewPlayer(mailNewPlayer, creatorMail) {
 }
 
 function sendMailToAdminAboutNewPlayerForAnAdmin(playerAdmin, mailNewPlayer, creatorMail) {
-    sendMail(playerAdmin.mail, "Nouveau Joueur" , includeWithArgs("front/mail/mailForAdmin", {
+    sendMail(playerAdmin.mail, "Nouveau Joueur" , includeWithArgs("front/mail/mailSimple", {
         html: "<h3>Le joueur " + mailNewPlayer + " vient d'être créé par " + creatorMail + "</h3>",
         urlMail: getUrlMail(playerAdmin)
     }));
@@ -434,4 +434,14 @@ function loadPageDeletion() {
         key: param.key,
         admin: param.isAdmin
     });
+}
+
+
+// noinspection JSUnusedGlobalSymbols
+function sendKeyByMail(mail) {
+    var player = getPlayerWithMail(mail);
+    sendMail(player.mail, "Clef oubliée" , includeWithArgs("front/mail/mailSimple", {
+        html: "<h3>Clef : " + player.keyWithSecurity + "</h3><h4>Les liens ci desssous fonctionnent aussi</h4>",
+        urlMail: getUrlMail(player)
+    }));
 }

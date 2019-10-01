@@ -1,17 +1,27 @@
 <script>
 
     function connectionWithCheckJs() {
-        if(profilInfosAreOk()) {
+        if (infosAreOk({
+                mail: "Le mail doit être rempli",
+                key: "La clef doit être rempli"
+            }
+        )) {
+            Logger.log("connectionJs");
             connectionJs();
         }
     }
 
-    function profilInfosAreOk() {
-        var toValidate = {
-            mail: "Le mail doit être rempli",
-            key: "La clef doit être rempli"
-        };
+    function sendKeyByMailAndCheckJs() {
+        if (infosAreOk({
+                mail: "Le mail doit être rempli"
+        }
+        )) {
+            Logger.log("sendKeyByMailJs");
+            sendKeyByMailJs();
+        }
+    }
 
+    function infosAreOk(toValidate) {
         Object.keys(toValidate).forEach(function (k) {
             if (!checkValidity(k, toValidate[k])) {
                 return false;
@@ -30,9 +40,15 @@
     }
 
     function connectionJs() {
-        M.toast({html: "Connection en cours"});
         var mailValue = document.getElementById("mail").value;
         var keyValue = document.getElementById("key").value;
         window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=profil&mail=" + String(mailValue) + "&key=" + String(keyValue);
+        M.toast({html: "Connection en cours"});
     }
+
+    function sendKeyByMailJs() {
+        google.script.run.sendKeyByMail(document.getElementById("mail").value);
+        M.toast({html: "Envoi en cours"});
+    }
+
 </script>

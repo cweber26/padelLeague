@@ -16,7 +16,11 @@
         google.script.url.getLocation(function (location) {
             var parameter = location.parameter;
             var date = encodeURIComponent(document.getElementById("matchDate").value);
-            window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=resultat&mail=" + String(parameter.mail) + "&key=" + String(parameter.key) + "&matchDate=" + String(date);
+            if(parameter.mail && parameter.key) {
+                window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=resultat&mail=" + String(parameter.mail) + "&key=" + String(parameter.key) + "&matchDate=" + String(date);
+            } else {
+                window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=resultat&matchDate=" + String(date);
+            }
         });
     }
 
