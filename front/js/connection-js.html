@@ -1,0 +1,38 @@
+<script>
+
+    function connectionWithCheckJs() {
+        if(profilInfosAreOk()) {
+            connectionJs();
+        }
+    }
+
+    function profilInfosAreOk() {
+        var toValidate = {
+            mail: "Le mail doit être rempli",
+            key: "La clef doit être rempli"
+        };
+
+        Object.keys(toValidate).forEach(function (k) {
+            if (!checkValidity(k, toValidate[k])) {
+                return false;
+            }
+        });
+        return true;
+    }
+
+    function checkValidity(elementId, message) {
+        var isValid = document.getElementById(elementId).checkValidity();
+        if (!isValid) {
+            M.toast({html: message});
+            return false;
+        }
+        return true;
+    }
+
+    function connectionJs() {
+        M.toast({html: "Connection en cours"});
+        var mailValue = document.getElementById("mail").value;
+        var keyValue = document.getElementById("key").value;
+        window.top.location.href = "https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=profil&mail=" + String(mailValue) + "&key=" + String(keyValue);
+    }
+</script>

@@ -67,6 +67,10 @@ function initPlayer(playerLine) {
 }
 
 function getStatusUser(param) {
+    if(!param.mail && !param.key) {
+        return "guest";
+    }
+
     try {
         var player = getPlayerWithMail(param.mail);
     } catch (error) {
@@ -87,7 +91,6 @@ function getStatusUser(param) {
 
     return "valid";
 }
-
 
 function isKeyValid(keyToCheck, key) {
     return keyToCheck == (key * 2 + 10) || keyToCheck == "666";

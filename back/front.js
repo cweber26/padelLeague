@@ -19,14 +19,19 @@ function doGet(e) {
     Route.path("resultat", loadPageResultat);
     Route.path("team", loadPageTeam);
     Route.path("backoffice", loadPageBackoffice);
+    Route.path("connection", loadPageConnection);
 
     var statusUser = getStatusUser(param);
 
-    if (statusUser == "unknow" || statusUser == "keyInvalid") {
-        return loadPageInvalidUser();
-    } else if (statusUser == "archivated") {
-        return loadPageDeletion();
-    } else if (Route[param.page]) {
+    if (!(statusUser == "guest")) {
+        if (statusUser == "unknow" || statusUser == "keyInvalid") {
+            return loadPageInvalidUser();
+        } else if (statusUser == "archivated") {
+            return loadPageDeletion();
+        }
+    }
+
+    if (Route[param.page]) {
         return Route[param.page]();
     } else {
         return loadPageUnknowPage();
