@@ -9,7 +9,7 @@ function sendMatchCompletMail() {
 }
 
 function sendMatchCompletMailForAPlayer(player) {
-    sendMail(player.mail, "Match du " + parametersMap.get("nextMatchDateFrench") + " complet 🤙🤙", includeWithArgs("front/mail/mailMatchComplet", {
+    sendMail(player.mail, "Match du " + nextMatchDateInFrench + " complet 🤙🤙", includeWithArgs("front/mail/mailMatchComplet", {
         date: matchDayGapInFrench(true),
         compo: getCompoPlayersListForMail(),
         urlMail: getUrlMail(player)

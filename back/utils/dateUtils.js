@@ -1,5 +1,6 @@
 var currentWeekDay = parseInt(Utilities.formatDate(new Date(), "Europe/Paris", "u"));
 var nextMatchDate = parametersMap.get("nextMatchDate");
+var nextMatchDateInFrench = LanguageApp.translate(Utilities.formatDate(nextMatchDate,  "Europe/Paris", "EEEE dd MMMM"),"en","fr");
 var nextMatchDay = nextMatchDate.getDay();
 var scheduleValues = sheetSchedule.getRange(1, 1).getDataRegion().getValues();
 
@@ -67,9 +68,9 @@ function matchDayGapInFrench(withPronom) {
             }
         default:
             if (withPronom) {
-                return "du " + parametersMap.get("nextMatchDateFrench");
+                return "du " + nextMatchDateInFrench;
             } else {
-                return parametersMap.get("nextMatchDateFrench");
+                return nextMatchDateInFrench;
             }
     }
 }

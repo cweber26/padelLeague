@@ -33,7 +33,7 @@ function sendInscriptionMailForAPlayer(player) {
         stadium: getStadiumInfo(),
         evalToDo: !player.haveDoneAutoEvaluation
     });
-    sendMail(player.mail, "Inscription au match de Footsal du " + parametersMap.get("nextMatchDateFrench") + " ✅", body);
+    sendMail(player.mail, "Inscription au match de Footsal du " + nextMatchDateInFrench + " ✅", body);
 }
 
 

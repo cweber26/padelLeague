@@ -59,7 +59,7 @@ function sendScoreMail() {
 }
 
 function sendScoreMailForAPlayer(player) {
-    sendMail(player.mail, "Score pour le match du " + parametersMap.get("nextMatchDateFrench"), includeWithArgs("front/mail/mailScore", {
+    sendMail(player.mail, "Score pour le match du " + nextMatchDateInFrench, includeWithArgs("front/mail/mailScore", {
         date: matchDayGapInFrench(true),
         compo: getCompoPlayersListForMail(),
         urlMail: getUrlMail(player)
