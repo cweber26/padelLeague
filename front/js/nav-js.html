@@ -76,6 +76,12 @@
         }
     }
 
+    function sendMailsTestJs() {
+        if (window.confirm("Es tu sûr de vouloir envoyer les mails de test ?")) {
+            google.script.run.withSuccessHandler(successNav).withFailureHandler(failNav).testMails();
+        }
+    }
+
     function reloadNav() {
         google.script.url.getLocation(function (location) {
             var parameter = location.parameter;
