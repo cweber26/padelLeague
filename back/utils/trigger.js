@@ -75,6 +75,7 @@ function execStep(step) {
             break;
         case 7:
             saveTeam();
+            saveRank();
             break;
         case 8:
             sendScoreMail();

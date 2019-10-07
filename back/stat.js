@@ -81,9 +81,13 @@ function loadPageStat() {
     var data = sheetStats.getRange(2, 1, sheetStats.getLastRow(), sheetStats.getLastColumn()).getValues();
     data.forEach(function (p) {
         if(p[1]){
-            stats += "<tr>"
-                + "<td>" + p[0] + "</td>"
-                + "<td>" + p[1] + "</td>"
+            stats += "<tr>";
+            if (p[23]) {
+                stats += "<td>" + p[0] + "<sup> (" + p[23] + ")</sup></td>";
+            } else {
+                stats += "<td>" + p[0] + "</td>";
+            }
+            stats += "<td>" + p[1] + "</td>"
                 + "<td>" + p[2] + "</td>"
                 + "<td>" + p[3] + "</td>"
                 + "<td>" + p[4] + "</td>"
@@ -105,4 +109,9 @@ function loadPageStat() {
         admin: param.isAdmin,
         testing: isParameterTrue("modeTest")
     });
+}
+
+function saveRank() {
+    var currentRank = sheetResultFilter.getRange(1, 21, sheetResultFilter.getRange("A1:A").getValues().filter(String).length, 1).getValues();
+    sheetResultFilter.getRange(1, 22, sheetResultFilter.getRange("A1:A").getValues().filter(String).length, 1).setValues(currentRank);
 }
