@@ -101,11 +101,9 @@ function deleteUnavaibility() {
     var playersList = playersTeamList();
     for (var i in playersList) {
         var player = playersList[i];
-        if (player.endDateOfUnavailibility) {
-            if (player.endDateOfUnavailibility.valueOf() < nextMatchDate.valueOf()) {
-                sheetTeam.getRange(Number(i) + 3, 8).setValue(false);
-                sheetTeam.getRange(Number(i) + 3, 9).clearContent();
-            }
+        if (player[8] && player[8].valueOf() < nextMatchDate.valueOf()) {
+            sheetTeam.getRange(Number(i) + 3, 8).setValue(false);
+            sheetTeam.getRange(Number(i) + 3, 9).clearContent();
         }
     }
 }
