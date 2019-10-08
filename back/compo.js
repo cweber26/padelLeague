@@ -13,9 +13,17 @@ function loadPageCompo() {
                 effectif += "<tr>"
                     + "<td>" + p[9] + "</td>"
                     + "<td>" + p[0] + "</td>"
-                    + "<td>" + p[1] + "</td>"
-                    + "<td>" + p[7] + "</td>"
-                    + "<td>" + getSerieLumieres(p[8]) + "</td>"
+                    + "<td>" + p[1] + "</td>";
+                if(p[7]>0){
+                    effectif += "<td>" + Utilities.formatString("%02d",Number(p[7])) + "</td>";
+                } else {
+                    effectif += "<td>-</td>";
+                }
+                if(param.isAdmin) {
+                    effectif += "<td>" + p[2] + "</td>"
+                        + "<td>" + Utilities.formatString("%02d",Number(p[3]+p[4]+p[5])) + " : " + p[3] + "/" + p[4]+ "/" + p[5] + "</td>";
+                }
+                effectif += "<td>" + getSerieLumieres(p[8]) + "</td>"
                     + "<td>" + p[6] + "</td>"
                     + "<td>" + getLogoCar(p[11]) + "</td>"
                     + "</tr>";
