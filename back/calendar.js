@@ -1,12 +1,12 @@
 function createEventIfMatchIsFull() {
-    if (!isMatchCancel() && isParameterBlank("creationGoogleEvent") && parametersMap.get("numberPlayerInMatch") == parametersMap.get("numberPlayerMatch")) {
+    if (isParameterBlank("creationGoogleEvent") && parametersMap.get("numberPlayerInMatch") == parametersMap.get("numberPlayerMatch")) {
         sendMatchCompletMail();
         createCalendarEvent();
     }
 }
 
 function updateCalendarEvent() {
-    if(!isMatchCancel() && isParameterNotBlank("creationGoogleEvent")){
+    if(isParameterNotBlank("creationGoogleEvent")){
         deleteCalendarEvent();
         createCalendarEvent();
     }
@@ -21,7 +21,7 @@ function createCalendarEvent() {
         if (parametersMap.get("modeTest")) {
             mails = parametersMap.get("mailTester");
         }
-        calendar.createEvent(parametersMap.get("applicationName"), begin, end, {location: parametersMap.get("nextMatchStadiumAddress"), guests: mails, sendInvites: false});
+        calendar.createEvent(parametersMap.get("applicationName"), begin, end, {location: "87 Rue Gustave Delory, 59810 Lesquin", guests: mails, sendInvites: false});
         updateParameterValue("creationGoogleEvent", now());
     }
 }

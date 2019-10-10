@@ -5,35 +5,27 @@ function execBatch() {
     if(isTimeForStep(nextStep)){
         execStep(nextStep);
     }
-    if(nextStep>2) {
+    if(nextStep==2 || nextStep==3) {
         createEventIfMatchIsFull();
     }
 }
 
 function getNextStep() {
-    if(isParameterBlank("mailSendingPrio1")){
+    if(isParameterBlank("mail1")){
         return 1;
-    } else if(isParameterBlank("mailSendingPrio2")){
+    } else if(isParameterBlank("mail2")){
         return 2;
-    } else if(isParameterBlank("mailSendingPrio3")){
+    } else if(isParameterBlank("mailReminder")){
         return 3;
-    } else if(isParameterBlank("controlDone")){
-        return 4;
-    } else if(isParameterBlank("mailSendingReminder")){
-        return 5;
-    } else if(isParameterBlank("mailSendingConfirmation")){
-        return 6;
-    } else if(isParameterBlank("teamSaved")){
-        return 7;
-    } else {
-      return 8;
+    } else if(isParameterBlank("cleaning")){
+      return 4;
     }
 }
 
 function isTimeForStep(step) {
     var nextMatchDay = parametersMap.get("nextMatchDate").getDay();
     var column = nextMatchDay + 1;
-    var row = step + 4;
+    var row = step + 2;
     var nextStepDate = sheetSchedule.getRange(row, column).getValue();
     var nextStepDay = nextStepDate.substring(0, 3);
     var nextStepHour = nextStepDate.substring(4, 9);
@@ -55,40 +47,18 @@ function execStep(step) {
     Logger.log("execStep "+ step);
     switch (step) {
         case 1:
-            deleteUnavaibility();
             sendInscriptionMailForAPrio(1);
             break;
         case 2:
             sendInscriptionMailForAPrio(2);
             break;
         case 3:
-            sendInscriptionMailForAPrio(3);
-            break;
-        case 4:
-            controlAndCancelOrRelaunch();
-            break;
-        case 5:
             sendReminderMail();
             break;
-        case 6:
-            sendConfirmMail();
-            break;
-        case 7:
-            saveTeam();
-            saveRank();
-            break;
-        case 8:
-            sendScoreMail();
-            updatePriority();
-            setNextMatchDate();
+        case 4:
             cleaning();
-            break;
+            setNextMatchDate();
     }
-}
-
-// noinspection JSUnusedGlobalSymbols
-function resultatDuMois() {
-    sendLastMonthResultMail();
 }
 
 

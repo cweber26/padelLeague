@@ -3,31 +3,18 @@
 
 <head>
     <?!= include("front/page/head"); ?>
-    <?!= include("front/css/mailCss"); ?>
-    <?!= include("front/css/mainCss"); ?>
+    <?!= include("front/css"); ?>
 </head>
 
 <body>
-    <div class="container">
-    <?!= includeWithArgs("front/mail/mailHeader", {urlMail: urlMail}); ?>
-        <div class="row">
-            <h2 class="title">N'oublie pas de prendre tes affaires pour le match <?= date ?></h2>
-        </div>
-        <? if(isNewPlayer) { ?>
-        <h3 class="alert">Suite à un désistement tu as été sélectionné</h3>
-        <h3>
-            <a class="buttonRed" style="color: white; width: 300px" href="<?= urlMail.desinscription ?>">En fait je ne suis pas dispo</a>
-        </h3>
-        <? } ?>
-        <? if(nbAvailableSlots===0) { ?>
-        <?!= includeWithArgs("front/mail/mailCompo", {compo: compo}) ?>
-        <? } else { ?>
-        <h3>Il nous manque encore <?=nbAvailableSlots?> joueurs mais le match est conservé pour le moment.</h3>
-        <h3> N'hésite pas à chercher des joueurs disponibles et à me contacter</h3>
-        <? } ?>
-        <?!= includeWithArgs("front/utils/stadiumInfo", {stadium: stadium, withDetail: false}) ?>
-        <?!= includeWithArgs("front/mail/mailFooter", {urlMail: urlMail}); ?>
+<div class="container">
+    <?!= include("front/mail/mailHeader"); ?>
+    <div class="row">
+        <h2 class="title">N'oublie pas de prendre tes affaires pour le match <?= date ?></h2>
     </div>
+    <?!= includeWithArgs("front/mail/mailCompo", {compo: compo}) ?>
+    <div class="logoPadelAttitude"></div>
+</div>
 </body>
 </html>
 

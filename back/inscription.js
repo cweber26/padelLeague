@@ -1,16 +1,14 @@
 function sendInscriptionMailForAPrio(prio) {
-    if (!isMatchCancel() && parametersMap.get("numberAvailableSlotInMatch") > 0) {
+    if (parametersMap.get("numberAvailableSlotInMatch") > 0) {
         sendInscriptionMailForAPrioWithoutControl(prio);
     }
     switch (prio) {
         case 1:
-            updateParameterValue("mailSendingPrio1", now());
+            updateParameterValue("mail1", now());
+            clearParameterValue("cleaning");
             break;
         case 2:
-            updateParameterValue("mailSendingPrio2", now());
-            break;
-        case 3:
-            updateParameterValue("mailSendingPrio3", now());
+            updateParameterValue("mail2", now());
             break;
     }
 }
@@ -28,23 +26,17 @@ function sendInscriptionMailForAPrioWithoutControl(prio) {
 function sendInscriptionMailForAPlayer(player) {
     var body = includeWithArgs("front/mail/mailInscription", {
         date: matchDayGapInFrench(true),
-        nbAvailableSlots: parametersMap.get("numberAvailableSlotInMatch"),
-        urlMail: getUrlMail(player),
-        stadium: getStadiumInfo(),
-        evalToDo: !player.haveDoneAutoEvaluation
+        inscription: "https://script.google.com/macros/s/AKfycbzVIY90RhNdhPaWSs8is3rR8v-IMk0H9uBgHwCHx1e26DBVgjBK/exec?page=inscription&mail=" + player.mail + "&answer=Oui",
+        desinscription: "https://script.google.com/macros/s/AKfycbzVIY90RhNdhPaWSs8is3rR8v-IMk0H9uBgHwCHx1e26DBVgjBK/exec?page=inscription&mail=" + player.mail + "&answer=Non"
     });
-    sendMail(player.mail, "Inscription au match de Footsal du " + nextMatchDateInFrench + " ✅", body);
+    sendMail(player.mail, "Inscription au match de Padel du " + nextMatchDateInFrench + " ✅", body);
 }
 
 
 
 
 function loadPageInscription() {
-    if (param.answer == "Oui") {
-        return render("front/page/inscription", "inscription", {mail: param.mail, key: param.key, admin: param.isAdmin});
-    } else {
-        return render("front/page/desinscription", "desinscription",{mail: param.mail, key: param.key, admin: param.isAdmin});
-    }
+    return render("front/page/inscription", "PadelLeague",{mail: param.mail, answer: param.answer});
 }
 
 
@@ -53,8 +45,8 @@ function inscription(parameter) {
     Logger.log("Inscription for " + parameter.mail + " and answer " + parameter.answer);
     if (isValidAnswer(parameter)) {
         var playersInTheMatchMailBefore = playersInTheMatchMail();
-        if (sheetInscription.getLastRow() > 1) {
-            var inscriptions = sheetInscription.getRange(2, 1, sheetInscription.getLastRow(), sheetInscription.getLastColumn()).getValues();
+        if (sheetInscription.getLastRow() > 0) {
+            var inscriptions = sheetInscription.getRange(1, 1, sheetInscription.getLastRow(), sheetInscription.getLastColumn()).getValues();
             for (var i in inscriptions) {
                 if (inscriptions[i][0] == parameter.mail) {
                     if (inscriptions[i][2] == parameter.answer) {
@@ -62,7 +54,7 @@ function inscription(parameter) {
                         return;
                     } else {
                         // answer different. we delete the row and check if it is a desistement.
-                        sheetInscription.deleteRow(Number(i) + 2);
+                        sheetInscription.deleteRow(Number(i) + 1);
                         checkIfDesistement(parameter, playersInTheMatchMailBefore);
                         break;
                     }

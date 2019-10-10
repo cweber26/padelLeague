@@ -1,0 +1,147 @@
+<style>
+    h1, h2, h3, h4, h5 {
+        text-align: center;
+        color: #42a5f5;
+    }
+
+    .row {
+        margin-bottom: 15px;
+    }
+
+    .title {
+        text-align: center;
+        color: #42a5f5;
+    }
+
+    .alert {
+        text-align: center;
+        color: #f44336;
+    }
+
+    .logoPadelAttitude {
+        margin: auto;
+        width: 80px;
+        height: 80px;
+        background-image: url(https://lh3.googleusercontent.com/kb2CGlnjH9c-1gl9dwi99RYxBJJpVNj416z38euuwSuZXBa81I7FGkdBeUVohEa3S5bizU4GzRP-vOd14vMtZCAyYnpuDQvFGJPzYEKG6UzldtWP56SziPi3uEGX0M00Rj8ZFuUnZdNTOPz8-_Lty3kqE6RLnunMezf3NBn-uHhQvu5ar85244WrbZM-Z_1TMAueUFUIBlICCYpahwp4pauDaBhAgvo8dzhCzGwZwRh0T6HF67LX5gBpmiyQWsXmMSwHGXS7FYfIN3r8bumolvVLCPWFpixkCLYGaAoZ0FJxAKo3_Ll9yt9RMHDKwMQ8gFAwy5Mok61k3BL2iMdoY2PADttQkJlE5PaK2OwKxF8NSh9czaqQN-kjW67EYCEIPGFNGFCSynXiPZEwRmNFnJrQIeqUrplsAuPg25eTOscHURLyTgYYQzXl7s_pN-vw2r3qtk5VFKtdNbI6EiNXKFJcISbuX_UiuvKdG7NUW4uC_4oqKxA9wjJhC6zKEOrIwChVHGu0L2sU28JWSpBmYxP8F8uFQ_OaPkkflhEDSfjKfPHl0o0mkN54VrwMFvubaGa_ZanL-GO5lBjew3McnGuPfnCwjomfUBXjYMR--J8tRNB4FQAgKKQeGP-9jl_qk4q0YzwXEe7PeHh3frs6tljWQkjtBnyk1Q7k_P76tvQxOUtgeQuJow4=s188-no);
+        background-size: 100% 100%;
+        link: "";
+    }
+
+    .logo {
+        width: 100px;
+        height: 120px;
+        margin: auto;
+        background-image: url(https://lh3.googleusercontent.com/w9GvVUoV85MoOyMCuinRNdY5JUc2VBViTvtiTZdAf66gM7L1ZZ9D7oQtTKEvLMkl-JNzYnsQDsTYnTiBbGIiWvlzxwRL5EdEMi-mfzIixMvxYLW02pVH8J5vHH_9uZbQz7rGriKD6qVaKqQXHcUBjZvPszggw9I8ut5919tyeIhkCn7Y_oH2ZLZ5dgy4jMSlZZXLOHHy18E-zP8rXAnRkgBcaYxLryOtInSUe-gWCBEFu2_4N40zbs7WF__PRH2puKK7UTtN7UCqCbWU0ekCYIxVulEdZeXN6A9V31rS_UveknJbRXM8d761prLncKH6BdeTxBogKTxK1V99lxzRkGEkF6p6pTjbhSrwWMRH0aVMDz5PZtZi7LGRkAzZYzaUGtwoOk64M1alitPQQTa2EVo45tXxDvAuivev8xSfqaVH3nFW3U3ciBMIrXzyPa8RqA0RGbQjfIVhzcNoA6RZzqzLNSUHP0W3e3x9R7wzGwnHpkOU5OVybsHnOa2PNCZ773SjCVyQGzFEJZ-ATsvN55kT_eRF_wJ8ITQR8hYJ1p_izvLJtBYMhtNhQLYtV7KcmgJKnx_2XrRnTdJtHm-9y0oLaDwx_E-iVwy9GPGUnDRdFSQEar7fjBBuGFys_yY84VEOnnfogSA2wA2XdjPfwbqEk9I-Tuo8U4KOVajjJjV4V6smmZRsYAY=w470-h642-no);
+        background-size: 100% 100%;
+        cursor: pointer;
+    }
+
+    .field {
+        width: 60%;
+        height: 280px;
+        margin: auto;
+        background-image: url(https://lh3.googleusercontent.com/nKconnn0YMHehkyf9qWHZ_dqitvGV9zNdMuPsoPwU1jo826oXcMf4YWyzYyuFH_98-CXebZGELIyxXTXGquZt0T1kZH7e3Uuq569QKUjui2x-Xv1lcGZ93sF3yeHrtOGED_HabB2A63N795ZjC2H9PJR95SsM4yb12VxcCGkghW0WpY3oQaf9pn5a9W6AYRBdNpXnWl4LRSEZmvj3wFQxbILPS2lAILG4CcFaZTIaTaRDB_Ye33FyfJ5qQV3l6f_2dOqmyvmucS819KxYsbQxRtIoY2u9Er-SjHIbFTnvMA2sgZ1lSKos7zaCSKtQ5ryT1wbWVXV5fzmwWLIcXm2piV39yaox_0XQcpgzpTiZbj4h1cIYmZOEj_SFw8XmHHsHHgbBUv-yKobswVeq9l16fh6J7G2zwtAEsD2gdRCQsBrPLh3tpBoBXWold5QFPROoYp5fydUSnVsFrL5aiqoH1kdW4q1lXbmukQ27qrjp5d94i-GjRdG2klYTM8bLBhiFjPWULBdgI61ThaaLrsu2kM3MQeLmDZvnyu89gd_veWBA388D7pTuAi3GylpbAm9ytlpR4SM9AaokWZMd-2z75Ks1uxX7hKU7tQtVwp87qzGj5-UcKtA3aSNXhUIn-IyFAbITKgJjn50nmJT-3ZnHO0-rVcSLhkUb8T2XGwSw9K9_IqADGyTPyY=w662-h1272-no);
+        background-size: 100% 100%;
+        text-align: center;
+    }
+
+    .zone1 {
+        position: relative;
+        height: 18%;
+    }
+
+    .zone2 {
+        position: relative;
+        height: 28%;
+    }
+
+    .zoneMail {
+        position: relative;
+        height: 10px;
+    }
+
+    .zoneMail1 {
+        position: relative;
+        height: 50px;
+    }
+
+    .zoneMail2 {
+        position: relative;
+        height: 52px;
+    }
+
+    .zoneMail3 {
+        position: relative;
+        height: 50px;
+    }
+
+    .zoneGauche {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+
+    .zoneDroite {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        float: right;
+    }
+
+    .joueur {
+        position: relative;
+        padding: 7px;
+        margin: auto;
+        display: inline-block;
+        text-decoration: none;
+        font-size: 14px;
+        border-radius: 10px;
+        color: white;
+    }
+
+    .red {
+        background-color: #ef5350;
+    }
+
+    .blue {
+        background-color: #42a5f5;
+    }
+
+    .green {
+        background-color: #66bb6a;
+    }
+
+    .yellow {
+        background-color: #42a5f5;
+    }
+
+    .buttonRed {
+        background-color: #e57373;
+        border: none;
+        padding: 15px 0;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: 100%;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .buttonGreen {
+        background-color: #81c784;
+        border: none;
+        padding: 15px 0;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: 100%;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+    }
+
+</style>

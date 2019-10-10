@@ -3,31 +3,22 @@
 
 <head>
     <?!= include("front/page/head"); ?>
-    <?!= include("front/css/mailCss"); ?>
-    <?!= include("front/css/mainCss"); ?>
+    <?!= include("front/css"); ?>
 </head>
 
 <body>
     <div class="container">
-        <?!= includeWithArgs("front/mail/mailHeader", {urlMail: urlMail}); ?>
-        <? if(evalToDo) { ?> <?!= includeWithArgs("front/mail/mailEvaluation", {urlMail: urlMail}); ?> <? } ?>
+        <?!= include("front/mail/mailHeader"); ?>
         <div class="row">
             <table style="margin:auto; width:400px">
             <tr><th style="width:50%">
-            <a class="buttonGreen" style="color:white; width: 198px" href="<?=urlMail.inscription?>">Je m'inscris</a>
+            <a class="buttonGreen" style="color:white; width: 198px" href="<?=inscription?>">Je m'inscris</a>
             </th><th style="width:50%">
-            <a class="buttonRed" style="color:white; width: 198px" href="<?=urlMail.desinscription?>">Pas dispo</a>
+            <a class="buttonRed" style="color:white; width: 198px" href="<?=desinscription?>">Pas dispo</a>
             </th></tr>
             </table>
-        </div>
-        <div class="row"></div>
-        <?!= includeWithArgs("front/utils/stadiumInfo", {stadium: stadium, withDetail: false}) ?>
-        <? if(nbAvailableSlots<=5 && nbAvailableSlots>0) { ?>
-        <div class="row">
-            <h4 class="title">Il reste <?=nbAvailableSlots?> place(s)</h4>
-        </div>
-        <? } ?>
-        <?!= includeWithArgs("front/mail/mailFooter", {urlMail: urlMail}); ?>
+        </div><div class="logoPadelAttitude"></div>
+
     </div>
 </body>
 </html>

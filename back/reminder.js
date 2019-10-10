@@ -24,32 +24,28 @@ function sendReminderMailWithoutControl() {
 function sendWaitingListMail(player) {
     var body = includeWithArgs("front/mail/mailWaitingList", {
         date: matchDayGapInFrench(true),
-        urlMail: getUrlMail(player)
     });
     sendMail(player.mail, "Liste d'attente pour le match " + matchDayGapInFrench(true), body);
 }
 
-function sendRemindMailForAPlayer(player, isNewPlayer) {
-    sendMail(player.mail, "Rappel : Match de footsal " + matchDayGapInFrench(false) + " 🤙🤙", getBodyMailReminder(player, isNewPlayer));
+function sendRemindMailForAPlayer(player) {
+    sendMail(player.mail, "Rappel : Match de padel " + matchDayGapInFrench(false) + " 🤙🤙", getBodyMailReminder(player));
 }
 
-function getBodyMailReminder(player, isNewPlayer) {
+function getBodyMailReminder() {
     return includeWithArgs("front/mail/mailReminder", {
         date: matchDayGapInFrench(true),
         nbAvailableSlots: parametersMap.get("numberAvailableSlotInMatch"),
-        compo: getCompoPlayersListForMail(),
-        isNewPlayer: isNewPlayer,
-        urlMail: getUrlMail(player),
-        stadium: getStadiumInfo()
+        compo: getCompoPlayersListForMail()
     });
 }
 
 function getCompoPlayersListForMail() {
     var players = [];
     if (parametersMap.get("numberPlayerInMatch") > 0) {
-        var data = playersInTheMatchForFinalCompo();
-        data.forEach(function (p) {
-            players.push(p[1]);
+        playersInTheMatchMail().forEach(function (m) {
+            var player = getPlayerWithMail(m)
+            players.push(player.name);
         });
     }
     return players;

@@ -21,5 +21,5 @@ function render(fileName, tabTitle, argsObject) {
             tmp[key] = argsObject[key];
         })
     }
-    return tmp.evaluate().setTitle(tabTitle).setFaviconUrl("https://i.ibb.co/9csrcMx/favicon.png").setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+    return tmp.evaluate().setTitle(tabTitle).setFaviconUrl("https://i.ibb.co/whkSN5X/favicon-Padel.png").setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }

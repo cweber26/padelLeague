@@ -2,12 +2,9 @@
   var parameter = {};
   google.script.url.getLocation(function(location) {
       parameter = location.parameter;
-      google.script.run.withSuccessHandler(redirectToPageCompo).withFailureHandler(redirectToPageError).inscription(parameter);
+      google.script.run.withSuccessHandler(redirectToPageCompo).inscription(parameter);
   });
   function redirectToPageCompo() {
-    window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=compo&mail="+String(parameter.mail)+"&key="+String(parameter.key);
-  }
-  function redirectToPageError() {
-    window.top.location.href="https://script.google.com/macros/s/AKfycbw7SggSd_5zNsbmfZ3nUU_nr2cXfRYIgntGSLh2n3sNhOJyUDs/exec?page=error";
+    window.top.location.href="https://script.google.com/macros/s/AKfycbzVIY90RhNdhPaWSs8is3rR8v-IMk0H9uBgHwCHx1e26DBVgjBK/exec?page=compo";
   }
 </script>

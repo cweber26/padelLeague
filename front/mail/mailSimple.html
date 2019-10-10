@@ -3,8 +3,7 @@
 
 <head>
     <?!= include("front/page/head"); ?>
-    <?!= include("front/css/mailCss"); ?>
-    <?!= include("front/css/mainCss"); ?>
+    <?!= include("front/css"); ?>
 </head>
 
 <body>
@@ -13,7 +12,6 @@
         <div class="row">
             <?!=html?>
         </div>
-    <?!= includeWithArgs("front/mail/mailFooter", {urlMail: urlMail}); ?>
     </div>
 </body>
 </html>

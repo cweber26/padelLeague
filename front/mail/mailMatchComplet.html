@@ -3,18 +3,17 @@
 
 <head>
     <?!= include("front/page/head"); ?>
-    <?!= include("front/css/mailCss"); ?>
-    <?!= include("front/css/mainCss"); ?>
+    <?!= include("front/css"); ?>
 </head>
 
 <body>
 <div class="container">
-    <?!= includeWithArgs("front/mail/mailHeader", {urlMail: urlMail}); ?>
+    <?!= include("front/mail/mailHeader"); ?>
     <div class="row">
         <h2 class="title">Le match <?= date ?> est complet</h2>
     </div>
     <?!= includeWithArgs("front/mail/mailCompo", {compo: compo}) ?>
-    <?!= includeWithArgs("front/mail/mailFooter", {urlMail: urlMail}); ?>
+    <div class="logoPadelAttitude"></div>
 </div>
 </body>
 </html>

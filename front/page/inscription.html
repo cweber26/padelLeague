@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <?!= include("front/page/head"); ?>
-      <?!= include("front/css/pageCss"); ?>
-    <?!= include("front/css/mainCss"); ?>
-  </head>
-  <body>
-  <div class="container">
-   <div class="row"></div>
-   <div class="row">
-    <div class="center">
-      <img class=none src="https://drive.google.com/thumbnail?id=1Aucoy6mDftns8VbpY6h1AZlk62KjP5Yj"  alt="logo"/>
-    </div>
-    <h3>Inscription en cours</h3>
-    <div class="center">
-      <div class="preloader-wrapper big active center">
-        <div class="spinner-layer spinner-green-only">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div>
-          <div class="gap-patch">
-            <div class="circle"></div>
-          </div>
-          <div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
+    <?!= include("front/css"); ?>
+</head>
+<body>
+<div class="container">
+    <div class="row"></div>
+    <div class="row">
+        <div class="logo">
         </div>
-      </div>
+        <? if(answer == "Oui") { ?>
+        <h3>Inscription en cours</h3>
+        <? } else { ?>
+        <h3>Désinscription en cours</h3>
+        <? } ?>
+        <div class="center">
+            <div class="preloader-wrapper big active center">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-   </div>
-  </div>
-  </body>
+</div>
+</body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <?!= include("front/js/inscription-js"); ?>
 </html>
