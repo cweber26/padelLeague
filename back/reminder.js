@@ -1,9 +1,9 @@
 function sendReminderMail() {
-    if (isParameterBlank("mailSendingReminder")) {
+    if (isParameterBlank("mailReminder")) {
         if(!isMatchCancel()){
             sendReminderMailWithoutControl();
         }
-        updateParameterValue("mailSendingReminder", now());
+        updateParameterValue("mailReminder", now());
     }
 }
 
