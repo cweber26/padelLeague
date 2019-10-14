@@ -47,3 +47,17 @@ function playersInWaitingListMail() {
     }
     return [];
 }
+
+function playersNotAvailablePlayerListMail() {
+    if(parametersMap.get("notAvailablePlayerMailList")) {
+        return parametersMap.get("notAvailablePlayerMailList").split(',');
+    }
+    return [];
+}
+
+function playersNotRespondedPlayerListMail() {
+    if(parametersMap.get("notRespondedPlayerMailList")) {
+        return parametersMap.get("notRespondedPlayerMailList").split(',');
+    }
+    return [];
+}
