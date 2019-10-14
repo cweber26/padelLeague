@@ -15,3 +15,7 @@ function loadParametersMap() {
     });
     return parametersMap;
 }
+
+function reloadParametersMap() {
+    parametersMap = loadParametersMap();
+}

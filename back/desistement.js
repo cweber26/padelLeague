@@ -14,7 +14,7 @@ function actionsToDoIfDesistement(desisteurMail) {
         //the match was full and a least a player was in waiting list
         var newPlayer = getNewPlayerInCompo();
         // we get the new player
-        loadParametersMap();
+        reloadParametersMap();
         if (isParameterBlank("mailSendingReminder")) {
             sendMail(newPlayer.mail, "Tu es sélectionné pour le match " + matchDayGapInFrench(true) + " en raison d'un désitement", getBodyMailReminder(newPlayer, true));
         } else {
