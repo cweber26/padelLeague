@@ -1,8 +1,6 @@
 function sendReminderMail() {
     if (isParameterBlank("mailReminder")) {
-        if(!isMatchCancel()){
-            sendReminderMailWithoutControl();
-        }
+        sendReminderMailWithoutControl();
         updateParameterValue("mailReminder", now());
     }
 }
@@ -12,20 +10,6 @@ function sendReminderMailWithoutControl() {
     for (var i in matchMails) {
         sendRemindMailForAPlayer(getPlayerWithMail(matchMails[i]), false);
     }
-
-    if (parametersMap.get("numberPlayerInWaitingList") > 0) {
-        var waitingListMails = playersInWaitingListMail();
-        for (var j in waitingListMails) {
-            sendWaitingListMail(getPlayerWithMail(waitingListMails[j]));
-        }
-    }
-}
-
-function sendWaitingListMail(player) {
-    var body = includeWithArgs("front/mail/mailWaitingList", {
-        date: matchDayGapInFrench(true),
-    });
-    sendMail(player.mail, "Liste d'attente pour le match " + matchDayGapInFrench(true), body);
 }
 
 function sendRemindMailForAPlayer(player) {
