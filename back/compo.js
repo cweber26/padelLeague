@@ -44,7 +44,8 @@ function loadPageCompo() {
         compo: players,
         listeAttente: listeAttente,
         listePasDispo: listePasDispo,
-        listePasRepondu: listePasRepondu
+        listePasRepondu: listePasRepondu,
+        nbTerrain: parametersMap.get("numberOfField")
     });
 }
 

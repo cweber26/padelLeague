@@ -1,5 +1,5 @@
 function sendReminderMail() {
-    if (isParameterBlank("mailReminder")) {
+    if (isParameterBlank("mailReminder") && parametersMap.get("numberPlayerInMatch")==parametersMap.get("numberPlayerMatch") ) {
         sendReminderMailWithoutControl();
         updateParameterValue("mailReminder", now());
     }
