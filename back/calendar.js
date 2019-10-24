@@ -21,7 +21,12 @@ function createCalendarEvent() {
         if (modeTest) {
             mails = mailTester;
         }
-        calendar.createEvent(applicationName, begin, end, {location: "87 Rue Gustave Delory, 59810 Lesquin", guests: mails, sendInvites: false});
+        var event = calendar.createEvent(applicationName, begin, end, {location: "87 Rue Gustave Delory, 59810 Lesquin", guests: mails, sendInvites: false});
+
+        if(mails.includes("cedric.weber@decathlon.com")){
+            event.setMyStatus(CalendarApp.GuestStatus.YES);
+        }
+
         updateParameter("creationGoogleEvent", now());
     }
 }
