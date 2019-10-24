@@ -1,7 +1,5 @@
 var currentWeekDay = parseInt(Utilities.formatDate(new Date(), "Europe/Paris", "u"));
-var nextMatchDate = parametersMap.get("nextMatchDate");
 var nextMatchDateInFrench = LanguageApp.translate(Utilities.formatDate(nextMatchDate,  "Europe/Paris", "EEEE dd MMMM"),"en","fr");
-var nextMatchDay = nextMatchDate.getDay();
 var scheduleValues = sheetSchedule.getRange(1, 1).getDataRegion().getValues();
 
 function setNextMatchDate() {
@@ -9,7 +7,7 @@ function setNextMatchDate() {
     for (var i = 1; i <= 7; i++) {
         var dayToTest = (currentWeekDay+i);
         if(isADayWithMatch(dayToTest)){
-            updateParameterValue("nextMatchDate", nextDay(dayToTest));
+            updateParameter("nextMatchDate", nextDay(dayToTest));
             return;
         }
     }
@@ -55,22 +53,6 @@ function matchDayGapInFrench(withPronom) {
             } else {
                 return nextMatchDateInFrench;
             }
-    }
-}
-
-function getDateFormat(date) {
-    if (date != "") {
-        return Utilities.formatDate(new Date(date), "Europe/Paris", "dd/MM/yy");
-    } else {
-        return "";
-    }
-}
-
-function getDateTimeFormat(date) {
-    if (date != "") {
-        return Utilities.formatDate(new Date(date), "Europe/Paris", "dd/MM/yy HH:mm:ss");
-    } else {
-        return "";
     }
 }
 

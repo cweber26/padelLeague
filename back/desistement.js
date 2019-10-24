@@ -10,12 +10,11 @@ function checkIfDesistement(parameter, playersInTheMatchMailBefore) {
 
 function actionsToDoIfDesistement(desisteurMail) {
     var oldPlayer = getPlayerWithMail(desisteurMail);
-    if (parametersMap.get("numberPlayerInMatch") == parametersMap.get("numberPlayerMatch") && parametersMap.get("numberPlayerInWaitingList") > 0) {
+    if (numberPlayerInMatch == numberPlayerMatch && numberPlayerInWaitingList > 0) {
         //the match was full and a least a player was in waiting list
         var newPlayer = getNewPlayerInCompo();
         // we get the new player
-        reloadParametersMap();
-        if (isParameterBlank("mailSendingReminder")) {
+        if (mailSendingReminder="") {
             sendMail(newPlayer.mail, "Tu es sélectionné pour le match " + matchDayGapInFrench(true) + " en raison d'un désitement", getBodyMailReminder(newPlayer, true));
         } else {
             sendRemindMailForAPlayer(newPlayer, true);
@@ -23,7 +22,7 @@ function actionsToDoIfDesistement(desisteurMail) {
         sendMailSimple("Remplacement : " + oldPlayer.fullName + " s'est désité pour le match " + matchDayGapInFrench(true),
             "<h4>" + oldPlayer.fullName + " s'est désité pour le match " + matchDayGapInFrench(true) + "</h4><h4>" + newPlayer.fullName + " est dispo pour le remplacer</h4>");
     } else {
-        var nbAvailableSlotsDesistement = (parametersMap.get("numberAvailableSlotInMatch") + 1);
+        var nbAvailableSlotsDesistement = (numberAvailableSlotInMatch + 1);
         sendMailSimple("Alerte : " + oldPlayer.fullName + " s'est désité pour le match " + matchDayGapInFrench(true) + " il manque " + nbAvailableSlotsDesistement + " joueur(s) pour le match", "<h4>" + oldPlayer.fullName + " s'est désité pour le match " + matchDayGapInFrench(true) + "</h4><h4>Il manque " + nbAvailableSlotsDesistement + " joueur(s)</h4>");
     }
     updateCalendarEvent();

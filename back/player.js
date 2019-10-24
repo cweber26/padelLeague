@@ -35,29 +35,29 @@ function getNewPlayerInCompo() {
 }
 
 function playersInTheMatchMail() {
-    if(parametersMap.get("numberPlayerInMatch")>0) {
-        return parametersMap.get("matchPlayerMailList").split(',');
+    if(numberPlayerInMatch>0) {
+        return matchPlayerMailList.split(',');
     }
     return [];
 }
 
 function playersInWaitingListMail() {
-    if(parametersMap.get("numberPlayerInWaitingList")>0) {
-        return parametersMap.get("waitingListPlayerMailList").split(',');
+    if(numberPlayerInWaitingList>0) {
+        return waitingListPlayerMailList.split(',');
     }
     return [];
 }
 
 function playersNotAvailablePlayerListMail() {
-    if(parametersMap.get("notAvailablePlayerMailList")) {
-        return parametersMap.get("notAvailablePlayerMailList").split(',');
+    if(notAvailablePlayerMailList) {
+        return notAvailablePlayerMailList.split(',');
     }
     return [];
 }
 
 function playersNotRespondedPlayerListMail() {
-    if(parametersMap.get("notRespondedPlayerMailList")) {
-        return parametersMap.get("notRespondedPlayerMailList").split(',');
+    if(notRespondedPlayerMailList) {
+        return notRespondedPlayerMailList.split(',');
     }
     return [];
 }

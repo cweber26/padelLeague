@@ -6,16 +6,48 @@ var sheetSchedule = spreadsheet.getSheetByName("Schedule");
 var sheetParameters = spreadsheet.getSheetByName("Parameters");
 
 ////////////PARAMETERS INIT////////////
-var parametersMap = loadParametersMap();
 
-function loadParametersMap() {
-    var parametersMap = new Map();
-    sheetParameters.getRange(1,1).getDataRegion().getValues().forEach(function(p) {
-        parametersMap.set(p[0],p[1]);
-    });
-    return parametersMap;
+var parametersList = sheetParameters.getRange(1,1).getDataRegion().getValues();
+
+var mail1 = getParameterFromList("mail1");
+var mail2 = getParameterFromList("mail2");
+var creationGoogleEvent = getParameterFromList("creationGoogleEvent");
+var mailReminder = getParameterFromList("mailReminder");
+var cleaning = getParameterFromList("cleaning");
+var nextMatchDate = getParameterFromList("nextMatchDate");
+var numberOfField = getParameterFromList("numberOfField");
+var numberAvailableSlotInMatch = getParameterFromList("numberAvailableSlotInMatch");
+var numberPlayerInMatch = getParameterFromList("numberPlayerInMatch");
+var numberPlayerInWaitingList = getParameterFromList("numberPlayerInWaitingList");
+var matchPlayerMailList = getParameterFromList("matchPlayerMailList");
+var waitingListPlayerMailList = getParameterFromList("waitingListPlayerMailList");
+var notAvailablePlayerMailList = getParameterFromList("notAvailablePlayerMailList");
+var notRespondedPlayerMailList = getParameterFromList("notRespondedPlayerMailList");
+var modeTest = getParameterFromList("modeTest");
+var mailTester = getParameterFromList("mailTester");
+var applicationName = getParameterFromList("applicationName");
+var numberPlayerMatch = getParameterFromList("numberPlayerMatch");
+var adminMailList = getParameterFromList("adminMailList");
+
+
+function getRowParameter(name) {
+    if(name) {
+        for (var i=0; i <parametersList.length; i++) {
+            if(parametersList[i][0]==name) {
+                return i+1;
+            }
+        }
+    }
 }
 
-function reloadParametersMap() {
-    parametersMap = loadParametersMap();
+function getParameterFromList(name) {
+    return parametersList[getRowParameter(name)-1][1];
+}
+
+function clearParameter(name) {
+    sheetParameters.getRange(getRowParameter(name), 2).clearContent();
+}
+
+function updateParameter(name, value) {
+    sheetParameters.getRange(getRowParameter(name), 2).setValue(value);
 }

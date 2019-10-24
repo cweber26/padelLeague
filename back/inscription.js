@@ -1,14 +1,14 @@
 function sendInscriptionMailForAPrio(prio) {
-    if (parametersMap.get("numberAvailableSlotInMatch") > 0) {
+    if (numberAvailableSlotInMatch > 0) {
         sendInscriptionMailForAPrioWithoutControl(prio);
     }
     switch (prio) {
         case 1:
-            updateParameterValue("mail1", now());
-            clearParameterValue("cleaning");
+            updateParameter("mail1", now());
+            clearParameter("cleaning");
             break;
         case 2:
-            updateParameterValue("mail2", now());
+            updateParameter("mail2", now());
             break;
     }
 }

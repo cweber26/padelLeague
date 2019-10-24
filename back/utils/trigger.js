@@ -11,19 +11,19 @@ function execBatch() {
 }
 
 function getNextStep() {
-    if(isParameterBlank("mail1")){
+    if(mail1=""){
         return 1;
-    } else if(isParameterBlank("mail2")){
+    } else if(mail2=""){
         return 2;
-    } else if(isParameterBlank("mailReminder")){
+    } else if(mailReminder=""){
         return 3;
-    } else if(isParameterBlank("cleaning")){
+    } else if(cleaning=""){
       return 4;
     }
 }
 
 function isTimeForStep(step) {
-    var nextMatchDay = parametersMap.get("nextMatchDate").getDay();
+    var nextMatchDay = nextMatchDate.getDay();
     var column = nextMatchDay + 1;
     var row = step + 2;
     var nextStepDate = sheetSchedule.getRange(row, column).getValue();
@@ -56,7 +56,7 @@ function execStep(step) {
             sendReminderMail();
             break;
         case 4:
-            cleaning();
+            cleaningParam();
             setNextMatchDate();
     }
 }

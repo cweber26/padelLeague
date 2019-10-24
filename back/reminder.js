@@ -1,7 +1,7 @@
 function sendReminderMail() {
-    if (isParameterBlank("mailReminder") && parametersMap.get("numberPlayerInMatch")==parametersMap.get("numberPlayerMatch") ) {
+    if (mailReminder="" && numberPlayerInMatch == numberPlayerMatch) {
         sendReminderMailWithoutControl();
-        updateParameterValue("mailReminder", now());
+        updateParameter("mailReminder", now());
     }
 }
 
@@ -19,14 +19,14 @@ function sendRemindMailForAPlayer(player) {
 function getBodyMailReminder() {
     return includeWithArgs("front/mail/mailReminder", {
         date: matchDayGapInFrench(true),
-        nbAvailableSlots: parametersMap.get("numberAvailableSlotInMatch"),
+        nbAvailableSlots: numberAvailableSlotInMatch,
         compo: getCompoPlayersListForMail()
     });
 }
 
 function getCompoPlayersListForMail() {
     var players = [];
-    if (parametersMap.get("numberPlayerInMatch") > 0) {
+    if (numberPlayerInMatch > 0) {
         playersInTheMatchMail().forEach(function (m) {
             var player = getPlayerWithMail(m)
             players.push(player.name);

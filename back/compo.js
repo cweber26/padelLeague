@@ -1,6 +1,6 @@
 function loadPageCompo() {
     var players = [];
-    if (parametersMap.get("numberPlayerInMatch") > 0) {
+    if (numberPlayerInMatch > 0) {
         playersInTheMatchMail().forEach(function (m) {
             var player = getPlayerWithMail(m);
             players.push(player.name);
@@ -8,7 +8,7 @@ function loadPageCompo() {
     }
 
     var listeAttente = "";
-    if (parametersMap.get("numberPlayerInWaitingList") > 0) {
+    if (numberPlayerInWaitingList > 0) {
         playersInWaitingListMail().forEach(function (m) {
             var player = getPlayerWithMail(m);
             if(player) {
@@ -18,7 +18,7 @@ function loadPageCompo() {
     }
 
     var listePasDispo = "";
-    if (parametersMap.get("notAvailablePlayerMailList")) {
+    if (notAvailablePlayerMailList) {
         playersNotAvailablePlayerListMail().forEach(function (m) {
             var player = getPlayerWithMail(m);
             if(player) {
@@ -28,7 +28,7 @@ function loadPageCompo() {
     }
 
     var listePasRepondu = "";
-    if (parametersMap.get("notRespondedPlayerMailList")) {
+    if (notRespondedPlayerMailList) {
         playersNotRespondedPlayerListMail().forEach(function (m) {
             var player = getPlayerWithMail(m);
             if(player) {
@@ -45,7 +45,7 @@ function loadPageCompo() {
         listeAttente: listeAttente,
         listePasDispo: listePasDispo,
         listePasRepondu: listePasRepondu,
-        nbTerrain: parametersMap.get("numberOfField")
+        nbTerrain: numberOfField
     });
 }
 

@@ -1,5 +1,5 @@
 function sendMatchCompletMail() {
-    var mails = parametersMap.get("adminMailList").split(',');
+    var mails = adminMailList.split(',');
     for (var i in mails) {
         var player = getPlayerWithMail(mails[i]);
         sendMatchCompletMailForAPlayer(player);
