@@ -1,8 +1,8 @@
 function sendReminderMail() {
     if (mailReminder=="" && numberPlayerInMatch == numberPlayerMatch) {
         sendReminderMailWithoutControl();
-        updateParameter("mailReminder", now());
     }
+    updateParameter("mailReminder", now());
 }
 
 function sendReminderMailWithoutControl() {
