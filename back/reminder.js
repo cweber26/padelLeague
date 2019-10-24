@@ -1,5 +1,5 @@
 function sendReminderMail() {
-    if (mailReminder="" && numberPlayerInMatch == numberPlayerMatch) {
+    if (mailReminder=="" && numberPlayerInMatch == numberPlayerMatch) {
         sendReminderMailWithoutControl();
         updateParameter("mailReminder", now());
     }

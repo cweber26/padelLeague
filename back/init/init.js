@@ -6,9 +6,7 @@ var sheetSchedule = spreadsheet.getSheetByName("Schedule");
 var sheetParameters = spreadsheet.getSheetByName("Parameters");
 
 ////////////PARAMETERS INIT////////////
-
 var parametersList = sheetParameters.getRange(1,1).getDataRegion().getValues();
-
 var mail1 = getParameterFromList("mail1");
 var mail2 = getParameterFromList("mail2");
 var creationGoogleEvent = getParameterFromList("creationGoogleEvent");
@@ -28,7 +26,6 @@ var mailTester = getParameterFromList("mailTester");
 var applicationName = getParameterFromList("applicationName");
 var numberPlayerMatch = getParameterFromList("numberPlayerMatch");
 var adminMailList = getParameterFromList("adminMailList");
-
 
 function getRowParameter(name) {
     if(name) {

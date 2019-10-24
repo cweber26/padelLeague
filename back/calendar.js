@@ -1,5 +1,5 @@
 function createEventIfMatchIsFull() {
-    if (creationGoogleEvent="" && numberPlayerInMatch == numberPlayerMatch) {
+    if (creationGoogleEvent=="" && numberPlayerInMatch == numberPlayerMatch) {
         sendMatchCompletMail();
         createCalendarEvent();
     }
@@ -13,7 +13,7 @@ function updateCalendarEvent() {
 }
 
 function createCalendarEvent() {
-    if (creationGoogleEvent="") {
+    if (creationGoogleEvent=="") {
         var calendar = CalendarApp.getDefaultCalendar();
         var begin = new Date(Utilities.formatDate(nextMatchDate, "Europe/Paris", "MM/dd/yyyy") + " 12:00:00");
         var end = new Date(Utilities.formatDate(nextMatchDate, "Europe/Paris", "MM/dd/yyyy") + " 14:00:00");

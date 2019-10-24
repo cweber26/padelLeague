@@ -11,13 +11,13 @@ function execBatch() {
 }
 
 function getNextStep() {
-    if(mail1=""){
+    if(mail1==""){
         return 1;
-    } else if(mail2=""){
+    } else if(mail2==""){
         return 2;
-    } else if(mailReminder=""){
+    } else if(mailReminder==""){
         return 3;
-    } else if(cleaning=""){
+    } else if(cleaning==""){
       return 4;
     }
 }
