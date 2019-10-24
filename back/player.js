@@ -1,7 +1,3 @@
-function playersTeamList() {
-    return sheetTeam.getRange(2, 1, sheetTeam.getLastRow()-1, sheetTeam.getLastColumn()).getValues()
-}
-
 function shouldReceiveInscriptionMail(player, prior) {
     if (player.mail && player.prio <= prior && !player.haveResponded) {
         return true;
@@ -9,11 +5,9 @@ function shouldReceiveInscriptionMail(player, prior) {
 }
 
 function getPlayerWithMail(mail) {
-    var teamList = playersTeamList();
-    for (var i = 0; i < teamList.length; i++) {
-        if (teamList[i][0] == mail) {
-            var playerLine = sheetTeam.getRange(i + 2, 1, 1, sheetTeam.getLastColumn()).getValues()[0];
-            return initPlayer(playerLine);
+    for (var i in playersTeamList) {
+        if (playersTeamList[i][0] == mail) {
+            return initPlayer(playersTeamList[i]);
         }
     }
     throw "mail " + mail + " inconnu";

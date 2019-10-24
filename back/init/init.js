@@ -6,6 +6,7 @@ var sheetSchedule = spreadsheet.getSheetByName("Schedule");
 var sheetParameters = spreadsheet.getSheetByName("Parameters");
 
 ////////////PARAMETERS INIT////////////
+var playersTeamList = sheetTeam.getRange(2, 1, sheetTeam.getLastRow()-1, sheetTeam.getLastColumn()).getValues();
 var parametersList = sheetParameters.getRange(1,1).getDataRegion().getValues();
 var mail1 = getParameterFromList("mail1");
 var mail2 = getParameterFromList("mail2");

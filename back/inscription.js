@@ -14,9 +14,8 @@ function sendInscriptionMailForAPrio(prio) {
 }
 
 function sendInscriptionMailForAPrioWithoutControl(prio) {
-    var playersList = playersTeamList();
-    for (var i in playersList) {
-        var player = initPlayer(playersList[i]);
+    for (var i in playersTeamList) {
+        var player = initPlayer(playersTeamList[i]);
         if (shouldReceiveInscriptionMail(player, prio)) {
             sendInscriptionMailForAPlayer(player);
         }
@@ -33,12 +32,9 @@ function sendInscriptionMailForAPlayer(player) {
 }
 
 
-
-
 function loadPageInscription() {
     return render("front/page/inscription", "PadelLeague",{mail: param.mail, answer: param.answer});
 }
-
 
 
 function inscription(parameter) {

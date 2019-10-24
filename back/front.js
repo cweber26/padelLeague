@@ -3,9 +3,11 @@ Route.path = function (route, callback) {
     Route[route] = callback;
 };
 
+var param;
+
 // noinspection JSUnusedGlobalSymbols
 function doGet(e) {
-    var param = e.parameters;
+    param = e.parameters;
 
     Route.path("inscription", loadPageInscription);
     Route.path("compo", loadPageCompo);
