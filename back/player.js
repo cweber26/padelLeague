@@ -14,7 +14,7 @@ function getPlayerWithMail(mail) {
 }
 
 function initPlayer(playerLine) {
-    Logger.log("initPlayer : " + playerLine);
+    //Logger.log("initPlayer : " + playerLine);
     return {
         mail: playerLine[0],
         name: playerLine[1],

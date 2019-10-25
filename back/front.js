@@ -12,6 +12,8 @@ function doGet(e) {
     Route.path("inscription", loadPageInscription);
     Route.path("compo", loadPageCompo);
 
+    Logger.log("Page to load : " + param.page + " for mail " + param.mail);
+
     if (Route[param.page]) {
         return Route[param.page]();
     }
