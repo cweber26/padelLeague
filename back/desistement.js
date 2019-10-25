@@ -14,16 +14,16 @@ function actionsToDoIfDesistement(desisteurMail) {
         //the match was full and a least a player was in waiting list
         var newPlayer = getNewPlayerInCompo();
         // we get the new player
-        if (mailSendingReminder=="") {
+        if (mailReminder=="") {
             sendMail(newPlayer.mail, "Tu es sélectionné pour le match " + matchDayGapInFrench(true) + " en raison d'un désitement", getBodyMailReminder(newPlayer, true));
         } else {
             sendRemindMailForAPlayer(newPlayer, true);
         }
-        sendMailSimple("Remplacement : " + oldPlayer.fullName + " s'est désité pour le match " + matchDayGapInFrench(true),
-            "<h4>" + oldPlayer.fullName + " s'est désité pour le match " + matchDayGapInFrench(true) + "</h4><h4>" + newPlayer.fullName + " est dispo pour le remplacer</h4>");
+        sendMailSimple("Remplacement : " + oldPlayer.name + " s'est désité pour le match " + matchDayGapInFrench(true),
+            "<h4>" + oldPlayer.name + " s'est désité pour le match " + matchDayGapInFrench(true) + "</h4><h4>" + newPlayer.name + " est dispo pour le remplacer</h4>");
     } else {
         var nbAvailableSlotsDesistement = (numberAvailableSlotInMatch + 1);
-        sendMailSimple("Alerte : " + oldPlayer.fullName + " s'est désité pour le match " + matchDayGapInFrench(true) + " il manque " + nbAvailableSlotsDesistement + " joueur(s) pour le match", "<h4>" + oldPlayer.fullName + " s'est désité pour le match " + matchDayGapInFrench(true) + "</h4><h4>Il manque " + nbAvailableSlotsDesistement + " joueur(s)</h4>");
+        sendMailSimple("Alerte : " + oldPlayer.name + " s'est désité pour le match " + matchDayGapInFrench(true) + " il manque " + nbAvailableSlotsDesistement + " joueur(s) pour le match", "<h4>" + oldPlayer.name + " s'est désité pour le match " + matchDayGapInFrench(true) + "</h4><h4>Il name " + nbAvailableSlotsDesistement + " joueur(s)</h4>");
     }
     updateCalendarEvent();
 }
