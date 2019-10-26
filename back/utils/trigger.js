@@ -5,9 +5,7 @@ function execBatch() {
     if(isTimeForStep(nextStep)){
         execStep(nextStep);
     }
-    if(nextStep==2 || nextStep==3) {
-        createEventIfMatchIsFull();
-    }
+    createEventIfMatchIsFull();
 }
 
 function getNextStep() {
