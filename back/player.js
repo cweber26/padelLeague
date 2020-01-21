@@ -1,5 +1,5 @@
 function shouldReceiveInscriptionMail(player, prior) {
-    if (player.mail && player.prio <= prior && !player.haveResponded) {
+    if (player.mail && player.prio == prior && !player.haveResponded) {
         return true;
     }
 }
